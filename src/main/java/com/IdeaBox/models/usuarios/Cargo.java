@@ -1,0 +1,5 @@
+package com.IdeaBox.models.usuarios;
+
+public enum Cargo {
+	DESENVOLVEDOR, QA, SUPERVISOR, ASSISTENTE, CTO, CIO, CRO, CMO, COORDERNADOR, PROGRAMADOR, CONSULTOR 
+}

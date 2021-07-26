@@ -1,4 +1,4 @@
-package com.IdeaBox.models;
+package com.IdeaBox.models.usuarios;
 
 import java.io.Serializable;
 
@@ -26,7 +26,8 @@ public abstract class Usuario implements Serializable {
 	private Integer id;
 	private String nome;
 	private String cpf;
-	private String cargo;
+	@Enumerated(EnumType.STRING)
+	private Cargo cargo;
 	protected boolean isRegistrado;
 	private String login;
 	private String senha;
@@ -35,7 +36,7 @@ public abstract class Usuario implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private StatusColaborador status;
 	
-	public Usuario(Integer id, String nome, String cpf, String cargo, String login, String senha, String email) {
+	public Usuario(Integer id, String nome, String cpf, Cargo cargo, String login, String senha, String email) {
 		setId(id);
 		setNome(nome);
 		setCpf(cpf);
@@ -68,10 +69,10 @@ public abstract class Usuario implements Serializable {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getCargo() {
+	public Cargo getCargo() {
 		return cargo;
 	}
-	public void setCargo(String cargo) {
+	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
 	public boolean isRegistrado() {

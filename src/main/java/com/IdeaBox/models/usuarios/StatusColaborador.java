@@ -1,4 +1,4 @@
-package com.IdeaBox.models;
+package com.IdeaBox.models.usuarios;
 
 public enum StatusColaborador {
 	 ATIVO, DESLIGADO
