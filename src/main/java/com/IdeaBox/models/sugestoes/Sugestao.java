@@ -39,7 +39,6 @@ public class Sugestao implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer Id;
 	private String texto;
-	private LocalDateTime criacaoDaSugestao;
 	@OneToOne
 	private Colaborador colaborador;
 	private double classificacao;
@@ -65,7 +64,6 @@ public class Sugestao implements Serializable {
 		this.setTotalDeAvaliacoes(0);
 		this.setId(Id);
 		setCategoria(categoria);
-		setCriacaoDaSugestao(criacaoDaSugestao);
 		}
 	
 	
@@ -136,13 +134,8 @@ public class Sugestao implements Serializable {
 		Id = id;
 	}
 
-	public LocalDateTime getCriacaoDaSugestao() {
-		return criacaoDaSugestao;
-	}
 
-	public void setCriacaoDaSugestao(LocalDateTime criacaoDaSugestao) {
-		this.criacaoDaSugestao = criacaoDaSugestao;
-	}
+	
 	public ZonedDateTime getDataEnvio() {
 		return dataEnvio;
 	}
