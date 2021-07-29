@@ -42,7 +42,8 @@ public class Sugestao implements Serializable {
 	@OneToOne
 	private Colaborador colaborador;
 	private double classificacao;
-	private Status_Sugestao status;
+	@Enumerated(EnumType.STRING)
+	private Status_Sugestao status = Status_Sugestao.EM_ANALISE_RH;
 	@Enumerated(EnumType.STRING)
 	private Categoria categoria;
 	private int totalDeAvaliacoes;
@@ -58,7 +59,6 @@ public class Sugestao implements Serializable {
 	public Sugestao(Integer id, Colaborador colaborador, Categoria categoria, String texto){
 		super();
 		setColaborador(colaborador);
-		setStatus(Status_Sugestao.APROVADO_PELO_RH);
 		setClassificacao(0);
 		setTexto(texto);
 		this.setTotalDeAvaliacoes(0);
@@ -134,6 +134,7 @@ public class Sugestao implements Serializable {
 		Id = id;
 	}
 
+	
 
 	
 	public ZonedDateTime getDataEnvio() {
