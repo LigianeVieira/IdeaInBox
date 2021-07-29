@@ -1,6 +1,8 @@
 package com.IdeaBox.models.usuarios;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -10,6 +12,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+
+import com.IdeaBox.models.sugestoes.Sugestao;
 
 
 
@@ -35,7 +40,11 @@ public abstract class Usuario implements Serializable {
 	private String email;
 	@Enumerated(EnumType.STRING)
 	private StatusColaborador status;
+	@OneToMany
+	private List <Sugestao> sugestoes;
 	
+
+
 	public Usuario(Integer id, String nome, String cpf, Cargo cargo, String login, String senha, String email) {
 		setId(id);
 		setNome(nome);
@@ -47,6 +56,7 @@ public abstract class Usuario implements Serializable {
 		setLogado(false);
 		setRegistrado(true);
 		setStatus(StatusColaborador.ATIVO);
+		sugestoes = new ArrayList<Sugestao>();
 	}
 	
 	
@@ -111,5 +121,16 @@ public abstract class Usuario implements Serializable {
 	public void setStatus(StatusColaborador status) {
 		this.status = status;
 	}
+	
+	public List<Sugestao> getSugestoes() {
+		return sugestoes;
+	}
+
+
+
+	public void setSugestoes(List<Sugestao> sugestoes) {
+		this.sugestoes = sugestoes;
+	}
+
 	
 }

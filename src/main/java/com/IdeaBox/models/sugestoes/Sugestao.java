@@ -1,8 +1,14 @@
 package com.IdeaBox.models.sugestoes;
 
+
+
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -12,6 +18,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.IdeaBox.models.usuarios.Colaborador;
 
@@ -29,39 +38,37 @@ public class Sugestao implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer Id;
-	private String sugestao;
-	private String criacaoDaSugestao;
-	@ManyToOne
+	private String texto;
+	private LocalDateTime criacaoDaSugestao;
+	@OneToOne
 	private Colaborador colaborador;
 	private double classificacao;
-	@Enumerated(EnumType.STRING)
 	private Status_Sugestao status;
 	@Enumerated(EnumType.STRING)
 	private Categoria categoria;
 	private int totalDeAvaliacoes;
+	private ZonedDateTime dataEnvio = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
 
+
+	
 	
 	public Sugestao() {
 		
 	}
 	
-	public Sugestao(Integer id, Colaborador colaborador, Categoria categoria, String Sugestao){
+	public Sugestao(Integer id, Colaborador colaborador, Categoria categoria, String texto){
 		super();
 		setColaborador(colaborador);
-		setStatus(status.RECEBIDO);
+		setStatus(Status_Sugestao.APROVADO_PELO_RH);
 		setClassificacao(0);
-		this.criacaoDaSugestao = this.getData();
-		setSugestao(Sugestao);
+		setTexto(texto);
 		this.setTotalDeAvaliacoes(0);
 		this.setId(Id);
 		setCategoria(categoria);
-	}
+		setCriacaoDaSugestao(criacaoDaSugestao);
+		}
 	
-	private String getData() {
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
-		Date date = new Date();
-		return dateFormat.format(date);
-	}
+	
 	
 	
 
@@ -86,12 +93,12 @@ public class Sugestao implements Serializable {
 
 
 
-	public String getSugestao() {
-		return sugestao;
+	public String getTexto() {
+		return texto;
 	}
 
-	public void setSugestao(String sugestao){
-		this.sugestao = sugestao;
+	public void setTexto(String texto){
+		this.texto = texto;
 	}
 
 	public Colaborador getColaborador() {
@@ -125,13 +132,27 @@ public class Sugestao implements Serializable {
 		return Id;
 	}
 
-
-
-
-
 	public void setId(Integer id) {
 		Id = id;
 	}
+
+	public LocalDateTime getCriacaoDaSugestao() {
+		return criacaoDaSugestao;
+	}
+
+	public void setCriacaoDaSugestao(LocalDateTime criacaoDaSugestao) {
+		this.criacaoDaSugestao = criacaoDaSugestao;
+	}
+	public ZonedDateTime getDataEnvio() {
+		return dataEnvio;
+	}
+
+	
+
+	
+
+	
+	
 }
 
 

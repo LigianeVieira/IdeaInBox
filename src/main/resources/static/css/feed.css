@@ -12,7 +12,7 @@ body{
 
 p, li{
     color: #444;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /*Barra de navegação*/
@@ -68,3 +68,12 @@ header, .navbar{
     li span{
     padding: 10px;
     }
+    
+    
+    .form-select{
+    width: 15%;
+    position: absolute;
+    left: 1200px}
+    
+  
+    
