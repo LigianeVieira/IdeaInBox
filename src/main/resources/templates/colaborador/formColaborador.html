@@ -3,231 +3,245 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 
-    <!--Fonte-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/cadastro.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<!--Fonte-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+	rel="stylesheet">
+<!-- Bootstrap-->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="css/cadastro.css">
+  <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/b77074ccd5.js" crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+	integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container" id="nav-container">
-            <nav class="navbar navbar-expand-lg fixed-top">
-                <a href="#" class="navbar-brand">
-                    <img id="logo" src="img/MicrosoftTeams-image-removebg-preview-Branco.png" alt="IdeaBox">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
-                    aria-controls="navbar-links" aria-expanded="false" aria-label="Toogle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link" id="home-menu">Home</a>
-                        <a class="nav-item nav-link" id="about-menu">Login</a>
-                        <a class="nav-item nav-link" id="services-menu">Cadastrar Colaborador</a>
-                        <a class="nav-item nav-link" id="portfolio-menu">Projetos</a>
-                        <a class="nav-item nav-link" id="contact-menu">Sobre</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <!--FORMULARIO ESQUERDO-->
-        <div class="container">
-            <form class="form-1" method="post">
-            <div class="row">
-                <div class="col-sm">
-                        <h2>Cadastrar colaborador</h2>
-                        <div class="form-group">
-                            <label for="nome">Nome</label>
-                            <input type="text" class="form-control" value="" name="nome"
-                                placeholder="Nome" >
-                            <small id="nomeHelp" class="form-text text-muted">Nome completo do colaborador</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="cpf">CPF</label>
-                            <input type="text" class="form-control" value="" name="cpf"
-                                placeholder="123.456.789-10" >
-                            <small id="cpfHelp" class="form-text text-muted">Alfanumerico como no exemplo</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="login">Login</label>
-                            <input type="text" class="form-control" value="" name="login" placeholder="Login" >
-                            <small id="loginHelp" class="form-text text-muted">Login que o usuario acessara o
-                                sistema</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
-                            <input type="password" class="form-control" value="" name="senha" placeholder="Senha" >
-                            <small id="loginHelp" class="form-text text-muted">Senha para acessar o sistema</small>
-                        </div>
-                   
-                </div>
-                <!--FORMULARIO DIREITO-->
-                <div class="col-sm">
-                        <div class="form-group2">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" value="" name="email"
-                                placeholder="Email do colaborador" >
-                            <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com
-                                ninguém.</small>
-                                </div>
-                                <div class="form-group2">
-                            <label for="exampleFormControlSelect1">Cargo</label>
-                            <select class="form-control" id="SelectForm" name="cargo">
-                              <option>ADMINISTRADOR</option>
-                              <option>ADMINISTRADOR_SISTEMAS,</option>
-                              <option>ADMINISTRADOR_BANCO_DE_DADOS</option>
-                              <option>ADMINISTRADOR_REDE</option>
-                              <option>ANALISTA</option>
-                              <option>ANALISTA_BI</option>
-                              <option>ANALISTA_TI</option>
-                              <option>ANALISTA_SEGURANÇA_DA_INFORMAÇÃO</option>
-                              <option>ANALISTA_SISTEMAS</option>
-                              <option>ANALISTA_WEB</option>
-                              <option>ANALISTA_TELECOMUNICAÇÕES</option>
-                              <option>ANALISTA_SUPORTE</option>
-                              <option>ANALISTA_BANCO_DE_DADOS</option>
-                              <option>ANALISTA_DE_DESENVOLVIMENTO_DE_SISTEMAS</option>
-                              <option>ANALISTA_RH</option>
-                              <option>ANALISTA_CONSULTOR</option>
-                              <option>ANALISTA_DE_NEGOCIOS</option>
-                              <option>ANALISTA_PROCESSOS</option>
-                              <option>ANALISTA_PRODUÇÃO</option>
-                              <option>ANALISTA_SISTEMAS_AUTOMAÇÃO</option>
-                              <option>ANALISTA_SUPORTE_MAINFRAME</option>
-                              <option>ANALISTA_ADMINISTRATIVO</option>
-                              <option>ANALISTA_FINANCEIRO</option>
-                              <option>APONTADOR</option>
-                              <option>ARQUITETO_REDE_DE_INFORMÁTICA</option>
-                              <option>ASSISTENTE_DE_QUALIDADE</option>
-                              <option>ASSISTENTE_TI</option>
-                              <option>ASSISTENTE_ADMINISTRATIVIO</option>
-                              <option>ASSISTENTE_COBRANÇA</option>
-                              <option>ASSISTENTE_CONTAS_A_PAGAR</option>
-                              <option>ASSISTENTE_CONTAS_A_RECEBER</option>
-                              <option>ASSISTENTE_FISCAL</option>
-                              <option>ASSISTENTE_CONTABIL</option>
-                              <option>ASSISTENTE_FINANCEIRO</option>
-                              <option>ASSISTENTE_DE_RH</option>
-                              <option>ASSISTENTE_DE_VENDAS</option>
-                              <option>ATENDENTE_HELP_DESK</option>
-                              <option>ATENDENTE</option>
-                              <option>AUXILIAR</option>
-                              <option>AUXILIAR_DE_LIMPEZA</option>
-                              <option>AUXILIAR_DE_SERVIÇOS_GERAIS</option>
-                              <option>AUXILIAR_FINANCEIRO</option>
-                              <option>AUXILIAR_RH</option>
-                              <option>AUXILIAR_DE_VENDAS</option>
-                              <option>BUSINESS_INTELLIGENCE</option>
-                              <option>CHIEF_TECNOLOGY_OFFICER</option>
-                              <option>CHIEF_DATA_OFFICER</option>
-                              <option>CIENTISTA_DE_DADOS</option>
-                              <option>CONSULTOR</option>
-                              <option>CONSULTOR_TI</option>
-                              <option>COORDENADOR_TI</option>
-                              <option>COORDENADOR</option>
-                              <option>COORDENADOR_WEB</option>
-                              <option>COORDENADOR_RH</option>
-                              <option>COPEIRA</option>
-                              <option>DESENVOLVEDOR</option>
-                              <option>DESENVOLVEDOR_FULL_STACK</option>
-                              <option>DESENVOLVEDOR_MOBILE</option>
-                              <option>DESENVOLVEDOR_PROJETOS_ERP</option>
-                              <option>DESENVOLVEDOR_WEB</option>
-                              <option>DESENHISTA_GRAFICO</option>
-                              <option>DESENHISTA_EDITORIAL</option>
-                              <option>DESIGNER</option>
-                              <option>DESIGNER_GRAFICO</option>
-                              <option>DESINER_DE_GAMES</option>
-                              <option>DIRETOR</option>
-                              <option>DOCUMENTADOR</option>
-                              <option>ENGENHEIRO</option>
-                              <option>ENGENHEIRO_DE_IA</option>
-                              <option>ENGENHEIRO_DE_SOFTWARE</option>
-                              <option>ENGENHEIRO_DE_DADOS</option>
-                              <option>ENGENHEIRO_DE_REDE</option>
-                              <option>ENGENHEIRO_DE_SUPORTE</option>
-                              <option>ESPECIALISTA</option>
-                              <option>ESPECIALISTA_CLOUD_COMPUTING</option>
-                              <option>ESTAGIARIO</option>
-                              <option>FINANCEIRO</option>
-                              <option>GERENTE</option>
-                              <option>GERENTE_FINANCEIRO</option>
-                              <option>GERENTE_TI</option>
-                              <option>GERENTE_PROJETOS</option>
-                              <option>GERENTE_SEGURANÇA_DA_INFORMAÇÃO</option>
-                              <option>GERENTE_PRODUTOS_SOFTWARE</option>
-                              <option>GERENTE_DE_NEGOCIOS</option>
-                              <option>GERENTE_DE_SISTEMAS</option>
-                              <option>GERENTE_DE_SUPORTE</option>
-                              <option>GERENTE_TELEPROCESSAMENTO</option>
-                              <option>GERENTE_DE_INFRAESTRUTURA</option>
-                              <option>OPERADOR_DE_PROCESSAMENTO_DE_DADOS</option>
-                              <option>OPERADOR_DE_SISTEMA_DE_COMPUTADOR</option>
-                              <option>OPERADOR_DE_SISTEMAS_COMPUTACIONAIS_DE_REDE</option>
-                              <option>PESQUISADOR_CIÊNCIAS_COMPUTAÇÃO_E_TI</option>
-                              <option>PORTEIRO</option>
-                              <option>PROGRAMADOR</option>
-                              <option>PROGRAMADOR_JOGOS_DIGITAIS</option>
-                              <option>PROGRAMADOR_JAVA</option>
-                              <option>PROGRAMADOR_FRONT_END</option>
-                              <option>PROGRAMADOR_PYTHON</option>
-                              <option>PROGRAMADOR_WEB</option>
-                              <option>PROGRAMADOR_DE_COMPUTADOR</option>
-                              <option>PROGRAMADOR_TI</option>
-                              <option>PROGRAMADOR_CD_ROM</option>
-                              <option>PROGRAMADOR_APLICATRIVOS_EDUCACIONAIS_E_ENTRETENIMENTO</option>
-                              <option>PROGRAMADOR_MULTIMIDIA</option>
-                              <option>PROFISSIONAL_DEVOPS</option>
-                              <option>RH</option>
-                              <option>RECEPCIONISTA</option>
-                              <option>SECRETARIA</option>
-                              <option>SEGURANÇA</option>
-                              <option>SUPERVISOR</option>
-                              <option>SUPERVISOR_TI</option>
-                              <option>SUPORTE</option>
-                              <option>TRAINEE_TI</option>
-                              <option>TRAINEE</option>
-                              <option>TECNICO</option>
-                              <option>TECNICO_MANUTENÇÃO_DE_EQUIPAMENTOS</option>
-                              <option>TECNICO_HELPDESK</option>
-                              <option>TECNICO_APLICAÇÃO</option>
-                              <option>TELEMARKETING</option>
-                              <option>TELEFONISTA</option>
-                              <option>TECNOLOGO_GESTÃO_TI</option>
-                              <option>TECNOLOGO_BANCO_DE_DADOS</option>
-                              <option>UX_UI</option>
-                              <option>VENDEDOR</option>
-                              <option>VIGILANTE,</option>
-                              <option>WEBMASTER</option>
-                            </select>
-                            <button type="submit" class="btn btn-primary">Cadastrar Colaborador</button>
-                          </div>
-                        </div>
-                     
-                 
-                    </form>
-                </div>
-            </div>
-    </main>
+	<header>
+		<div class="container" id="nav-container">
+			<nav class="navbar navbar-expand-lg fixed-top">
+				<a href="#" class="navbar-brand"> <img id="logo"
+					src="img/MicrosoftTeams-image-removebg-preview-Branco.png"
+					alt="IdeaBox">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbar-links" aria-controls="navbar-links"
+					aria-expanded="false" aria-label="Toogle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end"
+					id="navbar-links">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link" id="home-menu">Home</a> <a
+							class="nav-item nav-link" id="about-menu">Login</a> <a
+							class="nav-item nav-link" id="services-menu">Cadastrar
+							Colaborador</a> <a class="nav-item nav-link" id="portfolio-menu">Projetos</a>
+						<a class="nav-item nav-link" id="contact-menu">Sobre</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<!--FORMULARIO ESQUERDO-->
+		<div class="container">
+			<form class="form-1" method="post">
+				<div class="row">
+					<div class="col-sm">
+						<h2>Cadastrar colaborador</h2>
+						<div class="form-group">
+							<label for="nome">Nome</label> <input type="text"
+								class="form-control" value="" name="nome" placeholder="Nome">
+							<small id="nomeHelp" class="form-text text-muted">Nome
+								completo do colaborador</small>
+						</div>
+						<div class="form-group">
+							<label for="cpf">CPF</label> <input type="text"
+								class="form-control" value="" name="cpf"
+								placeholder="123.456.789-10"> <small id="cpfHelp"
+								class="form-text text-muted">Alfanumerico como no
+								exemplo</small>
+						</div>
+						<div class="form-group">
+							<label for="login">Login</label> <input type="text"
+								class="form-control" value="" name="login" placeholder="Login">
+							<small id="loginHelp" class="form-text text-muted">Login
+								que o usuario acessara o sistema</small>
+						</div>
+						<div class="form-group">
+							<label for="senha">Senha</label> <input type="password"
+								class="form-control" value="" name="senha" placeholder="Senha">
+							<small id="loginHelp" class="form-text text-muted">Senha
+								para acessar o sistema</small>
+						</div>
+
+					</div>
+					<!--FORMULARIO DIREITO-->
+					<div class="col-sm">
+						<div class="form-group2">
+							<label for="exampleInputEmail1">Email</label> <input type="email"
+								class="form-control" value="" name="email"
+								placeholder="Email do colaborador"> <small
+								id="emailHelp" class="form-text text-muted">Nunca vamos
+								compartilhar seu email, com ninguém.</small>
+						</div>
+						<div class="form-group2">
+							<label for="exampleDataList" class="form-label">Selecione o cargo
+								</label> <input class="form-control" list="datalistOptions"
+								id="cargo" name="cargo" placeholder="Pesquisar por cargo">
+							<datalist id="datalistOptions">
+								<option value="ADMINISTRADOR">
+								<option>ADMINISTRADOR_SISTEMAS,</option>
+								<option>ADMINISTRADOR_BANCO_DE_DADOS</option>
+								<option>ADMINISTRADOR_REDE</option>
+								<option>ANALISTA</option>
+								<option>ANALISTA_BI</option>
+								<option>ANALISTA_TI</option>
+								<option>ANALISTA_SEGURANÇA_DA_INFORMAÇÃO</option>
+								<option>ANALISTA_SISTEMAS</option>
+								<option>ANALISTA_WEB</option>
+								<option>ANALISTA_TELECOMUNICAÇÕES</option>
+								<option>ANALISTA_SUPORTE</option>
+								<option>ANALISTA_BANCO_DE_DADOS</option>
+								<option>ANALISTA_DE_DESENVOLVIMENTO_DE_SISTEMAS</option>
+								<option>ANALISTA_RH</option>
+								<option>ANALISTA_CONSULTOR</option>
+								<option>ANALISTA_DE_NEGOCIOS</option>
+								<option>ANALISTA_PROCESSOS</option>
+								<option>ANALISTA_PRODUÇÃO</option>
+								<option>ANALISTA_SISTEMAS_AUTOMAÇÃO</option>
+								<option>ANALISTA_SUPORTE_MAINFRAME</option>
+								<option>ANALISTA_ADMINISTRATIVO</option>
+								<option>ANALISTA_FINANCEIRO</option>
+								<option>APONTADOR</option>
+								<option>ARQUITETO_REDE_DE_INFORMÁTICA</option>
+								<option>ASSISTENTE_DE_QUALIDADE</option>
+								<option>ASSISTENTE_TI</option>
+								<option>ASSISTENTE_ADMINISTRATIVIO</option>
+								<option>ASSISTENTE_COBRANÇA</option>
+								<option>ASSISTENTE_CONTAS_A_PAGAR</option>
+								<option>ASSISTENTE_CONTAS_A_RECEBER</option>
+								<option>ASSISTENTE_FISCAL</option>
+								<option>ASSISTENTE_CONTABIL</option>
+								<option>ASSISTENTE_FINANCEIRO</option>
+								<option>ASSISTENTE_DE_RH</option>
+								<option>ASSISTENTE_DE_VENDAS</option>
+								<option>ATENDENTE_HELP_DESK</option>
+								<option>ATENDENTE</option>
+								<option>AUXILIAR</option>
+								<option>AUXILIAR_DE_LIMPEZA</option>
+								<option>AUXILIAR_DE_SERVIÇOS_GERAIS</option>
+								<option>AUXILIAR_FINANCEIRO</option>
+								<option>AUXILIAR_RH</option>
+								<option>AUXILIAR_DE_VENDAS</option>
+								<option>BUSINESS_INTELLIGENCE</option>
+								<option>CHIEF_TECNOLOGY_OFFICER</option>
+								<option>CHIEF_DATA_OFFICER</option>
+								<option>CIENTISTA_DE_DADOS</option>
+								<option>CONSULTOR</option>
+								<option>CONSULTOR_TI</option>
+								<option>COORDENADOR_TI</option>
+								<option>COORDENADOR</option>
+								<option>COORDENADOR_WEB</option>
+								<option>COORDENADOR_RH</option>
+								<option>COPEIRA</option>
+								<option>DESENVOLVEDOR</option>
+								<option>DESENVOLVEDOR_FULL_STACK</option>
+								<option>DESENVOLVEDOR_MOBILE</option>
+								<option>DESENVOLVEDOR_PROJETOS_ERP</option>
+								<option>DESENVOLVEDOR_WEB</option>
+								<option>DESENHISTA_GRAFICO</option>
+								<option>DESENHISTA_EDITORIAL</option>
+								<option>DESIGNER</option>
+								<option>DESIGNER_GRAFICO</option>
+								<option>DESINER_DE_GAMES</option>
+								<option>DIRETOR</option>
+								<option>DOCUMENTADOR</option>
+								<option>ENGENHEIRO</option>
+								<option>ENGENHEIRO_DE_IA</option>
+								<option>ENGENHEIRO_DE_SOFTWARE</option>
+								<option>ENGENHEIRO_DE_DADOS</option>
+								<option>ENGENHEIRO_DE_REDE</option>
+								<option>ENGENHEIRO_DE_SUPORTE</option>
+								<option>ESPECIALISTA</option>
+								<option>ESPECIALISTA_CLOUD_COMPUTING</option>
+								<option>ESTAGIARIO</option>
+								<option>FINANCEIRO</option>
+								<option>GERENTE</option>
+								<option>GERENTE_FINANCEIRO</option>
+								<option>GERENTE_TI</option>
+								<option>GERENTE_PROJETOS</option>
+								<option>GERENTE_SEGURANÇA_DA_INFORMAÇÃO</option>
+								<option>GERENTE_PRODUTOS_SOFTWARE</option>
+								<option>GERENTE_DE_NEGOCIOS</option>
+								<option>GERENTE_DE_SISTEMAS</option>
+								<option>GERENTE_DE_SUPORTE</option>
+								<option>GERENTE_TELEPROCESSAMENTO</option>
+								<option>GERENTE_DE_INFRAESTRUTURA</option>
+								<option>OPERADOR_DE_PROCESSAMENTO_DE_DADOS</option>
+								<option>OPERADOR_DE_SISTEMA_DE_COMPUTADOR</option>
+								<option>OPERADOR_DE_SISTEMAS_COMPUTACIONAIS_DE_REDE</option>
+								<option>PESQUISADOR_CIÊNCIAS_COMPUTAÇÃO_E_TI</option>
+								<option>PORTEIRO</option>
+								<option>PROGRAMADOR</option>
+								<option>PROGRAMADOR_JOGOS_DIGITAIS</option>
+								<option>PROGRAMADOR_JAVA</option>
+								<option>PROGRAMADOR_FRONT_END</option>
+								<option>PROGRAMADOR_PYTHON</option>
+								<option>PROGRAMADOR_WEB</option>
+								<option>PROGRAMADOR_DE_COMPUTADOR</option>
+								<option>PROGRAMADOR_TI</option>
+								<option>PROGRAMADOR_CD_ROM</option>
+								<option>PROGRAMADOR_APLICATRIVOS_EDUCACIONAIS_E_ENTRETENIMENTO</option>
+								<option>PROGRAMADOR_MULTIMIDIA</option>
+								<option>PROFISSIONAL_DEVOPS</option>
+								<option>RH</option>
+								<option>RECEPCIONISTA</option>
+								<option>SECRETARIA</option>
+								<option>SEGURANÇA</option>
+								<option>SUPERVISOR</option>
+								<option>SUPERVISOR_TI</option>
+								<option>SUPORTE</option>
+								<option>TRAINEE_TI</option>
+								<option>TRAINEE</option>
+								<option>TECNICO</option>
+								<option>TECNICO_MANUTENÇÃO_DE_EQUIPAMENTOS</option>
+								<option>TECNICO_HELPDESK</option>
+								<option>TECNICO_APLICAÇÃO</option>
+								<option>TELEMARKETING</option>
+								<option>TELEFONISTA</option>
+								<option>TECNOLOGO_GESTÃO_TI</option>
+								<option>TECNOLOGO_BANCO_DE_DADOS</option>
+								<option>UX_UI</option>
+								<option>VENDEDOR</option>
+								<option>VIGILANTE,</option>
+								<option>WEBMASTER</option>
+								</datalist>
+								<button type="submit" class="btn btn-primary">Cadastrar
+									Colaborador  &nbsp&nbsp<i class="fas fa-user-plus"></i></button>
+						</div>
+					</div>
+			</form>
+		</div>
+		</div>
+	</main>
 </body>
 
 </html>
