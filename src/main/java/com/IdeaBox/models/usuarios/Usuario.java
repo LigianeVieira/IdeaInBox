@@ -28,7 +28,7 @@ public abstract class Usuario implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	private Integer id;
+	private long id;
 	private String nome;
 	private String cpf;
 	@Enumerated(EnumType.STRING)
@@ -45,7 +45,7 @@ public abstract class Usuario implements Serializable {
 	
 
 
-	public Usuario(Integer id, String nome, String cpf, Cargo cargo, String login, String senha, String email) {
+	public Usuario(long id, String nome, String cpf, Cargo cargo, String login, String senha, String email) {
 		setId(id);
 		setNome(nome);
 		setCpf(cpf);
@@ -58,13 +58,15 @@ public abstract class Usuario implements Serializable {
 		setStatus(StatusColaborador.ATIVO);
 		sugestoes = new ArrayList<Sugestao>();
 	}
+	public Usuario() {
+		
+	}
 	
 	
-	
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getNome() {

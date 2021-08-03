@@ -21,11 +21,15 @@ public class Colaborador extends Usuario{
 		setRegistrado(true);
 		setStatus(StatusColaborador.ATIVO);
 	}
-
+	public Colaborador() {
+		
+	}
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	
 	
 

@@ -37,9 +37,9 @@ public class Sugestao implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer Id;
+	private long Id;
 	private String texto;
-	@OneToOne
+	@ManyToOne
 	private Colaborador colaborador;
 	private double classificacao;
 	@Enumerated(EnumType.STRING)
@@ -126,11 +126,11 @@ public class Sugestao implements Serializable {
 	}
 
 
-	public Integer getId() {
+	public long getId() {
 		return Id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(long id) {
 		Id = id;
 	}
 
