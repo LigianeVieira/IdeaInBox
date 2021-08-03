@@ -3,7 +3,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #f9f9f9;
-    background: url("../img/icone-contato.png") no-repeat 1300px 250px;
+    background: url("../img/icone-contato.png") no-repeat 80% 250px;
 }
 .row{
     margin: 0;

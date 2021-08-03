@@ -50,11 +50,11 @@
 				<div class="collapse navbar-collapse justify-content-end"
 					id="navbar-links">
 					<div class="navbar-nav">
-						<a class="nav-item nav-link" id="home-menu">Home</a> <a
-							class="nav-item nav-link" id="about-menu">Login</a> <a
-							class="nav-item nav-link" id="services-menu">Cadastrar
-							Colaborador</a> <a class="nav-item nav-link" id="portfolio-menu">Projetos</a>
-						<a class="nav-item nav-link" id="contact-menu">Sobre</a>
+						<a class="nav-item nav-link" id="home-menu" href="http://localhost:8080/">Home</a>
+                    <a class="nav-item nav-link" id="about-menu" href="/login">Login</a>
+                    <a class="nav-item nav-link" id="services-menu" href="/cadastrarColaborador">Cadastrar Colaborador</a>
+                    <a class="nav-item nav-link" id="team-menu" href="http://localhost:8080/timeline">Timeline</a>
+                    <a class="nav-item nav-link" id="contact-menu">Perfil</a>
 					</div>
 				</div>
 			</nav>
@@ -70,9 +70,13 @@
 				</div>
 				<select class="form-select" aria-label="Default select example" name="categoria">
 					<option selected>Categoria</option>
-					<option>INFORMATICA</option>
-					<option>LIMPEZA</option>
 					<option>ALIMENTAÇAO</option>
+					<option>INFORMATICA</option>
+					<option>INFRAESTRUTURA</option>
+					<option>SEGURANÇA</option>
+					<option>SISTEMAS</option>
+					<option>TRANSPORTE</option>
+					<option>OUTROS</option>
 				</select>
 			</div>
 			<button type="submit" class="btn btn-primary">Enviar</button>

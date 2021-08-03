@@ -1,8 +1,12 @@
 package com.IdeaBox.models.usuarios;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+
+import com.IdeaBox.models.sugestoes.Sugestao;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -20,6 +24,7 @@ public class Colaborador extends Usuario{
 		setLogado(false);
 		setRegistrado(true);
 		setStatus(StatusColaborador.ATIVO);
+		sugestoes = new ArrayList<Sugestao>();
 	}
 	public Colaborador() {
 		

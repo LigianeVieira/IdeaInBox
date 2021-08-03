@@ -41,7 +41,7 @@ public abstract class Usuario implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private StatusColaborador status;
 	@OneToMany
-	private List <Sugestao> sugestoes;
+	protected List <Sugestao> sugestoes;
 	
 
 
