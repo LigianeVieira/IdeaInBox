@@ -23,5 +23,9 @@ public class ColaboradorController {
 		cr.save(colaborador);
 		return "redirect:/cadastrarColaborador";
 	}
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
+	}
 
 }

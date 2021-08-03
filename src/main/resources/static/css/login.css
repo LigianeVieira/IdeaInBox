@@ -1,0 +1,116 @@
+/* Gerais */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: aliceblue;
+}
+.row{
+    margin: 0;
+}
+
+.container{
+    padding: 70px 0;
+}
+
+p, li{
+    color: #444;
+    font-size: 14px;
+}
+
+
+/*Barra de navegação*/
+header, .navbar{
+    background-color: #ffc400;
+    
+    }
+    #nav-container{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    #logo{
+       width: 180px;
+    }
+    
+    .navbar-brand{
+    padding: 0;
+    color: white;
+    }
+    
+    .navbar-brand:hover{
+        color: white;
+    }
+    
+    #navbar-links a{
+        color: white;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link{
+        padding: 1rem .8rem;
+    }
+
+
+
+
+
+.form-1{
+    margin-top: 140px;
+
+}
+.form-1 .form-control{
+    width: 400px;
+}
+.form-1 h2{
+    color:#ffae00;
+}
+.form-1 label{
+    padding: 5px;
+}
+
+
+
+.card{
+    
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+   background: url(../img/login-fundo.jpg);
+    padding: 30px;
+    border-radius: 25px;
+}
+.card-top{
+    text-align: center;
+}
+.card-top h2{
+    color: rgb(255, 255, 255);
+}
+.card-top p{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    
+}
+.card-group{
+    margin-bottom: 10px;
+}
+.imglogin{
+    border-radius: 50px;
+    width: 100px;
+    box-shadow: 0px 0px 5px rgb(75, 74, 73) ;
+}
+.titulo{
+    font-size: 25pt;
+}
+
+.btn-primary{
+    background-image: linear-gradient(to right, #ffae00, #ffc400 );
+    width: 100%;
+    border-radius: 30px;
+    padding: 13px;
+    color: white;
+    margin-top: 12px;
+    border: 0px;
+    outline: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+.btn-primary:hover{
+    background-image: linear-gradient(to right, #ffc400, #ffae00); 
+}

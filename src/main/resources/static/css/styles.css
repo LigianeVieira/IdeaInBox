@@ -1,0 +1,169 @@
+/* Gerais */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+.row{
+    margin: 0;
+}
+
+.container{
+    padding: 70px 0;
+}
+
+p, li{
+    color: #444;
+    font-size: 14px;
+}
+
+/*Barra de navegação*/
+header, .navbar{
+background-color: #ffc400;
+
+}
+#nav-container{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#logo{
+   width: 180px;
+}
+
+.navbar-brand{
+padding: 0;
+color: white;
+}
+
+.navbar-brand:hover{
+    color: white;
+}
+
+#navbar-links a{
+    color: white;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 1rem .8rem;
+}
+
+/* Slider */
+
+.carousel-item h5{
+    font-size: 50pt;
+}
+.carousel-item p{
+    font-size: 20pt;
+    color: white;
+}
+.carousel-item button{
+  color: white;
+    width: 200px;
+  height: 60px;
+  border-radius: 30px;
+  transition: .5s;
+  text-transform: uppercase;
+    
+}
+.carousel-item button:hover{
+  text-decoration: none;
+    color: white;
+  background-color: transparent;
+  }
+.carousel-indicators .active{
+    background-color: #ffd000
+  }
+
+  /*About */
+  #about-area{
+      background-color: #f9f9f9;
+  }
+  
+  .main-title{
+      color: #444;
+      margin: 0 0 65px 0;
+      font-size: 40px;
+      text-align: center;
+  }
+
+.about-title{
+      font-size: 17px;
+      color: #444;
+      text-transform: uppercase;
+     font-weight: bold;
+  }
+#about-list{
+    list-style: none;
+    padding-left: 0;
+}
+#about-list li{
+    line-height: 30px;
+}
+#about-list i{
+    color:#ffa600 ;
+    margin-right: 15px;
+}
+
+
+/*SERVIÇOS*/
+.service-box{
+text-align: center;
+margin-bottom: 50px;
+}
+
+.service-box i, .service-box h4{
+    transition: .5s;
+
+}
+
+.service-box i{
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.service-box h4{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.service-box:hover > i, .service-box:hover > h4{
+    color:#ffa600 ;
+}
+/*PORTFLOIO */
+
+.main-btn{
+background-color: #ffc400;
+color: #fff;
+text-transform: uppercase;
+width: 200px;
+height: 60px;
+padding: 10px 20px;
+border-radius: 30px;
+border: 3px solid transparent;
+}
+
+.project-box{
+    margin-bottom: 30px;
+}
+#filter-btn-box{
+    margin-bottom: 50px;
+    text-align: center;
+}
+#portfolio-area .filter-btn{
+    color: #444;
+    border: 1px solid #444;
+    background: transparent;
+    text-transform: none;
+    margin: 0px 15px;
+    min-width: 100px;
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 20px;
+}
+#portfolio-area .filter-btn.active, #portfolio-area .filter-btn:hover{
+    color: white;
+    background-color: #ffc400;
+    border-color: #ffc400;
+}
