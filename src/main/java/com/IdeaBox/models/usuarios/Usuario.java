@@ -59,7 +59,17 @@ public abstract class Usuario implements Serializable {
 		sugestoes = new ArrayList<Sugestao>();
 	}
 	public Usuario() {
-		
+		setId(id);
+		setNome(nome);
+		setCpf(cpf);
+		setCargo(cargo);
+		setLogin(login);
+		setSenha(senha);
+		setEmail(email);
+		setLogado(false);
+		setRegistrado(true);
+		setStatus(StatusColaborador.ATIVO);
+		sugestoes = new ArrayList<Sugestao>();
 	}
 	
 	
