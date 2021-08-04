@@ -21,8 +21,6 @@ public class Colaborador extends Usuario{
 		setLogin(login);
 		setSenha(senha);
 		setEmail(email);
-		setLogado(false);
-		setRegistrado(true);
 		setStatus(StatusColaborador.ATIVO);
 		sugestoes = new ArrayList<Sugestao>();
 	}

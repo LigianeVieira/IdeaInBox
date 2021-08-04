@@ -1,0 +1,58 @@
+/*Barra de navegação*/
+
+.container{
+	margin-top: 10%;
+}
+
+/*Barra de navegação*/
+header, .navbar{
+    background-color: #ffc400;
+    
+    }
+    #nav-container{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    #logo{
+       width: 180px;
+    }
+    
+    .navbar-brand{
+    padding: 0;
+    color: white;
+    }
+    
+    .navbar-brand:hover{
+        color: white;
+    }
+    
+    #navbar-links a{
+        color: white;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link{
+        padding: 1rem .8rem;
+    }
+    
+    
+    
+.btn-primary{
+	color: white;
+    margin-top: 25px; 
+    border-radius: 12px;
+    background-color: #ffa600;
+    border: none;
+    
+}
+
+.btn-primary:hover{
+    background-color: #ff5100;
+}
+
+.btn-primary a{
+	text-decoration: none;
+	color: white;
+}
+.fa-trash-alt{
+	color: black;
+}

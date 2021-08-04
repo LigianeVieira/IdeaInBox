@@ -33,10 +33,8 @@ public abstract class Usuario implements Serializable {
 	private String cpf;
 	@Enumerated(EnumType.STRING)
 	private Cargo cargo;
-	protected boolean isRegistrado;
 	private String login;
 	private String senha;
-	private boolean isLogado;
 	private String email;
 	@Enumerated(EnumType.STRING)
 	private StatusColaborador status;
@@ -53,8 +51,6 @@ public abstract class Usuario implements Serializable {
 		setLogin(login);
 		setSenha(senha);
 		setEmail(email);
-		setLogado(false);
-		setRegistrado(true);
 		setStatus(StatusColaborador.ATIVO);
 		sugestoes = new ArrayList<Sugestao>();
 	}
@@ -66,8 +62,6 @@ public abstract class Usuario implements Serializable {
 		setLogin(login);
 		setSenha(senha);
 		setEmail(email);
-		setLogado(false);
-		setRegistrado(true);
 		setStatus(StatusColaborador.ATIVO);
 		sugestoes = new ArrayList<Sugestao>();
 	}
@@ -97,12 +91,7 @@ public abstract class Usuario implements Serializable {
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
-	public boolean isRegistrado() {
-		return isRegistrado;
-	}
-	public void setRegistrado(boolean isRegistrado) {
-		this.isRegistrado = isRegistrado;
-	}
+	
 	public String getLogin() {
 		return login;
 	}
@@ -115,12 +104,7 @@ public abstract class Usuario implements Serializable {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public boolean isLogado() {
-		return isLogado;
-	}
-	public void setLogado(boolean isLogado) {
-		this.isLogado = isLogado;
-	}
+	
 	public String getEmail() {
 		return email;
 	}

@@ -54,5 +54,20 @@ public class ColaboradorController {
 		sr.save(sugestao);
 		return "redirect:/timeline{id}";
 	}
+	
+	@RequestMapping("/colaboradores")
+	public ModelAndView listaSugestao() {
+		ModelAndView mv = new ModelAndView("colaborador/listaColaboradores");
+		Iterable<Colaborador> colaboradores = cr.findAll();
+		mv.addObject("colaboradores", colaboradores);
+		return mv;
+	}
+	
+	@RequestMapping("/deletar")
+	public String deletarColaborador(long Id) {
+		Colaborador colaborador = cr.findById(Id);
+		cr.delete(colaborador);
+		return "redirect:/colaboradores";
+	}
 
 }
