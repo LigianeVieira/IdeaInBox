@@ -11,6 +11,7 @@ import com.IdeaBox.models.sugestoes.Sugestao;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.repository.ColaboradorRepository;
 import com.IdeaBox.repository.SugestaoRepository;
+import com.IdeaBox.service.ServiceUsuario;
 
 
 @Controller
@@ -21,14 +22,17 @@ public class ColaboradorController {
 	@Autowired
 	private SugestaoRepository sr;
 	
+	@Autowired
+	private ServiceUsuario su;
+	
 	@RequestMapping(value="/cadastrarColaborador", method=RequestMethod.GET)
 	public String form() {
 		return "colaborador/formColaborador.html";
 	}
 	
 	@RequestMapping(value="/cadastrarColaborador", method=RequestMethod.POST)
-	public String form(Colaborador colaborador) {
-		cr.save(colaborador);
+	public String form(Colaborador colaborador) throws Exception {
+		su.salvarColaborador(colaborador);
 		return "redirect:/cadastrarColaborador";
 	}
 
