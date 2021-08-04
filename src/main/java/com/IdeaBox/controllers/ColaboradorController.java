@@ -31,29 +31,9 @@ public class ColaboradorController {
 		cr.save(colaborador);
 		return "redirect:/cadastrarColaborador";
 	}
-	@RequestMapping("/login")
-	public String login() {
-		return "login";
-	}
+
 	
-	@RequestMapping(value = "/timeline{id}", method = RequestMethod.GET)
-	public ModelAndView detalhesEvento(@PathVariable("id") long id) {
-		Colaborador colaborador = cr.findById(id);
-		ModelAndView mv = new ModelAndView("feed");
-		mv.addObject("colaborador", colaborador);
-		Iterable<Sugestao> sugestoes = sr.findAll();
-		mv.addObject("sugestoes", sugestoes);
-		return mv;
-	}
-	
-	
-	@RequestMapping(value = "/timeline{id}", method = RequestMethod.POST)
-	public String feedPost(@PathVariable("id") long id, Sugestao sugestao){
-		Colaborador colaborador = cr.findById(id);
-		sugestao.setColaborador(colaborador);
-		sr.save(sugestao);
-		return "redirect:/timeline{id}";
-	}
+
 	
 	@RequestMapping("/colaboradores")
 	public ModelAndView listaSugestao() {

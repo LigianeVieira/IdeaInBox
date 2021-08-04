@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
 
 import com.IdeaBox.models.sugestoes.Sugestao;
 
@@ -35,6 +36,7 @@ public abstract class Usuario implements Serializable {
 	private Cargo cargo;
 	private String login;
 	private String senha;
+	@Email
 	private String email;
 	@Enumerated(EnumType.STRING)
 	private StatusColaborador status;

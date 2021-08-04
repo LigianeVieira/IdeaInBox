@@ -1,5 +1,11 @@
 /*Barra de navegação*/
 
+body{
+	 font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: aliceblue;
+}
+
 .container{
 	margin-top: 10%;
 }
