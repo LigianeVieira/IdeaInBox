@@ -47,9 +47,14 @@
     <div class="row">
       <div class="col">
        
+       <div class="alert alert-danger" role="alert" th:if="${msg}">
+       <strong th:text="${msg}"></strong>
+       </div>
+       
+       
       </div>
       <div class="col">
-        <form class="form-1" method="post">
+        <form class="form-1" method="post" action="/login" th:object="${colaborador}">
             <div class="card">
                 <div class="card-top">
                   <img class="imglogin" src="img/foto-do-perfil-12072018154519044.png">
@@ -58,12 +63,12 @@
                 </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Login</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu login">
+              <input type="text" class="form-control" th:field="*{login}" placeholder="Digite seu login">
               <div id="emailHelp" class="form-text"></div>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha" required>
+              <input type="password" class="form-control"  th:field="*{senha}" placeholder="Digite sua senha" required>
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">

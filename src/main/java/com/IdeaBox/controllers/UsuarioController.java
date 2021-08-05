@@ -1,16 +1,87 @@
 package com.IdeaBox.controllers;
 
+import java.security.NoSuchAlgorithmException;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.IdeaBox.exceptions.ServiceExc;
+import com.IdeaBox.models.sugestoes.Sugestao;
+import com.IdeaBox.models.usuarios.Colaborador;
+import com.IdeaBox.repository.ColaboradorRepository;
+import com.IdeaBox.repository.SugestaoRepository;
+import com.IdeaBox.service.ServiceUsuario;
+import com.IdeaBox.util.Util;
 
 
 @Controller
 public class UsuarioController {
-	@RequestMapping("/login")
-	public ModelAndView login() {
+	
+	@Autowired
+	private ColaboradorRepository cr;
+	
+	@Autowired
+	private SugestaoRepository sr;
+	
+	@Autowired
+	private ServiceUsuario su;
+	
+	@RequestMapping("/timeline")
+	public ModelAndView listaSugestao() {
+		ModelAndView mv = new ModelAndView("feed");
+		Iterable<Sugestao> sugestoes = sr.findAll();
+		mv.addObject("sugestoes", sugestoes);
+		return mv;
+	}
+	
+
+	
+	
+	
+	@PostMapping("/login")
+	public ModelAndView login(Colaborador colaborador, BindingResult br, HttpSession session) throws NoSuchAlgorithmException, ServiceExc {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("colaborador", new Colaborador());
+		if(br.hasErrors()) {
+			mv.setViewName("login");
+		}
+		Colaborador colaboradorLogin = su.loginColaborador(colaborador.getLogin(), Util.md5(colaborador.getSenha()));
+		if(colaboradorLogin == null) {
+			mv.addObject("msg", "Usuario não encontrado tente novamente");
+		}
+		else {
+			session.setAttribute("colaboradorLogado", colaboradorLogin);
+			return index();
+		}
+		return mv;
+		
+	}
+	
+	@GetMapping("/login")
+	public ModelAndView loginGet() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("login");
+		mv.addObject("colaborador", new Colaborador());
 		return mv;
+	}
+	
+	@GetMapping("/")
+	public ModelAndView index() {
+		ModelAndView mv = new ModelAndView("index");
+		return mv;
+	}
+	
+	@PostMapping("/logout")
+	public ModelAndView logout(HttpSession session) {
+		session.invalidate();
+		return loginGet();
 	}
 }

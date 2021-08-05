@@ -21,10 +21,6 @@ public class SugestaoController {
 	@Autowired
 	private SugestaoRepository sr;
 	
-	@RequestMapping(value="/feed", method=RequestMethod.GET)
-	public String form() {
-		return "feed";
-	}
 	
 
 	@RequestMapping(value="/timeline", method=RequestMethod.POST)
@@ -33,13 +29,6 @@ public class SugestaoController {
 		return "redirect:/timeline";
 	}
 	
-	@RequestMapping("/timeline")
-	public ModelAndView listaSugestao() {
-		ModelAndView mv = new ModelAndView("feed");
-		Iterable<Sugestao> sugestoes = sr.findAll();
-		mv.addObject("sugestoes", sugestoes);
-		return mv;
-	}
 	
 	
 
