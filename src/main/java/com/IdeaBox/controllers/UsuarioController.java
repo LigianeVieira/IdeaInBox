@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.IdeaBox.exceptions.ServiceExc;
+
+import com.IdeaBox.exceptions.ServiceExce;
 import com.IdeaBox.models.sugestoes.Sugestao;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.repository.ColaboradorRepository;
@@ -47,7 +48,7 @@ public class UsuarioController {
 	
 	
 	@PostMapping("/login")
-	public ModelAndView login(Colaborador colaborador, BindingResult br, HttpSession session) throws NoSuchAlgorithmException, ServiceExc {
+	public ModelAndView login(Colaborador colaborador, BindingResult br, HttpSession session) throws NoSuchAlgorithmException, ServiceExce {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("colaborador", new Colaborador());
 		if(br.hasErrors()) {

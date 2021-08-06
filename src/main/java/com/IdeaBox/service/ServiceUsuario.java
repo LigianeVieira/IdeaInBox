@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.IdeaBox.exceptions.CriptoExistException;
 import com.IdeaBox.exceptions.EmailExistException;
-import com.IdeaBox.exceptions.ServiceExc;
+
+import com.IdeaBox.exceptions.ServiceExce;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.repository.ColaboradorRepository;
 import com.IdeaBox.util.Util;
@@ -32,7 +33,7 @@ public class ServiceUsuario {
 		cr.save(colaborador);
 	}
 	
-	public Colaborador loginColaborador(String login, String senha) throws ServiceExc{
+	public Colaborador loginColaborador(String login, String senha) throws ServiceExce{
 		
 		Colaborador colaboradorLogin = cr.findLogin(login, senha);
 		return colaboradorLogin;
