@@ -35,14 +35,23 @@ public class UsuarioController {
 	@Autowired
 	private ServiceUsuario su;
 	
-	@RequestMapping("/timeline")
-	public ModelAndView listaSugestao() {
+	@GetMapping("/timeline")
+	public ModelAndView listaSugestao(HttpSession session) {
+		if(session.getAttribute("colaboradorLogado") != null) {
 		ModelAndView mv = new ModelAndView("feed");
 		Iterable<Sugestao> sugestoes = sr.findAll();
 		mv.addObject("sugestoes", sugestoes);
-		return mv;
+		return mv;}
+		else {
+			return error();
+		}
 	}
 	
+	@GetMapping("/error")
+	public ModelAndView error() {
+		ModelAndView mv = new ModelAndView("error");
+		return mv;
+	}
 
 	
 	
@@ -80,9 +89,11 @@ public class UsuarioController {
 		return mv;
 	}
 	
-	@PostMapping("/logout")
-	public ModelAndView logout(HttpSession session) {
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
 		session.invalidate();
-		return loginGet();
+		return "redirect:/login";
 	}
+	
+	
 }
