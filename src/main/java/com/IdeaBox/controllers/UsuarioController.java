@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -47,9 +48,9 @@ public class UsuarioController {
 		}
 	}
 	
-	@GetMapping("/error")
+	@GetMapping("/erroLogin")
 	public ModelAndView error() {
-		ModelAndView mv = new ModelAndView("error");
+		ModelAndView mv = new ModelAndView("naoLogado");
 		return mv;
 	}
 
@@ -95,5 +96,14 @@ public class UsuarioController {
 		return "redirect:/login";
 	}
 	
+	@GetMapping("/profile")
+	public ModelAndView perfilGet(HttpSession session) {
+		Colaborador colaborador = (Colaborador) session.getAttribute("colaboradorLogado");
+		ModelAndView mv = new ModelAndView("colaborador/profile");
+		mv.addObject("colaborador", colaborador);
+		Iterable<Sugestao> sugestoes = sr.findByColaborador(colaborador);
+		mv.addObject("sugestoes", sugestoes);
+		return mv;
+	}
 	
 }

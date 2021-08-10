@@ -1,0 +1,61 @@
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+/*Barra de navegação*/
+header, .navbar{
+    background-color: #ffc400;
+    margin-bottom: 80px;
+    
+    }
+    #nav-container{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    #logo{
+       width: 180px;
+    }
+    
+    .navbar-brand{
+    padding: 0;
+    color: white;
+    }
+    
+    .navbar-brand:hover{
+        color: white;
+    }
+    
+    #navbar-links a{
+        color: white;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link{
+        padding: 1rem .8rem;
+    }
+.img-thumbnail{
+    margin: 10px 0px 20px 0px;
+}
+.btn-primary{
+    width: 100%;
+    margin-top: 10%; 
+    border-radius: 12px;
+    background-color: #ffa600;
+    border: none;
+    
+}
+.btn-primary:hover{
+    background-color: #ff5100;
+}
+
+.contador{
+    margin-top: 10%;
+}
+
+.profile{
+    margin-top: 10%;
+}
+
+.profile h4{
+    margin-top: 3%;
+}

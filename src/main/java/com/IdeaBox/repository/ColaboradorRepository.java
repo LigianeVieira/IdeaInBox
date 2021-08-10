@@ -2,6 +2,8 @@ package com.IdeaBox.repository;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -14,6 +16,7 @@ public interface ColaboradorRepository extends CrudRepository<Colaborador, Strin
 	
 	@Query("select u from Colaborador u where u.login = :login and u.senha = :senha")
 	Colaborador findLogin(String login, String senha);
+	
 }
 
 
