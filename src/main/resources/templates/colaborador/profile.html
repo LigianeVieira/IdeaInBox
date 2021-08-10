@@ -86,11 +86,13 @@
                         </a>
                     </p>
                     <div class="collapse" id="collapseExample">
-                      <div class="card card-body">
+                      <div class="card card-body w-100">
                         <table class="table">
                             <tbody>
                               <tr th:each="sugestao : ${sugestoes}">
-                                <td><span th:text="${sugestao.texto}"></span></td>
+                                <td><span th:text="${sugestao.texto}"></span><i class="fas fa-trash-alt"></i>
+
+                                </td>
                               </tr>
                               </tbody>
                               </table>

@@ -59,3 +59,9 @@ header, .navbar{
 .profile h4{
     margin-top: 3%;
 }
+.fa-trash-alt{
+position: absolute;
+left: 95%;
+color: crimson;
+	
+}
