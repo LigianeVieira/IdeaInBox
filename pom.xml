@@ -8,11 +8,11 @@
 		<version>2.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.eventoapp</groupId>
-	<artifactId>eventoapp</artifactId>
+	<groupId>com.senac</groupId>
+	<artifactId>IdeaBox</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>eventoapp</name>
-	<description>Demo project for Spring Boot</description>
+	<name>IdeaBox</name>
+	<description>Programa onde o usúario faz sugestões para a empresa</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
