@@ -1,5 +1,7 @@
 package com.IdeaBox.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,17 +28,7 @@ public class ColaboradorController {
 	@Autowired
 	private ServiceUsuario su;
 	
-	@RequestMapping(value="/cadastrarColaborador", method=RequestMethod.GET)
-	public String form() {
-		return "colaborador/formColaborador.html";
-	}
 	
-	@RequestMapping(value="/cadastrarColaborador", method=RequestMethod.POST)
-	public String form(Colaborador colaborador) throws Exception {
-		su.salvarColaborador(colaborador);
-		return "redirect:/cadastrarColaborador";
-	}
-
 	
 
 	

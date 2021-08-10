@@ -106,4 +106,22 @@ public class UsuarioController {
 		return mv;
 	}
 	
+	@GetMapping("/cadastrarColaborador")
+	public ModelAndView form(HttpSession session) {
+		ModelAndView mv = new ModelAndView("colaborador/formColaborador");
+		if(session.getAttribute("colaboradorLogado") != null) {
+		return mv;}
+		else {
+			mv.addObject("logadoexce", "Você precisa estar logado");
+			return index();
+		}
+	}
+	
+	@RequestMapping(value="/cadastrarColaborador", method=RequestMethod.POST)
+	public String form(Colaborador colaborador) throws Exception {
+		su.salvarColaborador(colaborador);
+		return "redirect:/cadastrarColaborador";
+	}
+
+	
 }
