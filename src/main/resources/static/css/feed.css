@@ -65,7 +65,7 @@ header, .navbar{
     li{
     margin: 0px;
     text-align: justify;
- word-wrap: break-word
+ word-wrap: break-word;
     
     }
     li span{
@@ -80,7 +80,7 @@ header, .navbar{
     .form-select{
     width: 15%;
     position: absolute;
-    left: 78%;}
+    left: 69%;}
     
   
     

@@ -65,3 +65,6 @@ left: 95%;
 color: crimson;
 	
 }
+.table tr{
+word-wrap: break-word
+}
