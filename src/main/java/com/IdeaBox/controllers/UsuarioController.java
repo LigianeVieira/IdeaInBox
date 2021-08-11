@@ -44,7 +44,7 @@ public class UsuarioController {
 		mv.addObject("sugestoes", sugestoes);
 		return mv;}
 		else {
-			return error();
+			return loginGet();
 		}
 	}
 	
@@ -103,12 +103,16 @@ public class UsuarioController {
 	
 	@GetMapping("/profile")
 	public ModelAndView perfilGet(HttpSession session) {
+		if(session.getAttribute("colaboradorLogado") != null) {
 		Colaborador colaborador = (Colaborador) session.getAttribute("colaboradorLogado");
 		ModelAndView mv = new ModelAndView("colaborador/profile");
 		mv.addObject("colaborador", colaborador);
 		Iterable<Sugestao> sugestoes = sr.findByColaborador(colaborador);
 		mv.addObject("sugestoes", sugestoes);
-		return mv;
+		return mv;}
+		else {
+			return loginGet();
+		}
 	}
 	
 	@GetMapping("/cadastrarColaborador")
