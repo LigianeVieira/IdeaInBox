@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <title>Idea in Box - a sua agencia web</title>
     <!--Fonte-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,11 +53,14 @@
                      <a class="nav-item nav-link" id="contact-menu" href="/logout">Sair</a>
                 </div>
             </div>
+            <div class="alert alert-warning" role="alert" th:if="${logadoexce}">
+       <strong th:text="${logadoexce}"></strong>
+       </div>
+            
            </nav>
        </div>
     </header>
     <main>
-
         <div class="container-fluid">
         <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -103,8 +107,7 @@
           </div>
         </div>
         <!--About area-->
-        
-        <div id="about-area">
+              <div id="about-area">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
