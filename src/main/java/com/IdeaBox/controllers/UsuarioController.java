@@ -70,7 +70,7 @@ public class UsuarioController {
 		}
 		else {
 			session.setAttribute("colaboradorLogado", colaboradorLogin);
-			return index();
+			return index(session);
 		}
 		return mv;
 		
@@ -85,9 +85,14 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/")
-	public ModelAndView index() {
+	public ModelAndView index(HttpSession session) {
 		ModelAndView mv = new ModelAndView("index");
-		return mv;
+		if(session.getAttribute("colaboradorLogado") != null) {
+			return mv;
+		}
+		else {
+			mv.addObject("logadoexce", "Logue para acessar as funcionalidades do sistema.");
+		return mv;}
 	}
 	
 	@GetMapping("/logout")
@@ -112,8 +117,7 @@ public class UsuarioController {
 		if(session.getAttribute("colaboradorLogado") != null) {
 		return mv;}
 		else {
-			mv.addObject("logadoexce", "Você precisa estar logado");
-			return index();
+			return loginGet();
 		}
 	}
 	

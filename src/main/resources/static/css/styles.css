@@ -167,3 +167,8 @@ border: 3px solid transparent;
     background-color: #ffc400;
     border-color: #ffc400;
 }
+.alert{
+	position: absolute;
+	z-index: 1;
+	
+}
