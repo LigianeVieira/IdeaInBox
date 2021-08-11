@@ -35,6 +35,13 @@ public class SugestaoController {
 		return "redirect:/timeline";
 	}
 	
+	@RequestMapping("/deletarSugestao")
+	public String deletarSugestao(long Id) {
+		Sugestao sugestao = sr.findById(Id);
+		sr.delete(sugestao);
+		return "redirect:/profile";
+	}
+	
 	
 	
 

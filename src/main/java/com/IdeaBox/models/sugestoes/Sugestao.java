@@ -37,7 +37,7 @@ public class Sugestao implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long Id;
+	private long id;
 	private String texto;
 	@ManyToOne
 	private Colaborador colaborador;
@@ -62,7 +62,7 @@ public class Sugestao implements Serializable {
 		setClassificacao(0);
 		setTexto(texto);
 		this.setTotalDeAvaliacoes(0);
-		this.setId(Id);
+		this.setId(id);
 		setCategoria(categoria);
 		}
 	
@@ -127,11 +127,11 @@ public class Sugestao implements Serializable {
 
 
 	public long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(long id) {
-		Id = id;
+		this.id = id;
 	}
 
 	
