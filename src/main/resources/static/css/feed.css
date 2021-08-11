@@ -63,12 +63,19 @@ header, .navbar{
     }
     
     li{
-    margin: 10px;
+    margin: 0px;
+    text-align: justify;
+ word-wrap: break-word
+    
     }
     li span{
+        font-size: 14pt;
+        
+        }
+    ul{
     padding: 10px;
-    }
     
+    }
     
     .form-select{
     width: 15%;
