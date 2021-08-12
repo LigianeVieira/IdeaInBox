@@ -68,3 +68,8 @@ color: crimson;
 .table tr{
 word-wrap: break-word
 }
+
+.btn-primary a{
+	text-decoration: none;
+	color: white;
+}

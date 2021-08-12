@@ -132,7 +132,7 @@ public class UsuarioController {
 	@GetMapping("/cadastrarColaborador")
 	public ModelAndView form(HttpSession session) {
 		ModelAndView mv = new ModelAndView("colaborador/formColaborador");
-		if(session.getAttribute("colaboradorLogado") != null) {
+		if(session.getAttribute("AdmLogado") != null) {
 		return mv;}
 		else {
 			return loginGet();
