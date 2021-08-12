@@ -117,6 +117,13 @@ public class UsuarioController {
 		Iterable<Sugestao> sugestoes = sr.findByColaborador(colaborador);
 		mv.addObject("sugestoes", sugestoes);
 		return mv;}
+		else if(session.getAttribute("AdmLogado") != null) {
+			Administrador administrador = (Administrador) session.getAttribute("AdmLogado");
+			ModelAndView mv = new ModelAndView("colaborador/profileadm");
+			mv.addObject("administrador", administrador);
+			//Iterable<Sugestao> sugestoes = sr.findByAdm(administrador);
+			//mv.addObject("sugestoes", sugestoes);
+			return mv;}
 		else {
 			return loginGet();
 		}
