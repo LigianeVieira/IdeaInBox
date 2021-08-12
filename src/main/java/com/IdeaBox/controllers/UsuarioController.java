@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.IdeaBox.exceptions.ServiceExce;
 import com.IdeaBox.models.sugestoes.Sugestao;
+import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.repository.ColaboradorRepository;
 import com.IdeaBox.repository.SugestaoRepository;
@@ -58,18 +59,23 @@ public class UsuarioController {
 	
 	
 	@PostMapping("/login")
-	public ModelAndView login(Colaborador colaborador, BindingResult br, HttpSession session) throws NoSuchAlgorithmException, ServiceExce {
+	public ModelAndView login(Colaborador colaborador, Administrador adm, BindingResult br, HttpSession session) throws NoSuchAlgorithmException, ServiceExce {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("colaborador", new Colaborador());
 		if(br.hasErrors()) {
 			mv.setViewName("login");
 		}
 		Colaborador colaboradorLogin = su.loginColaborador(colaborador.getLogin(), Util.md5(colaborador.getSenha()));
-		if(colaboradorLogin == null) {
+		Administrador administradorLogin = su.loginAdm(adm.getLogin(), adm.getSenha());
+		if(colaboradorLogin == null && administradorLogin == null) {
 			mv.addObject("msg", "Usuario não encontrado tente novamente");
 		}
-		else {
+		else if(colaboradorLogin != null){
 			session.setAttribute("colaboradorLogado", colaboradorLogin);
+			return index(session);
+		}
+		else {
+			session.setAttribute("AdmLogado", administradorLogin);
 			return index(session);
 		}
 		return mv;
@@ -87,9 +93,10 @@ public class UsuarioController {
 	@GetMapping("/")
 	public ModelAndView index(HttpSession session) {
 		ModelAndView mv = new ModelAndView("index");
-		if(session.getAttribute("colaboradorLogado") != null) {
+		if(session.getAttribute("colaboradorLogado") != null  || session.getAttribute("AdmLogado") != null) {
 			return mv;
 		}
+		//AdmLogado
 		else {
 			mv.addObject("logadoexce", "Logue para acessar as funcionalidades do sistema.");
 		return mv;}
