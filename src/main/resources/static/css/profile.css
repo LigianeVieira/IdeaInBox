@@ -69,6 +69,11 @@ color: crimson;
 word-wrap: break-word
 }
 
+.fa-check{
+position: absolute;
+left: 90%;
+color: green;
+}
 .btn-primary a{
 	text-decoration: none;
 	color: white;

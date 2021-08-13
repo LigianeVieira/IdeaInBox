@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.IdeaBox.models.sugestoes.Status_Sugestao;
 import com.IdeaBox.models.sugestoes.Sugestao;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.repository.SugestaoRepository;
@@ -42,6 +43,13 @@ public class SugestaoController {
 		return "redirect:/profile";
 	}
 	
+	@RequestMapping("/aprovarSugestao")
+	public String aprovarSugestao(long Id) {
+		Sugestao sugestao = sr.findById(Id);
+		sugestao.setStatus(Status_Sugestao.APROVADO_PELO_RH);
+		sr.save(sugestao);
+		return "redirect:/profile";
+	}
 	
 	
 

@@ -41,7 +41,7 @@ public class UsuarioController {
 	public ModelAndView listaSugestao(HttpSession session) {
 		if(session.getAttribute("colaboradorLogado") != null) {
 		ModelAndView mv = new ModelAndView("feed");
-		Iterable<Sugestao> sugestoes = sr.findAll();
+		Iterable<Sugestao> sugestoes = sr.findAllByStatus();
 		mv.addObject("sugestoes", sugestoes);
 		return mv;}
 		else {
@@ -121,8 +121,8 @@ public class UsuarioController {
 			Administrador administrador = (Administrador) session.getAttribute("AdmLogado");
 			ModelAndView mv = new ModelAndView("colaborador/profileadm");
 			mv.addObject("administrador", administrador);
-			//Iterable<Sugestao> sugestoes = sr.findByAdm(administrador);
-			//mv.addObject("sugestoes", sugestoes);
+			Iterable<Sugestao> sugestoes = sr.findAllInAnalise();
+			mv.addObject("sugestoes", sugestoes);
 			return mv;}
 		else {
 			return loginGet();

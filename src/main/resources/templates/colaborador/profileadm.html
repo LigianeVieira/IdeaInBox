@@ -91,7 +91,10 @@
                       <div class="card card-body w-100">
                         <table class="table">
                             <tbody>
-                              
+                               <tr th:each="sugestao : ${sugestoes}">
+                                <td><span th:text="${sugestao.texto}"></span><a th:href="${(#mvc.url('SC#aprovarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-check"></i></a>
+
+                                <a th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-trash-alt"></i></a>
 
                               </tbody>
                               </table>

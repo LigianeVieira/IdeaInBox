@@ -13,6 +13,11 @@ public interface SugestaoRepository extends CrudRepository<Sugestao, String>{
 	
 	Iterable<Sugestao> findByColaborador(Colaborador colaborador);
 	
+	@Query(value = "SELECT * FROM sugestao WHERE status != 'EM_ANALISE_RH'", nativeQuery = true)
+	Iterable<Sugestao> findAllByStatus();
+
+	@Query(value = "SELECT * FROM sugestao WHERE status = 'EM_ANALISE_RH'", nativeQuery = true)
+	Iterable<Sugestao> findAllInAnalise();
 
 	
 	Sugestao findById(long id);
