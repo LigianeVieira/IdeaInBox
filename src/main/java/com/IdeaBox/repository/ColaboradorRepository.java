@@ -9,6 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
+import com.IdeaBox.models.usuarios.Gerente;
 
 public interface ColaboradorRepository extends CrudRepository<Colaborador, String>{
 	Colaborador findById(long id);
@@ -20,7 +21,9 @@ public interface ColaboradorRepository extends CrudRepository<Colaborador, Strin
 	
 	@Query("select u from Administrador u where u.login = :login and u.senha = :senha")
 	Administrador findByLoginA(String login, String senha);
-	
+
+	@Query("select u from Gerente u where u.login = :login and u.senha = :senha")
+	Gerente findByLoginB(String login, String senha);
 }
 
 

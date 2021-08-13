@@ -11,6 +11,7 @@ import com.IdeaBox.exceptions.EmailExistException;
 import com.IdeaBox.exceptions.ServiceExce;
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
+import com.IdeaBox.models.usuarios.Gerente;
 import com.IdeaBox.repository.ColaboradorRepository;
 import com.IdeaBox.util.Util;
 
@@ -44,5 +45,10 @@ public class ServiceUsuario {
 	public Administrador loginAdm(String login, String senha) throws ServiceExce{
 		Administrador admLogin = cr.findByLoginA(login, senha);
 		return admLogin;
+	}
+	
+	public Gerente loginGerente(String login, String senha) throws ServiceExce{
+		Gerente gerenteLogin = cr.findByLoginB(login,senha);
+		return gerenteLogin;
 	}
 }
