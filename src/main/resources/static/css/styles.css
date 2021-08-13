@@ -98,6 +98,7 @@ color: white;
 }
 #about-list li{
     line-height: 30px;
+    font-size: 11pt;
 }
 #about-list i{
     color:#ffa600 ;
