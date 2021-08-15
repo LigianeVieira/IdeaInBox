@@ -13,12 +13,16 @@ import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.models.usuarios.Gerente;
 import com.IdeaBox.repository.ColaboradorRepository;
+import com.IdeaBox.repository.GerenteRepository;
 import com.IdeaBox.util.Util;
 
 @Service
 public class ServiceUsuario {
 	@Autowired
 	private ColaboradorRepository cr;
+	
+	@Autowired
+	private GerenteRepository gr;
 	
 	public void salvarColaborador(Colaborador colaborador) throws Exception {
 		try {
@@ -34,6 +38,23 @@ public class ServiceUsuario {
 		
 		cr.save(colaborador);
 	}
+	
+	
+	public void salvarGerente(Gerente gerente) throws Exception {
+		try {
+			if(cr.findByEmailG(gerente.getEmail()) != null) {
+				throw new EmailExistException("Esse email já está cadastro para: " + gerente.getEmail());
+			}
+			
+			gerente.setSenha(Util.md5(gerente.getSenha()));
+			
+		} catch (NoSuchAlgorithmException e) {
+			throw new CriptoExistException("Erro na criptografia na senha");
+		}
+		
+		gr.save(gerente);
+	}
+
 	
 	public Colaborador loginColaborador(String login, String senha) throws ServiceExce{
 		

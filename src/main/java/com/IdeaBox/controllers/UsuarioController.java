@@ -123,7 +123,7 @@ public class UsuarioController {
 			Administrador administrador = (Administrador) session.getAttribute("AdmLogado");
 			ModelAndView mv = new ModelAndView("colaborador/profileadm");
 			mv.addObject("administrador", administrador);
-			Iterable<Sugestao> sugestoes = sr.findAllInAnalise();
+			Iterable<Sugestao> sugestoes = sr.findAllInAnaliseG();
 			mv.addObject("sugestoes", sugestoes);
 			return mv;
 		} 
@@ -154,6 +154,22 @@ public class UsuarioController {
 	public String form(Colaborador colaborador) throws Exception {
 		su.salvarColaborador(colaborador);
 		return "redirect:/cadastrarColaborador";
+	}
+	
+	@GetMapping("/cadastrarGerente")
+	public ModelAndView formGerente(HttpSession session) {
+		ModelAndView mv = new ModelAndView("colaborador/formGerente");
+		if (session.getAttribute("AdmLogado") != null) {
+			return mv;
+		} else {
+			return loginGet();
+		}
+	}
+	
+	@RequestMapping(value = "/cadastrarGerente", method = RequestMethod.POST)
+	public String form(Gerente gerente) throws Exception {
+		su.salvarGerente(gerente);
+		return "redirect:/cadastrarGerente";
 	}
 
 }

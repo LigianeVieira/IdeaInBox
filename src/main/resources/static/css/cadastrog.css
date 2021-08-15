@@ -1,0 +1,86 @@
+/* Gerais */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    background: url("../img/gerenteimg.png") no-repeat 95% 70%;
+}
+.row{
+    margin: 0;
+}
+
+.container{
+    padding: 70px 0;
+}
+
+p, li{
+    color: #444;
+    font-size: 14px;
+}
+
+/*Barra de navegação*/
+header, .navbar{
+    background-color: #ffc400;
+    
+    }
+    #nav-container{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    #logo{
+       width: 180px;
+    }
+    
+    .navbar-brand{
+    padding: 0;
+    color: white;
+    }
+    
+    .navbar-brand:hover{
+        color: white;
+    }
+    
+    #navbar-links a{
+        color: white;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link{
+        padding: 1rem .8rem;
+    }
+    
+
+    
+      /* questionario*/ 
+.form-1{
+    margin-top: 140px;
+    margin-right: 90px;
+}
+.form-1 .form-control{
+    width: 400px;
+}
+.form-1 h2{
+    color:#ffae00;
+}
+.form-1 label{
+    padding: 5px;
+}
+.btn-primary{
+    margin-top: 25px; 
+    border-radius: 12px;
+    background-color: #ffa600;
+    border: none;
+    
+}
+.form-group2{
+margin-top: 45px;
+}
+.btn-primary:hover{
+    background-color: #ff5100;
+}
+
+
+
+
+.form-control#SelectForm{
+	 text-transform: lowercase;
+}

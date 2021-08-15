@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.kotlin.CoroutineCrudRepository;
 
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
@@ -16,6 +17,10 @@ public interface ColaboradorRepository extends CrudRepository<Colaborador, Strin
 	@Query("select i from Colaborador i where i.email = :email")
 	Colaborador findByEmail(String email);
 	
+	@Query("select i from Gerente i where i.email = :email")
+	Gerente findByEmailG(String email);
+
+	
 	@Query("select u from Colaborador u where u.login = :login and u.senha = :senha")
 	Colaborador findLogin(String login, String senha);
 	
@@ -24,6 +29,7 @@ public interface ColaboradorRepository extends CrudRepository<Colaborador, Strin
 
 	@Query("select u from Gerente u where u.login = :login and u.senha = :senha")
 	Gerente findByLoginB(String login, String senha);
+	
 }
 
 

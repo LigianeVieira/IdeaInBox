@@ -18,6 +18,11 @@ public interface SugestaoRepository extends CrudRepository<Sugestao, String>{
 
 	@Query(value = "SELECT * FROM sugestao WHERE status = 'EM_ANALISE_RH'", nativeQuery = true)
 	Iterable<Sugestao> findAllInAnalise();
+	
+	@Query(value = "SELECT * FROM sugestao WHERE status = 'EM_ANALISE_GERENCIA'", nativeQuery = true)
+	Iterable<Sugestao> findAllInAnaliseG();
+
+	
 
 	
 	Sugestao findById(long id);
