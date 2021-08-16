@@ -90,7 +90,7 @@
 	<div class="container">
 		<div th:each="sugestao : ${sugestoes}">
 			<ul class="list-group">
-				<li class="list-group-item"><span th:text="${sugestao.texto}"></span></li>
+				<li class="list-group-item"><span th:text="${sugestao.texto}"></span><span class="data" th:text="${sugestao.dataEnvio}"></span></li>
 				
 			</ul>
 		</div>

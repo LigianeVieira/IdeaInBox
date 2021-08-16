@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -40,7 +41,7 @@ public abstract class Usuario implements Serializable {
 	private String email;
 	@Enumerated(EnumType.STRING)
 	private StatusColaborador status;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval= true)
 	protected List <Sugestao> sugestoes;
 	
 

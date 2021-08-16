@@ -9,8 +9,6 @@ import javax.persistence.InheritanceType;
 import com.IdeaBox.models.sugestoes.Sugestao;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-
 public class Colaborador extends Usuario{
 	public Colaborador(Integer id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {
 		super(id, nome, CPF, cargo, login, senha, email);
