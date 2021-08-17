@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.IdeaBox.models.sugestoes.Status_Sugestao;
 import com.IdeaBox.models.sugestoes.Sugestao;
 import com.IdeaBox.models.usuarios.Colaborador;
+import com.IdeaBox.models.usuarios.Gerente;
 import com.IdeaBox.repository.SugestaoRepository;
 
 
@@ -30,8 +31,12 @@ public class SugestaoController {
 
 	@RequestMapping(value="/timeline", method=RequestMethod.POST)
 	public String form(Sugestao sugestao, HttpSession session) {
+		if(session.getAttribute("colaboradorLogado") != null) {
 		Colaborador colaborador = (Colaborador)session.getAttribute("colaboradorLogado");
-		sugestao.setColaborador(colaborador);
+		sugestao.setColaborador(colaborador);}else {
+			Gerente gerente = (Gerente)session.getAttribute("gerenteLogado");
+			sugestao.setColaborador(gerente);
+		}
 		sr.save(sugestao);
 		return "redirect:/timeline";
 	}
