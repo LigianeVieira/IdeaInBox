@@ -136,6 +136,9 @@ public class UsuarioController {
 			mv.addObject("gerente", gerente);
 			Iterable<Sugestao> sugestoes = sr.findAllInAnalise();
 			mv.addObject("sugestoes", sugestoes);
+			Iterable<Sugestao> todas = sr.findByColaborador(gerente);
+			mv.addObject("sugestoesGerente", todas);
+			
 			return mv;
 		} else {
 			return loginGet();

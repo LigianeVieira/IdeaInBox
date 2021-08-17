@@ -8,6 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.IdeaBox.models.sugestoes.Sugestao;
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
+import com.IdeaBox.models.usuarios.Gerente;
 
 public interface SugestaoRepository extends CrudRepository<Sugestao, String>{
 	
