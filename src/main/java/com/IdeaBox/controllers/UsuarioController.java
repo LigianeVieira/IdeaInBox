@@ -38,7 +38,7 @@ public class UsuarioController {
 
 	@GetMapping("/timeline")
 	public ModelAndView listaSugestao(HttpSession session) {
-		if (session.getAttribute("colaboradorLogado") != null) {
+		if (session.getAttribute("colaboradorLogado") != null || session.getAttribute("gerenteLogado") != null) {
 			ModelAndView mv = new ModelAndView("feed");
 			Iterable<Sugestao> sugestoes = sr.findAllByStatus();
 			mv.addObject("sugestoes", sugestoes);
@@ -59,12 +59,13 @@ public class UsuarioController {
 			HttpSession session) throws NoSuchAlgorithmException, ServiceExce {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("colaborador", new Colaborador());
+		mv.addObject("gerente", new Gerente());
 		if (br.hasErrors()) {
 			mv.setViewName("login");
 		}
 		Colaborador colaboradorLogin = su.loginColaborador(colaborador.getLogin(), Util.md5(colaborador.getSenha()));
 		Administrador administradorLogin = su.loginAdm(adm.getLogin(), adm.getSenha());
-		Gerente gerenteLogin = su.loginGerente(gerente.getLogin(), gerente.getSenha());
+		Gerente gerenteLogin = su.loginGerente(gerente.getLogin(), Util.md5(gerente.getSenha()));
 		if (colaboradorLogin == null && administradorLogin == null && gerenteLogin == null) {
 			mv.addObject("msg", "Usuario não encontrado tente novamente");
 		} else if (colaboradorLogin != null) {
@@ -86,6 +87,7 @@ public class UsuarioController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("login");
 		mv.addObject("colaborador", new Colaborador());
+		mv.addObject("gerente", new Gerente());
 		return mv;
 	}
 

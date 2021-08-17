@@ -27,8 +27,6 @@ public interface ColaboradorRepository extends CrudRepository<Colaborador, Strin
 	@Query("select u from Administrador u where u.login = :login and u.senha = :senha")
 	Administrador findByLoginA(String login, String senha);
 
-	@Query("select u from Gerente u where u.login = :login and u.senha = :senha")
-	Gerente findByLoginB(String login, String senha);
 	
 }
 

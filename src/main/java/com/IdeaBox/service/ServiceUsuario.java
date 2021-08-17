@@ -69,7 +69,7 @@ public class ServiceUsuario {
 	}
 	
 	public Gerente loginGerente(String login, String senha) throws ServiceExce{
-		Gerente gerenteLogin = cr.findByLoginB(login,senha);
+		Gerente gerenteLogin = gr.findByLogin(login,senha);
 		return gerenteLogin;
 	}
 }
