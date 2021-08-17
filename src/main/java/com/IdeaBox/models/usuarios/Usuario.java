@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -31,13 +32,19 @@ public abstract class Usuario implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private long id;
+	@Column(length = 25, nullable = false, unique = false)
 	private String nome;
+	@Column(length = 1, nullable = false, unique = true)
 	private String cpf;
+	
 	@Enumerated(EnumType.STRING)
 	private Cargo cargo;
+	@Column(length = 25, nullable = false, unique = true)
 	private String login;
+	@Column(nullable = false, unique = false)
 	private String senha;
 	@Email
+	@Column(nullable = false, unique = false)
 	private String email;
 	@Enumerated(EnumType.STRING)
 	private StatusColaborador status;
