@@ -34,7 +34,7 @@ public abstract class Usuario implements Serializable {
 	private long id;
 	@Column(length = 25, nullable = false, unique = false)
 	private String nome;
-	@Column(length = 1, nullable = false, unique = true)
+	@Column(length = 11, nullable = false, unique = true)
 	private String cpf;
 	
 	@Enumerated(EnumType.STRING)
