@@ -59,25 +59,26 @@ public class UsuarioController {
 			HttpSession session) throws NoSuchAlgorithmException, ServiceExce {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("colaborador", new Colaborador());
-		mv.addObject("gerente", new Gerente());
 		if (br.hasErrors()) {
 			mv.setViewName("login");
 		}
 		Colaborador colaboradorLogin = su.loginColaborador(colaborador.getLogin(), Util.md5(colaborador.getSenha()));
 		Administrador administradorLogin = su.loginAdm(adm.getLogin(), adm.getSenha());
-		Gerente gerenteLogin = su.loginGerente(gerente.getLogin(), Util.md5(gerente.getSenha()));
+		Gerente gerenteLogin = (Gerente) su.loginGerente(gerente.getLogin(), Util.md5(gerente.getSenha()));
 		if (colaboradorLogin == null && administradorLogin == null && gerenteLogin == null) {
 			mv.addObject("msg", "Usuario não encontrado tente novamente");
+		}
+		if (gerenteLogin instanceof Gerente ) {
+			session.setAttribute("gerenteLogado", gerenteLogin);
+			return index(session);
 		} else if (colaboradorLogin != null) {
 			session.setAttribute("colaboradorLogado", colaboradorLogin);
 			return index(session);
 		} else if (administradorLogin != null) {
 			session.setAttribute("AdmLogado", administradorLogin);
 			return index(session);
-		} else {
-			session.setAttribute("gerenteLogado", gerenteLogin);
-			return index(session);
 		}
+
 		return mv;
 
 	}
@@ -94,7 +95,8 @@ public class UsuarioController {
 	@GetMapping("/")
 	public ModelAndView index(HttpSession session) {
 		ModelAndView mv = new ModelAndView("index");
-		if (session.getAttribute("colaboradorLogado") != null || session.getAttribute("AdmLogado") != null || session.getAttribute("gerenteLogado") != null) {
+		if (session.getAttribute("colaboradorLogado") != null || session.getAttribute("AdmLogado") != null
+				|| session.getAttribute("gerenteLogado") != null) {
 			return mv;
 		}
 		// AdmLogado
@@ -119,8 +121,8 @@ public class UsuarioController {
 			Iterable<Sugestao> sugestoes = sr.findByColaborador(colaborador);
 			mv.addObject("sugestoes", sugestoes);
 			return mv;
-		} 
-		
+		}
+
 		else if (session.getAttribute("AdmLogado") != null) {
 			Administrador administrador = (Administrador) session.getAttribute("AdmLogado");
 			ModelAndView mv = new ModelAndView("colaborador/profileadm");
@@ -128,16 +130,14 @@ public class UsuarioController {
 			Iterable<Sugestao> sugestoes = sr.findAllInAnaliseG();
 			mv.addObject("sugestoes", sugestoes);
 			return mv;
-		} 
-		else if(session.getAttribute("gerenteLogado") != null) {
+		} else if (session.getAttribute("gerenteLogado") != null) {
 			Gerente gerente = (Gerente) session.getAttribute("gerenteLogado");
 			ModelAndView mv = new ModelAndView("colaborador/profilegerente");
-			mv.addObject("gerente",gerente);
+			mv.addObject("gerente", gerente);
 			Iterable<Sugestao> sugestoes = sr.findAllInAnalise();
 			mv.addObject("sugestoes", sugestoes);
 			return mv;
-		}
-		else {
+		} else {
 			return loginGet();
 		}
 	}
@@ -157,7 +157,7 @@ public class UsuarioController {
 		su.salvarColaborador(colaborador);
 		return "redirect:/cadastrarColaborador";
 	}
-	
+
 	@GetMapping("/cadastrarGerente")
 	public ModelAndView formGerente(HttpSession session) {
 		ModelAndView mv = new ModelAndView("colaborador/formGerente");
@@ -167,7 +167,7 @@ public class UsuarioController {
 			return loginGet();
 		}
 	}
-	
+
 	@RequestMapping(value = "/cadastrarGerente", method = RequestMethod.POST)
 	public String form(Gerente gerente) throws Exception {
 		su.salvarGerente(gerente);
