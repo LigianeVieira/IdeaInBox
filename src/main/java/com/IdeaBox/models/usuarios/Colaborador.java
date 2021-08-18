@@ -1,15 +1,21 @@
 package com.IdeaBox.models.usuarios;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 
 import com.IdeaBox.models.sugestoes.Sugestao;
 
 @Entity
 public class Colaborador extends Usuario{
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval= true)
+	protected List <Sugestao> sugestoes;
+	
 	public Colaborador(Integer id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {
 		super(id, nome, CPF, cargo, login, senha, email);
 		setId(id);
@@ -32,6 +38,14 @@ public class Colaborador extends Usuario{
 	private static final long serialVersionUID = 1L;
 	
 	
-	
+	public List<Sugestao> getSugestoes() {
+		return sugestoes;
+	}
+
+
+
+	public void setSugestoes(List<Sugestao> sugestoes) {
+		this.sugestoes = sugestoes;
+	}
 
 }

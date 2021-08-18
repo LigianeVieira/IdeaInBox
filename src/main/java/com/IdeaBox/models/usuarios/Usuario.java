@@ -48,8 +48,7 @@ public abstract class Usuario implements Serializable {
 	private String email;
 	@Enumerated(EnumType.STRING)
 	private StatusColaborador status;
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval= true)
-	protected List <Sugestao> sugestoes;
+	
 	
 
 
@@ -61,8 +60,8 @@ public abstract class Usuario implements Serializable {
 		setLogin(login);
 		setSenha(senha);
 		setEmail(email);
-		setStatus(StatusColaborador.ATIVO);
-		sugestoes = new ArrayList<Sugestao>();
+		setStatus(StatusColaborador.ATIVO); 
+		
 	}
 	public Usuario() {
 		setId(id);
@@ -73,7 +72,7 @@ public abstract class Usuario implements Serializable {
 		setSenha(senha);
 		setEmail(email);
 		setStatus(StatusColaborador.ATIVO);
-		sugestoes = new ArrayList<Sugestao>();
+		
 	}
 	
 	
@@ -128,15 +127,7 @@ public abstract class Usuario implements Serializable {
 		this.status = status;
 	}
 	
-	public List<Sugestao> getSugestoes() {
-		return sugestoes;
-	}
-
-
-
-	public void setSugestoes(List<Sugestao> sugestoes) {
-		this.sugestoes = sugestoes;
-	}
+	
 
 	
 }

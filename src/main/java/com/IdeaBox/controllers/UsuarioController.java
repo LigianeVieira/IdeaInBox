@@ -127,12 +127,12 @@ public class UsuarioController {
 			Administrador administrador = (Administrador) session.getAttribute("AdmLogado");
 			ModelAndView mv = new ModelAndView("colaborador/profileadm");
 			mv.addObject("administrador", administrador);
-			Iterable<Sugestao> sugestoes = sr.findAllInAnaliseG();
+			Iterable<Sugestao> sugestoes = sr.findAllInAnaliseG(); 
 			mv.addObject("sugestoes", sugestoes);
 			return mv;
 		} else if (session.getAttribute("gerenteLogado") != null) {
 			Gerente gerente = (Gerente) session.getAttribute("gerenteLogado");
-			ModelAndView mv = new ModelAndView("colaborador/profilegerente");
+			ModelAndView mv = new ModelAndView("colaborador/profilegerente"); 
 			mv.addObject("gerente", gerente);
 			Iterable<Sugestao> sugestoes = sr.findAllInAnalise();
 			mv.addObject("sugestoes", sugestoes);
