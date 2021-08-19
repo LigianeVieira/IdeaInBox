@@ -18,6 +18,7 @@ import com.IdeaBox.models.sugestoes.Status_Sugestao;
 import com.IdeaBox.models.sugestoes.Sugestao;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.models.usuarios.Gerente;
+import com.IdeaBox.repository.ColaboradorRepository;
 import com.IdeaBox.repository.SugestaoRepository;
 
 
@@ -27,17 +28,23 @@ public class SugestaoController {
 	@Autowired
 	private SugestaoRepository sr;
 	
-	
+	@Autowired
+	private ColaboradorRepository cr;
 
 	@RequestMapping(value="/timeline", method=RequestMethod.POST)
 	public String form(Sugestao sugestao, HttpSession session) {
 		if(session.getAttribute("colaboradorLogado") != null) {
 		Colaborador colaborador = (Colaborador)session.getAttribute("colaboradorLogado");
-		sugestao.setColaborador(colaborador);}else {
+		sugestao.setColaborador(colaborador);
+		colaborador.getSugestoes().add(sugestao);
+		cr.save(colaborador);
+		}else { 
 			Gerente gerente = (Gerente)session.getAttribute("gerenteLogado");
 			sugestao.setColaborador(gerente);
+			gerente.getSugestoes().add(sugestao);
+			cr.save(gerente);
 		}
-		sr.save(sugestao);
+		
 		return "redirect:/timeline";
 	}
 	

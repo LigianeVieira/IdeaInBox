@@ -5,15 +5,17 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
-import com.IdeaBox.models.sugestoes.Sugestao;
+import org.hibernate.annotations.Target;
 
+import com.IdeaBox.models.sugestoes.Sugestao;
 @Entity
 public class Colaborador extends Usuario{
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval= true)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity=Sugestao.class, mappedBy = "colaborador")
 	protected List <Sugestao> sugestoes;
 	
 	public Colaborador(Integer id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {
@@ -24,7 +26,7 @@ public class Colaborador extends Usuario{
 		setCargo(cargo);
 		setLogin(login);
 		setSenha(senha);
-		setEmail(email);
+		setEmail(email); 
 		setStatus(StatusColaborador.ATIVO);
 		sugestoes = new ArrayList<Sugestao>();
 	}
