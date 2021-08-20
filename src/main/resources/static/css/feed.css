@@ -88,3 +88,6 @@ header, .navbar{
   white-space: nowrap;
   text-overflow: ellipsis;}
     
+.fa-star{
+	color: orange;
+}

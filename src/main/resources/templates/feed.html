@@ -22,7 +22,7 @@
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/feed.css">
-<script src="js/funcoes.js"></script>
+
 
 <script
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -97,23 +97,12 @@
 		<div th:each="sugestao : ${sugestoes}">
 			<ul class="list-group">
 				<li class="list-group-item"><span th:text="${sugestao.texto}"></span><span
-					class="data" th:text="${sugestao.dataEnvio}"></span>	<a href="javascript:void(0)" onclick="Avaliar(1)"> <img
-					src="img/star0.png" id="s1"></a>
-
-				<a href="javascript:void(0)" onclick="Avaliar(2)"> <img
-					src="img/star0.png" id="s2"></a>
-
-				<a href="javascript:void(0)" onclick="Avaliar(3)"> <img
-					src="img/star0.png" id="s3"></a>
-
-				<a href="javascript:void(0)" onclick="Avaliar(4)"> <img
-					src="img/star0.png" id="s4"></a>
-
-				<a href="javascript:void(0)" onclick="Avaliar(5)"> <img
-					src="img/star0.png" id="s5"></a>
-				<p id="rating">0</p></li>
-
+					class="data" th:text="${sugestao.dataEnvio}"></span>
+					<span><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></span>
+<input type="range" class="form-range" min="1" max="5" id="customRange2">
+					
 			</ul>
+			
 		</div>
 
 	</div>
