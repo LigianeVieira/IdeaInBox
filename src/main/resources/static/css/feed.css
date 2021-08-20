@@ -83,7 +83,7 @@ header, .navbar{
     left: 69%;}
     
   .data{display: block;
-  width: 110px;
+  width: 115px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;}
