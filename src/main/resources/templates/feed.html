@@ -98,11 +98,11 @@
 			<ul class="list-group">
 				<li class="list-group-item"><span th:text="${sugestao.texto}"></span><span
 					class="data" th:text="${sugestao.dataEnvio}"></span>
-					<form action="">
+					<form method="post">
 					<span><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></span>
 <input type="range" class="form-range" min="1" max="5" id="customRange2">
 					
-					<button type="submit" class="btn btn-primary">Avaliar</button>
+					<a th:href="${(#mvc.url('SC#avaliarSugestao').arg(0, sugestao.id)).build()}"><button type="submit" class="btn btn-primary">Avaliar</button></a>
 					</form>
 			</ul>
 			

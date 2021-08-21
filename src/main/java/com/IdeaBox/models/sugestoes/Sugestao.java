@@ -41,7 +41,7 @@ public class Sugestao implements Serializable {
 	private String texto;
 	@ManyToOne
 	private Colaborador colaborador;
-	private double classificacao;
+	private int classificacao;
 	@Enumerated(EnumType.STRING)
 	private Status_Sugestao status = Status_Sugestao.EM_ANALISE_RH;
 	@Enumerated(EnumType.STRING)
@@ -113,7 +113,7 @@ public class Sugestao implements Serializable {
 		return classificacao;
 	}
 
-	public void setClassificacao(double classificacao) {
+	public void setClassificacao(int classificacao) {
 		this.classificacao = classificacao;
 	}
 
