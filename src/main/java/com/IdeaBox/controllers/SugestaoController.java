@@ -69,8 +69,8 @@ public class SugestaoController {
 		return "redirect:/profile";
 	}
 	
-	@PutMapping("/avaliar")
-	public String avaliarSugestao(@RequestParam(required = true) long id, @RequestBody ClassificacaoRequest classificacao) {
+	@PostMapping("/avaliar")
+	public String avaliarSugestao(@RequestParam(required = true) long id, ClassificacaoRequest classificacao) {
 		Sugestao sugestao = sr.findById(id);
 		sugestao.setClassificacao(classificacao.getClassificacao());
 		System.out.println(sugestao.toString() + id + " " + classificacao);

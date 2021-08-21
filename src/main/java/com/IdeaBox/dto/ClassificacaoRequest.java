@@ -9,6 +9,10 @@ public class ClassificacaoRequest {
 		this.classificacao = classificacao;
 	}
 
+	public ClassificacaoRequest() {
+		
+	}
+	
 	public int getClassificacao() {
 		return classificacao;
 	}
