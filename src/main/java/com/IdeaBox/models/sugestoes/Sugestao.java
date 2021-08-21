@@ -11,6 +11,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -38,15 +39,26 @@ public class Sugestao implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
+	
+	@Column
 	private String texto;
+	
 	@ManyToOne
 	private Colaborador colaborador;
+	
+	@Column
 	private int classificacao;
+	
 	@Enumerated(EnumType.STRING)
 	private Status_Sugestao status = Status_Sugestao.EM_ANALISE_RH;
+	
 	@Enumerated(EnumType.STRING)
 	private Categoria categoria;
+	
+	@Column
 	private int totalDeAvaliacoes;
+	
+	@Column
 	private ZonedDateTime dataEnvio = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
 
 
@@ -139,6 +151,13 @@ public class Sugestao implements Serializable {
 	
 	public ZonedDateTime getDataEnvio() {
 		return dataEnvio;
+	}
+
+	@Override
+	public String toString() {
+		return "Sugestao [id=" + id + ", texto=" + texto + ", colaborador=" + colaborador + ", classificacao="
+				+ classificacao + ", status=" + status + ", categoria=" + categoria + ", totalDeAvaliacoes="
+				+ totalDeAvaliacoes + ", dataEnvio=" + dataEnvio + "]";
 	}
 
 	

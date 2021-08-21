@@ -11,11 +11,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.IdeaBox.dto.ClassificacaoRequest;
 import com.IdeaBox.models.sugestoes.Status_Sugestao;
 import com.IdeaBox.models.sugestoes.Sugestao;
 import com.IdeaBox.models.usuarios.Colaborador;
@@ -65,9 +69,11 @@ public class SugestaoController {
 		return "redirect:/profile";
 	}
 	
-	@PostMapping("/avaliar")
-	public String avaliarSugestao(Long id) {
+	@PutMapping("/avaliar")
+	public String avaliarSugestao(@RequestParam(required = true) long id, @RequestBody ClassificacaoRequest classificacao) {
 		Sugestao sugestao = sr.findById(id);
+		sugestao.setClassificacao(classificacao.getClassificacao());
+		System.out.println(sugestao.toString() + id + " " + classificacao);
 		sr.save(sugestao);
 		return "redirect:/timeline";
 	}
