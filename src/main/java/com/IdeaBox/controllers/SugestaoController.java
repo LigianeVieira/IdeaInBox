@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,6 +45,7 @@ public class SugestaoController {
 		sugestao.setColaborador(colaborador);
 		colaborador.getSugestoes().add(sugestao);
 		cr.save(colaborador);
+		colaborador.getSugestoes().clear();
 		}else { 
 			Gerente gerente = (Gerente)session.getAttribute("gerenteLogado");
 			sugestao.setColaborador(gerente);
@@ -56,8 +58,8 @@ public class SugestaoController {
 	
 	@RequestMapping("/deletarSugestao")
 	public String deletarSugestao(long Id) {
-		Sugestao sugestao = sr.findById(Id);
-		sr.delete(sugestao);
+	Sugestao sugestao = sr.findById(Id);
+	sr.delete(sugestao);
 		return "redirect:/profile";
 	}
 	
@@ -73,7 +75,7 @@ public class SugestaoController {
 	public String avaliarSugestao(@RequestParam(required = true) long id, ClassificacaoRequest classificacao) {
 		Sugestao sugestao = sr.findById(id);
 		sugestao.setClassificacao(classificacao.getClassificacao());
-		System.out.println(sugestao.toString() + id + " " + classificacao);
+		
 		sr.save(sugestao);
 		return "redirect:/timeline";
 	}
