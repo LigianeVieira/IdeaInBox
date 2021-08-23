@@ -51,6 +51,7 @@ public class SugestaoController {
 			sugestao.setColaborador(gerente);
 			gerente.getSugestoes().add(sugestao);
 			cr.save(gerente);
+			gerente.getSugestoes().clear();
 		}
 		
 		return "redirect:/timeline";
