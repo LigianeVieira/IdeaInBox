@@ -18,9 +18,12 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.IdeaBox.models.usuarios.Colaborador;
@@ -44,6 +47,8 @@ public class Sugestao implements Serializable {
 	private String texto;
 	
 	@ManyToOne
+	@JoinColumn(name = "colaborador_id")
+	@OnDelete(action = OnDeleteAction.NO_ACTION)
 	private Colaborador colaborador;
 	
 	@Column
