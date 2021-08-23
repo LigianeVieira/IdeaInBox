@@ -15,7 +15,7 @@ import org.hibernate.annotations.Target;
 import com.IdeaBox.models.sugestoes.Sugestao;
 @Entity
 public class Colaborador extends Usuario{
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity=Sugestao.class, mappedBy = "colaborador")
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity=Sugestao.class)
 	protected List <Sugestao> sugestoes;
 	
 	public Colaborador(Integer id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {
