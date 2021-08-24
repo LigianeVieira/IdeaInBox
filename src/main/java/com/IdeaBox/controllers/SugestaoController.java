@@ -75,7 +75,8 @@ public class SugestaoController {
 	@PostMapping("/avaliar")
 	public String avaliarSugestao(@RequestParam(required = true) long id, ClassificacaoRequest classificacao) {
 		Sugestao sugestao = sr.findById(id);
-		sugestao.setClassificacao(classificacao.getClassificacao());
+		sugestao.setTotalDeAvaliacoes(sugestao.getTotalDeAvaliacoes() + 1);
+		sugestao.setClassificacao((sugestao.getClassificacao() + classificacao.getClassificacao()) / sugestao.getTotalDeAvaliacoes());
 		
 		sr.save(sugestao);
 		return "redirect:/timeline";

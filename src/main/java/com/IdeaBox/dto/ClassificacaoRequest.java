@@ -1,11 +1,11 @@
 package com.IdeaBox.dto;
 
 public class ClassificacaoRequest {
-	int classificacao;
+	double classificacao;
 
 	
 	
-	public ClassificacaoRequest(int classificacao) {
+	public ClassificacaoRequest(double classificacao) {
 		this.classificacao = classificacao;
 	}
 
@@ -13,11 +13,11 @@ public class ClassificacaoRequest {
 		
 	}
 	
-	public int getClassificacao() {
+	public double getClassificacao() {
 		return classificacao;
 	}
 
-	public void setClassificacao(int classificacao) {
+	public void setClassificacao(double classificacao) {
 		this.classificacao = classificacao;
 	} 
 	
