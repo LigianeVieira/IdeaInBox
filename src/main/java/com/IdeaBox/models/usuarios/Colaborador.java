@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.Target;
@@ -18,7 +16,6 @@ import com.IdeaBox.models.sugestoes.Sugestao;
 @Entity
 public class Colaborador extends Usuario{
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity=Sugestao.class)
-	@JoinTable(name = "colaborador_sugestoes", joinColumns = @JoinColumn(name = "sugestoes_id"), inverseJoinColumns = @JoinColumn(name = "colaborador_id"))
 	protected List <Sugestao> sugestoes;
 	
 	public Colaborador(long id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {
