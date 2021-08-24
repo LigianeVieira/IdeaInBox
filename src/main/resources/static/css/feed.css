@@ -1,6 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #03658c25;
 }
 .row{
     margin: 0;
@@ -17,7 +17,7 @@ p, li{
 
 /*Barra de navega��o*/
 header, .navbar{
-    background-color: #ffc400;
+    background-color: #F2B807;
     margin-bottom: 80px;
     
     }
@@ -47,7 +47,7 @@ header, .navbar{
     }
 
     .btn-primary{
-        background-image: linear-gradient(to right, #ffae00, #ffc400 );
+        background-image: linear-gradient(to right,#344373 ,#73346F);
         width: 10%;
         border-radius: 30px;
         padding: 7px;
@@ -59,7 +59,7 @@ header, .navbar{
     
     }
     .btn-primary:hover{
-        background-image: linear-gradient(to right, #ffc400, #ffae00); 
+        background-color: #F2B807;
     }
     
     li{
@@ -89,5 +89,5 @@ header, .navbar{
   text-overflow: ellipsis;}
     
 .fa-star{
-	color: orange;
+	color: #D96725;
 }

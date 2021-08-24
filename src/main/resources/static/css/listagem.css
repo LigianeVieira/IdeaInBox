@@ -2,7 +2,7 @@
 
 body{
 	 font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #03658c25;
     color: aliceblue;
 }
 
@@ -12,7 +12,7 @@ body{
 
 /*Barra de navegação*/
 header, .navbar{
-    background-color: #ffc400;
+    background-color: #F2B807;
     
     }
     #nav-container{
@@ -46,13 +46,13 @@ header, .navbar{
 	color: white;
     margin-top: 25px; 
     border-radius: 12px;
-    background-color: #ffa600;
+    background-image: linear-gradient(to right,#344373 ,#73346F);
     border: none;
     
 }
 
 .btn-primary:hover{
-    background-color: #ff5100;
+     background-color: #F2B807;
 }
 
 .btn-primary a{

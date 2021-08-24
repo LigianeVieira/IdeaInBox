@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
-    background: url("../img/gerenteimg.png") no-repeat 95% 70%;
+    background: url("../img/criat2.png") no-repeat 120% 85%;
+    background-color: #03658c25;
 }
 .row{
     margin: 0;
@@ -20,7 +20,7 @@ p, li{
 
 /*Barra de navegação*/
 header, .navbar{
-    background-color: #ffc400;
+    background-color:  #F2B807;
     
     }
     #nav-container{
@@ -67,7 +67,7 @@ header, .navbar{
 .btn-primary{
     margin-top: 25px; 
     border-radius: 12px;
-    background-color: #ffa600;
+   background-image: linear-gradient(to right,#344373 ,#73346F);
     border: none;
     
 }
@@ -75,7 +75,7 @@ header, .navbar{
 margin-top: 45px;
 }
 .btn-primary:hover{
-    background-color: #ff5100;
+   background-color: #F2B807;
 }
 
 

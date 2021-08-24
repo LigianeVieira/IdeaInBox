@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #03658c25;
 }
 .row{
     margin: 0;
@@ -19,7 +19,7 @@ p, li{
 
 /*Barra de navegação*/
 header, .navbar{
-background-color: #ffc400;
+background-color: #F2B807;
 
 }
 #nav-container{
@@ -71,7 +71,7 @@ color: white;
   background-color: transparent;
   }
 .carousel-indicators .active{
-    background-color: #ffd000
+    background-color: #F2B807;
   }
 
   /*About */
@@ -101,7 +101,7 @@ color: white;
     font-size: 11pt;
 }
 #about-list i{
-    color:#ffa600 ;
+    color:#D96725 ;
     margin-right: 15px;
 }
 
@@ -129,12 +129,12 @@ margin-bottom: 50px;
 }
 
 .service-box:hover > i, .service-box:hover > h4{
-    color:#ffa600 ;
+    color:#73346F;
 }
 /*PORTFLOIO */
 
 .main-btn{
-background-color: #ffc400;
+background-color: #F2B807;
 color: #fff;
 text-transform: uppercase;
 width: 200px;
@@ -165,8 +165,8 @@ border: 3px solid transparent;
 }
 #portfolio-area .filter-btn.active, #portfolio-area .filter-btn:hover{
     color: white;
-    background-color: #ffc400;
-    border-color: #ffc400;
+    background-color: #F2B807;
+    border-color: #03658C;
 }
 .alert{
 	position: absolute;
