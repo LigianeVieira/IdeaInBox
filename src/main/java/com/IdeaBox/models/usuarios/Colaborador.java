@@ -18,7 +18,7 @@ public class Colaborador extends Usuario{
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity=Sugestao.class)
 	protected List <Sugestao> sugestoes;
 	
-	public Colaborador(Integer id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {
+	public Colaborador(long id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {
 		super(id, nome, CPF, cargo, login, senha, email);
 		setId(id);
 		setNome(nome);
