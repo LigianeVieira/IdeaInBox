@@ -79,8 +79,11 @@ public class SugestaoController {
 		sugestao.setClassificacao((sugestao.getClassificacao() + classificacao.getClassificacao()) / sugestao.getTotalDeAvaliacoes());
 		Colaborador colaborador = (Colaborador) session.getAttribute("colaboradorLogado");
 		sugestao.getAvaliadores().add(colaborador);
+		colaborador.getSugestoesAvaliadas().add(sugestao);
 		sr.save(sugestao);
+		cr.save(colaborador);
 		sugestao.getAvaliadores().clear();
+		colaborador.getSugestoesAvaliadas().clear();
 		return "redirect:/timeline";
 	}
 	
