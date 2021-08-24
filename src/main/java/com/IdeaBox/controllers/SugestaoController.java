@@ -73,12 +73,14 @@ public class SugestaoController {
 	}
 	
 	@PostMapping("/avaliar")
-	public String avaliarSugestao(@RequestParam(required = true) long id, ClassificacaoRequest classificacao) {
+	public String avaliarSugestao(@RequestParam(required = true) long id, ClassificacaoRequest classificacao, HttpSession session) {
 		Sugestao sugestao = sr.findById(id);
 		sugestao.setTotalDeAvaliacoes(sugestao.getTotalDeAvaliacoes() + 1);
 		sugestao.setClassificacao((sugestao.getClassificacao() + classificacao.getClassificacao()) / sugestao.getTotalDeAvaliacoes());
-		
+		Colaborador colaborador = (Colaborador) session.getAttribute("colaboradorLogado");
+		sugestao.getAvaliadores().add(colaborador);
 		sr.save(sugestao);
+		sugestao.getAvaliadores().clear();
 		return "redirect:/timeline";
 	}
 	

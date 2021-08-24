@@ -9,7 +9,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,6 +22,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.OnDelete;
@@ -65,9 +68,10 @@ public class Sugestao implements Serializable {
 	
 	@Column
 	private ZonedDateTime dataEnvio = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
-
-
 	
+	@OneToMany
+	@JoinColumn(name = "id")
+	private List<Colaborador> avaliadores;
 	
 	public Sugestao() {
 		
@@ -81,6 +85,7 @@ public class Sugestao implements Serializable {
 		this.setTotalDeAvaliacoes(0);
 		this.setId(id);
 		setCategoria(categoria);
+		avaliadores = new ArrayList<Colaborador>();
 		}
 	
 	
@@ -156,6 +161,17 @@ public class Sugestao implements Serializable {
 	
 	public ZonedDateTime getDataEnvio() {
 		return dataEnvio;
+	}
+
+	
+	
+	
+	public List<Colaborador> getAvaliadores() {
+		return avaliadores;
+	}
+
+	public void setAvaliadores(List<Colaborador> avaliadores) {
+		this.avaliadores = avaliadores;
 	}
 
 	@Override
