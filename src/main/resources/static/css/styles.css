@@ -19,7 +19,7 @@ p, li{
 
 /*Barra de navegação*/
 header, .navbar{
-background-color: #F2B807;
+background-color:#F3CA06;
 
 }
 #nav-container{
@@ -71,12 +71,12 @@ color: white;
   background-color: transparent;
   }
 .carousel-indicators .active{
-    background-color: #F2B807;
+    background-color: #F3CA06;
   }
 
   /*About */
   #about-area{
-      background-color: #f9f9f9;
+      background-color: #03658c25;;
   }
   
   .main-title{
@@ -101,7 +101,7 @@ color: white;
     font-size: 11pt;
 }
 #about-list i{
-    color:#D96725 ;
+    color:#DB8F02;
     margin-right: 15px;
 }
 
@@ -120,7 +120,7 @@ margin-bottom: 50px;
 .service-box i{
     font-size: 36px;
     margin-bottom: 20px;
-    color: #444;
+    color: #000440;
 }
 
 .service-box h4{
@@ -129,12 +129,12 @@ margin-bottom: 50px;
 }
 
 .service-box:hover > i, .service-box:hover > h4{
-    color:#73346F;
+    color:#DB8F02;
 }
 /*PORTFLOIO */
 
 .main-btn{
-background-color: #F2B807;
+background-color:#F3CA06;
 color: #fff;
 text-transform: uppercase;
 width: 200px;
@@ -165,8 +165,8 @@ border: 3px solid transparent;
 }
 #portfolio-area .filter-btn.active, #portfolio-area .filter-btn:hover{
     color: white;
-    background-color: #F2B807;
-    border-color: #03658C;
+    background-color: #000440;
+    border-color:#F3CA06;
 }
 .alert{
 	position: absolute;

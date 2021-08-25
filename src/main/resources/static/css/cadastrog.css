@@ -14,13 +14,13 @@ body{
 }
 
 p, li{
-    color: #444;
+    color: #DB8F02;
     font-size: 14px;
 }
 
 /*Barra de navegação*/
 header, .navbar{
-    background-color:  #F2B807;
+    background-color:#F3CA06;
     
     }
     #nav-container{
@@ -59,7 +59,7 @@ header, .navbar{
     width: 400px;
 }
 .form-1 h2{
-    color:#ffae00;
+    color:#DB8F02
 }
 .form-1 label{
     padding: 5px;
@@ -67,7 +67,7 @@ header, .navbar{
 .btn-primary{
     margin-top: 25px; 
     border-radius: 12px;
-   background-image: linear-gradient(to right,#344373 ,#73346F);
+   background-color:#000440;
     border: none;
     
 }
@@ -75,7 +75,7 @@ header, .navbar{
 margin-top: 45px;
 }
 .btn-primary:hover{
-   background-color: #F2B807;
+   background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
 
 

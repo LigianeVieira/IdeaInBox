@@ -21,7 +21,7 @@ p, li{
 
 /*Barra de navegação*/
 header, .navbar{
-    background-color: #F2B807;
+    background-color:#F3CA06;
     
     }
     #nav-container{
@@ -67,8 +67,8 @@ header, .navbar{
 
 .card{
     
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    background-image: linear-gradient(to right,#F2B807 ,#73346F,#344373);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: #F3CA06;
     padding: 20px;
     border-radius: 25px;
     padding-bottom: 15%;
@@ -97,7 +97,7 @@ header, .navbar{
 }
 
 .btn-primary{
-    background-image:linear-gradient(to left,#F2B807,#D96725);
+    background-color:#000440;
     width: 100%;
     border-radius: 30px;
     padding: 13px;
@@ -110,7 +110,7 @@ header, .navbar{
 
 }
 .btn-primary:hover{
-    background-image:linear-gradient(to right,#F2B807,#D96725);
+    background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
 
 .bg_video{

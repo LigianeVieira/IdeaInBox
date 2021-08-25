@@ -8,7 +8,7 @@ body{
     position: absolute;
    margin-top: 23%;
    text-align: center;
-   background-color: #ffc400;
+   background-color:#F3CA06;
    width: 99%;
     color: white;
     padding: 70px;
@@ -16,7 +16,7 @@ body{
 
 .btn-primary{
     position: absolute;
-    background-image: linear-gradient(to right, #ff8800, #e4761c );
+    background-color:#000440;
     width: 15%;
     border-radius: 30px;
     padding: 8x;
@@ -31,5 +31,5 @@ body{
 
 }
 .btn-primary:hover{
-    background-image: linear-gradient(to right, #ffc400, #ffae00); 
+   background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
