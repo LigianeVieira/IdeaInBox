@@ -14,6 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.Target;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.IdeaBox.models.sugestoes.Sugestao;
 @Entity
@@ -21,10 +22,9 @@ public class Colaborador extends Usuario{
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity=Sugestao.class)
 	protected List <Sugestao> sugestoes;
 	
-	@ManyToMany
-	@JoinTable(name="sugestao_avaliadores", 
-    joinColumns={@JoinColumn(name="sugestao_id")},
-    inverseJoinColumns={@JoinColumn(name="avaliadores_id")})
+	@ManyToMany(cascade=CascadeType.PERSIST)
+    @JoinTable(name="COLABORADOR_SUGESTOES_AVALIADAS", joinColumns={@JoinColumn(referencedColumnName="ID")}
+                                        , inverseJoinColumns={@JoinColumn(referencedColumnName="ID")}) 
 	protected List <Sugestao> sugestoesAvaliadas;
 	
 	public Colaborador(Integer id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {

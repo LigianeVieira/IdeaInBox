@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -30,6 +31,7 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.IdeaBox.models.usuarios.Colaborador;
 
@@ -53,7 +55,6 @@ public class Sugestao implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "colaborador_id")
-	@OnDelete(action = OnDeleteAction.NO_ACTION)
 	private Colaborador colaborador;
 	
 	@Column
@@ -71,10 +72,7 @@ public class Sugestao implements Serializable {
 	@Column
 	private ZonedDateTime dataEnvio = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
 	
-	@ManyToMany
-	@JoinTable(name="sugestao_avaliadores",
-    joinColumns={@JoinColumn(name="avaliadores_id")},
-    inverseJoinColumns={@JoinColumn(name="sugestao_id")})
+	@ManyToMany(mappedBy = "sugestoesAvaliadas")
 	private List<Colaborador> avaliadores;
 	
 	public Sugestao() {
