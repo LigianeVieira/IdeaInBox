@@ -3,7 +3,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     background: url("../img/grupotransp.png") no-repeat 90% 450px;
-    background-color:#03658c25;
+    background-color:#f9f9f9;
 }
 .row{
     margin: 0;
@@ -29,7 +29,7 @@ header, .navbar{
     }
     
     #logo{
-       width: 180px;
+      width: 160px;
     }
     
     .navbar-brand{

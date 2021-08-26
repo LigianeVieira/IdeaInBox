@@ -3,7 +3,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     background: url("../img/criat2.png") no-repeat 120% 85%;
-    background-color: #03658c25;
+    background-color: #F5F5F5;
 }
 .row{
     margin: 0;
@@ -29,7 +29,7 @@ header, .navbar{
     }
     
     #logo{
-       width: 180px;
+        width: 160px;
     }
     
     .navbar-brand{
