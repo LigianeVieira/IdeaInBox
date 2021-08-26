@@ -42,6 +42,7 @@ color: white;
 
 #navbar-links a{
     color: white;
+    font-weight: bolder;
 }
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 1rem .8rem;
