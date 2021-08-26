@@ -1,6 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #F5F5F5;
 }
 .row{
     margin: 0;
@@ -11,13 +11,13 @@ body{
 }
 
 p, li{
-    color: #444;
+    color: #000429;
     font-size: 16px;
 }
 
 /*Barra de navega��o*/
 header, .navbar{
-    background-color: #ffc400;
+    background-color: #F3CA06;
     margin-bottom: 80px;
     
     }
@@ -27,7 +27,7 @@ header, .navbar{
     }
     
     #logo{
-       width: 180px;
+       width: 160px;
     }
     
     .navbar-brand{
@@ -47,7 +47,7 @@ header, .navbar{
     }
 
     .btn-primary{
-        background-image: linear-gradient(to right, #ffae00, #ffc400 );
+        background-color:#000440;
         width: 10%;
         border-radius: 30px;
         padding: 7px;
@@ -59,7 +59,7 @@ header, .navbar{
     
     }
     .btn-primary:hover{
-        background-image: linear-gradient(to right, #ffc400, #ffae00); 
+        background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
     }
     
     li{
@@ -89,5 +89,5 @@ header, .navbar{
   text-overflow: ellipsis;}
     
 .fa-star{
-	color: orange;
+	color: #F3CA06
 }

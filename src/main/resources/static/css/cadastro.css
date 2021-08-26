@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
-    background: url("../img/icone-contato.png") no-repeat 80% 250px;
+    background: url("../img/grupotransp.png") no-repeat 90% 450px;
+    background-color:#f9f9f9;
 }
 .row{
     margin: 0;
@@ -14,13 +14,13 @@ body{
 }
 
 p, li{
-    color: #444;
+    color: #DB8F02;
     font-size: 14px;
 }
 
 /*Barra de navegação*/
 header, .navbar{
-    background-color: #ffc400;
+    background-color:#F3CA06;
     
     }
     #nav-container{
@@ -29,7 +29,7 @@ header, .navbar{
     }
     
     #logo{
-       width: 180px;
+      width: 160px;
     }
     
     .navbar-brand{
@@ -59,7 +59,7 @@ header, .navbar{
     width: 400px;
 }
 .form-1 h2{
-    color:#ffae00;
+    color:#DB8F02;
 }
 .form-1 label{
     padding: 5px;
@@ -67,7 +67,7 @@ header, .navbar{
 .btn-primary{
     margin-top: 25px; 
     border-radius: 12px;
-    background-color: #ffa600;
+    background-color:#000440;
     border: none;
     
 }
@@ -75,7 +75,8 @@ header, .navbar{
 margin-top: 45px;
 }
 .btn-primary:hover{
-    background-color: #ff5100;
+    
+   background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
 
 
