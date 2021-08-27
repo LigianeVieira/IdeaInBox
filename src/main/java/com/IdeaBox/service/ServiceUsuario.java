@@ -52,6 +52,7 @@ public class ServiceUsuario {
 		} catch(NomeCargoExistsException e) {
 			System.out.println(e.getMessage());
 		}
+		cgr.save(cargo);
 	}
 	
 	public void salvarGerente(Gerente gerente) throws Exception {
