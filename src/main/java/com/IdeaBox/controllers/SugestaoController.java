@@ -75,25 +75,31 @@ public class SugestaoController {
 	@PostMapping("/avaliar")
 	public String avaliarSugestao(@RequestParam(required = true) long id, ClassificacaoRequest classificacao, HttpSession session) {
 		Sugestao sugestao = sr.findById(id);
-		sugestao.setTotalDeAvaliacoes(sugestao.getTotalDeAvaliacoes() + 1);
-		sugestao.setClassificacao((sugestao.getClassificacao() + classificacao.getClassificacao()) / sugestao.getTotalDeAvaliacoes());
 		if(session.getAttribute("colaboradorLogado") != null) {
 		Colaborador colaborador = (Colaborador) session.getAttribute("colaboradorLogado");
+		if(cr.findByAvaliacao(sugestao.getId(), colaborador.getId()) == null) {
+			return "redirect:/timeline";
+		}
+
 		sugestao.getAvaliadores().add(colaborador);
 		colaborador.getSugestoesAvaliadas().add(sugestao);
 		sr.save(sugestao);
 		cr.save(colaborador);
-		sugestao.getAvaliadores().clear();
-		colaborador.getSugestoesAvaliadas().clear();}
+		colaborador.getSugestoesAvaliadas().clear();
+		}
 		else {
 			Colaborador colaborador = (Colaborador) session.getAttribute("gerenteLogado");
+			sugestao.setTotalDeAvaliacoes(sugestao.getTotalDeAvaliacoes() + 1);
+			sugestao.setClassificacao((sugestao.getClassificacao() + classificacao.getClassificacao()) / sugestao.getTotalDeAvaliacoes());
+			if(cr.findByAvaliacao(sugestao.getId(), colaborador.getId()) == null) {
+				return "redirect:/timeline";
+			}
 			sugestao.getAvaliadores().add(colaborador);
 			colaborador.getSugestoesAvaliadas().add(sugestao);
 			sr.save(sugestao);
 			cr.save(colaborador);
-			sugestao.getAvaliadores().clear();
-			colaborador.getSugestoesAvaliadas().clear();}
-		
+			colaborador.getSugestoesAvaliadas().clear(); 
+		}
 		return "redirect:/timeline";
 	}
 	
