@@ -10,6 +10,4 @@ public interface CargoRepository extends CrudRepository<Cargos, String>{
 	@Query(value = "select nome from Cargos where nome=?", nativeQuery = true)
 	Cargos findNome(String nome);
 	
-	Cargos findById();
-
 }

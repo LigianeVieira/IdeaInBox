@@ -41,8 +41,7 @@ public abstract class Usuario implements Serializable {
 	@Column(length = 11, nullable = false, unique = true)
 	private String cpf;
 	
-    @Column
-    @ManyToOne
+    @Column(length = 30, nullable = false, unique = false)
 	private Cargos cargo;
     
 	@Column(length = 25, nullable = false, unique = true)
