@@ -26,7 +26,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.IdeaBox.models.usuarios.Colaborador;
 
 @Entity
-public class Cargos extends Colaborador implements Serializable {
+public class Cargos implements Serializable {
 
 	/**
 	 * 
@@ -51,6 +51,14 @@ public class Cargos extends Colaborador implements Serializable {
 	public Cargos(String nome, Colaborador colaborador) {
 		setNome(nome);
 		setColaborador(getColaborador());
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 	private List<Colaborador> getColaborador() {
