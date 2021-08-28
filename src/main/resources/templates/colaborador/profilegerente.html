@@ -37,21 +37,18 @@
         <div class="container" id="nav-container">
             <nav class="navbar navbar-expand-lg fixed-top">
              <a href="#" class="navbar-brand">
-                 <img id="logo" src="img/MicrosoftTeams-image-removebg-preview-Branco.png" alt="IdeaBox">
-             </a>
+             <img id="logo" src="img/MicrosoftTeams-image-removebg-preview-Branco.png" alt="IdeaBox"></a>
              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
              aria-controls="navbar-links" aria-expanded="false" aria-label="Toogle navigation">
-             <span class="navbar-toggler-icon"></span>
-             </button>
+             <span class="navbar-toggler-icon"></span></button>
              <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
                  <div class="navbar-nav">
-                     <a class="nav-item nav-link" id="home-menu" href="http://localhost:8080/">Home</a>
+                    <a class="nav-item nav-link" id="home-menu" href="http://localhost:8080/">Home</a>
                     <a class="nav-item nav-link" id="about-menu" href="/login">Login</a>
                     <a class="nav-item nav-link" id="services-menu" href="/cadastrarColaborador">Cadastrar Colaborador</a>
                     <a class="nav-item nav-link" id="team-menu" href="http://localhost:8080/timeline">Timeline</a>
                     <a class="nav-item nav-link" id="contact-menu" href="/profile">Perfil</a>
-                     <a class="nav-item nav-link" id="contact-menu" href="/logout">Sair</a>
-                 </div>
+                    <a class="nav-item nav-link" id="exit-menu" href="/logout">Sair</a> </div>
              </div>
             </nav>
         </div>
@@ -60,7 +57,7 @@
         <div class="container">
                 <div class="row">
                   <div class="col">
-                      <div class="profile">
+                    <div class="profile">
                     <img class= "gerente" src="img/newideia-removebg-preview.png">
                     <h4> &nbsp;<span th:text="${gerente.nome}"></span></h4>
                     &nbsp; 
@@ -71,70 +68,53 @@
                   </div>
                   <div class="col">
                       <div class="contador">
-                        <div class="row align-items-start">
-                        <div class="col">
+                      <div class="row align-items-start">
+                      <div class="col">
                     <h6>Sugestões</h6>
                     <span th:text="${#lists.size(sugestoesGerente)}"/>
                         </div>
-                            <div class="col">
-                        <h6>Avaliações</h6>
-                        <p>15</p> 
-                            </div>
-                     </div>
-                </div>  
-                 <div class="Sugestoes">
-                    <p>
-                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                           Suas Sugestões &nbsp; <i class="fas fa-lightbulb"></i>
-                        </a>
-                    </p>
+                            <div class="col"><h6>Avaliações</h6><p>15</p></div>
+                        </div>
+                    </div>  
+                <div class="Sugestoes">
+                    <p><a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Suas Sugestões &nbsp; <i class="fas fa-lightbulb"></i></a></p>
                     <div class="collapse" id="collapseExample">
                       <div class="card card-body w-100">
                         <table class="table">
                             <tbody>
-                               <tr th:each="sugestao : ${sugestoesGerente}">
-                                <td><span th:text="${sugestao.texto}"></span>
-
-                                <a th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-trash-alt"></i></a>
-                            </td>
-                             </tr>
-                              </tbody>
-                              </table>
+                             <tr th:each="sugestao : ${sugestoesGerente}">
+                             <td><span th:text="${sugestao.texto}"></span><a th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}">
+                             <i class="fas fa-trash-alt"></i></a></td></tr>
+                            </tbody>
+                        </table>
                       </div>
                     </div> 
                 </div>       
-                      <div class="Sugestoes">
-                    <p>
-                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Sugestões Pendentes &nbsp; <i class="fas fa-lightbulb"></i>
-                        </a>
-                    </p>
-                    <div class="collapse" id="collapseExample">
+                    <div class="Sugestoes">
+                    <p><a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Sugestões Pendentes &nbsp; <i class="fas fa-lightbulb"></i></a></p>
+                    <div class="collapse" id="collapseExample"> 
                       <div class="card card-body w-100">
                         <table class="table">
                             <tbody>
                                <tr th:each="sugestao : ${sugestoes}">
                                 <td><span th:text="${sugestao.texto}"></span><a th:href="${(#mvc.url('SC#aprovarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-check"></i></a>
-
-                                <a th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-trash-alt"></i></a>
-                               </td>
-                                </tr>
-                              </tbody>
-                              </table>
+                                <a th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-trash-alt"></i></a></td></tr>
+                            </tbody>
+                        </table>
                       </div>
                     </div> 
-                </div>       
-               <a href="/cadastrarColaborador"><button class="btn btn-primary">Cadastrar
-									Colaborador  &nbsp&nbsp<i class="fas fa-user-plus"></i></button> </a>
-									<a href="/colaboradores"><button class="btn btn-primary">Lista de
-									Colaboradores  &nbsp&nbsp<i class="fas fa-address-card"></i></button></a>
-									  
-                  </div>
+                </div>
+                <a href="/cadastrarColaborador"><button class="btn btn-primary">Cadastrar Colaborador  &nbsp&nbsp<i class="fas fa-user-plus"></i></button></a>
+                <a href="/cadastrarCargos"><button class="btn btn-primary">Cadastar Cargos  &nbsp&nbsp<i class="fas fa-user-plus"></i></button></a>
+                <a href="/colaboradores"><button class="btn btn-primary">Lista de Colaboradores  &nbsp&nbsp<i class="fas fa-address-card"></i></button></a>
                 </div>
             </div>
+        </div>
          
           
-     </main>
+    </main>
     <script src="js/scripts.js"></script> 
 </body>
 </html>

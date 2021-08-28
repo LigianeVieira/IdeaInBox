@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <title>Registrar Colaborador</title>
 
 <!--Fonte-->
@@ -69,45 +69,38 @@
 					<div class="col-sm">
 						<h2>Cadastrar Gerente</h2>
 						<div class="form-group">
-							<label for="nome">Nome</label> <input type="text" id="nome"
-								class="form-control" value="" name="nome" placeholder="Nome">
+							<label for="nome">Nome</label>
+							<input type="text" id="nome" class="form-control" value="" name="nome" placeholder="Nome" required>
 							<small  class="form-text text-muted">Nome
 								completo do Gerente</small>
 						</div>
 						<div class="form-group">
-							<label for="cpf">CPF</label> <input type="text" id="cpf"
-								class="form-control" value="" name="cpf"
-								placeholder="12345678910"> <small 
-								class="form-text text-muted">Numérico como no
-								exemplo</small>
+							<label for="cpf">CPF</label>
+							<input type="text" id="cpf" class="form-control" value="" name="cpf" placeholder="12345678910" required>
+							<small class="form-text text-muted">Numérico como no exemplo</small>
 						</div>
 						<div class="form-group">
-							<label for="login">Login</label> <input type="text" id="login"
-								class="form-control" value="" name="login" placeholder="Login">
-							<small class="form-text text-muted">Login
-								que o usuario acessara o sistema</small>
+							<label for="login">Login</label>
+							<input type="text" id="login" class="form-control" value="" name="login" placeholder="Login" required>
+							<small class="form-text text-muted">Login que o usuario acessara o sistema</small>
 						</div>
 						<div class="form-group">
-							<label for="senha">Senha</label> <input type="password" id="senha"
-								class="form-control" value="" name="senha" placeholder="Senha">
-							<small  class="form-text text-muted">Senha
-								para acessar o sistema</small>
+							<label for="senha">Senha</label>
+							<input type="password" id="senha" class="form-control" value="" name="senha" placeholder="Senha" required>
+							<small  class="form-text text-muted">Senha para acessar o sistema</small>
 						</div>
 
 					</div>
 					<!--FORMULARIO DIREITO-->
 					<div class="col-sm">
 						<div class="form-group2">
-							<label for="email">Email</label> <input type="email" id="email"
-								class="form-control" value="" name="email"
-								placeholder="Email do colaborador"> <small
-								class="form-text text-muted">Nunca vamos
-								compartilhar seu email, com ninguém.</small>
+							<label for="email">Email</label>
+							<input type="email" id="email" class="form-control" value="" name="email" placeholder="Email do colaborador" required> 
+							<small class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
 						</div>
 					 <div class="form-group2">
-							<label for="exampleDataList" class="form-label">Selecione o cargo
-								</label> <input class="form-control" list="datalistOptions"
-								id="cargo" name="cargo" placeholder="Pesquisar por cargo">
+							<label for="cargo" class="form-label">Selecione o cargo</label>
+							<input class="form-control" list="datalistOptions" id="cargo" name="cargo" placeholder="Pesquisar por cargo">
 							<datalist id="datalistOptions">
 								<option>GERENTE</option>
 								<option>GERENTE_FINANCEIRO</option>
@@ -120,9 +113,8 @@
 								<option>GERENTE_DE_SUPORTE</option>
 								<option>GERENTE_TELEPROCESSAMENTO</option>
 								<option>GERENTE_DE_INFRAESTRUTURA</option>
-								</datalist>
-								<button type="submit" class="btn btn-primary">Cadastrar
-									Gerente  &nbsp;&nbsp;<i class="fas fa-user-plus"></i></button>
+						    </datalist>
+							<button type="submit" class="btn btn-primary">Cadastrar Gerente  &nbsp;&nbsp;<i class="fas fa-user-plus"></i></button>
 						</div>
 					</div>
 				</div>
