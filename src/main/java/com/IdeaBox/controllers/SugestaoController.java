@@ -80,7 +80,8 @@ public class SugestaoController {
 		if(cr.findByAvaliacao(sugestao.getId(), colaborador.getId()) == null) {
 			return "redirect:/timeline";
 		}
-
+		sugestao.setTotalDeAvaliacoes(sugestao.getTotalDeAvaliacoes() + 1);
+		sugestao.setClassificacao((sugestao.getClassificacao() + classificacao.getClassificacao()) / sugestao.getTotalDeAvaliacoes());
 		sugestao.getAvaliadores().add(colaborador);
 		colaborador.getSugestoesAvaliadas().add(sugestao);
 		sr.save(sugestao);
@@ -89,11 +90,11 @@ public class SugestaoController {
 		}
 		else {
 			Colaborador colaborador = (Colaborador) session.getAttribute("gerenteLogado");
-			sugestao.setTotalDeAvaliacoes(sugestao.getTotalDeAvaliacoes() + 1);
-			sugestao.setClassificacao((sugestao.getClassificacao() + classificacao.getClassificacao()) / sugestao.getTotalDeAvaliacoes());
 			if(cr.findByAvaliacao(sugestao.getId(), colaborador.getId()) == null) {
 				return "redirect:/timeline";
 			}
+			sugestao.setTotalDeAvaliacoes(sugestao.getTotalDeAvaliacoes() + 1);
+			sugestao.setClassificacao((sugestao.getClassificacao() + classificacao.getClassificacao()) / sugestao.getTotalDeAvaliacoes());
 			sugestao.getAvaliadores().add(colaborador);
 			colaborador.getSugestoesAvaliadas().add(sugestao);
 			sr.save(sugestao);
