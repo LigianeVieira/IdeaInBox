@@ -176,5 +176,10 @@ public class UsuarioController {
 		su.salvarGerente(gerente);
 		return "redirect:/cadastrarGerente";
 	}
-
+	
+	@GetMapping("/cargos")
+	public ModelAndView formCargos() {
+		ModelAndView mv = new ModelAndView("cargos");
+		return mv;
+	}
 }
