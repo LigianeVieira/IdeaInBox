@@ -3,50 +3,17 @@
 body{
     
     font-family: 'Roboto', sans-serif;
-    background: url("img/equipe3-removebg-preview.png") no-repeat 55%  320px;
-    
-     
-       
+    background: url("img/equipe3-removebg-preview.png") no-repeat 50%  450px;
+    background-attachment: scroll;
+    position: relative;
+        
 } 
 
-/*Barra de navega��o*/
-header, .navbar{
-    background-color:#F3CA06;
-    
-    }
-    #nav-container{
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-    
-    #logo{
-      width: 160px;
-    }
-    
-    .navbar-brand{
-    padding: 0;
-    color: white;
-    }
-    
-    .navbar-brand:hover{
-        color: white;
-    }
-    
-    #navbar-links a{
-        color: white;
-    }
-    .navbar-expand-lg .navbar-nav .nav-link{
-        padding: 1rem .8rem;
-    }
-    
-
-    
-      /* questionario*/ 
+/* questionario*/ 
 .form-1{
-    margin-top: 200px;
+    margin-top: 300px;
     margin-left: 40%;
-    
-    
+     
 }
 legend{
     color: #000440;

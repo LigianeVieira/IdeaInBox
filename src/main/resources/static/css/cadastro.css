@@ -17,40 +17,8 @@ p, li{
     color: #DB8F02;
     font-size: 14px;
 }
-
-/*Barra de navegação*/
-header, .navbar{
-    background-color:#F3CA06;
-    
-    }
-    #nav-container{
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-    
-    #logo{
-      width: 160px;
-    }
-    
-    .navbar-brand{
-    padding: 0;
-    color: white;
-    }
-    
-    .navbar-brand:hover{
-        color: white;
-    }
-    
-    #navbar-links a{
-        color: white;
-    }
-    .navbar-expand-lg .navbar-nav .nav-link{
-        padding: 1rem .8rem;
-    }
-    
-
-    
-      /* questionario*/ 
+ 
+/* questionario*/ 
 .form-1{
     margin-top: 140px;
     margin-right: 90px;
@@ -78,9 +46,6 @@ margin-top: 45px;
     
    background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
-
-
-
 
 .form-control#SelectForm{
 	 text-transform: lowercase;
