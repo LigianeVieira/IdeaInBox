@@ -9,7 +9,7 @@ import com.IdeaBox.exceptions.CriptoExistException;
 import com.IdeaBox.exceptions.EmailExistException;
 import com.IdeaBox.exceptions.NomeCargoExistsException;
 import com.IdeaBox.exceptions.ServiceExce;
-import com.IdeaBox.models.cargos.Cargos;
+import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.models.usuarios.Gerente;
@@ -44,7 +44,7 @@ public class ServiceUsuario {
 		cr.save(colaborador);
 	}
 	
-	public void salvarCargos(Cargos cargo) {
+	public void salvarCargos(Cargo cargo) {
 		try {
 			if(cgr.findNome(cargo.getNome()) != null) {
 				throw new NomeCargoExistsException("Este cargo ja existe!.");

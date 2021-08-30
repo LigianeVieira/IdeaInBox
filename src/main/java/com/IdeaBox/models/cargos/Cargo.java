@@ -9,6 +9,7 @@ import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -26,7 +27,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.IdeaBox.models.usuarios.Colaborador;
 
 @Entity
-public class Cargos implements Serializable {
+public class Cargo implements Serializable {
 
 	/**
 	 * 
@@ -40,15 +41,15 @@ public class Cargos implements Serializable {
 	@Column(length = 30, nullable = false, unique = false)
 	private String nome;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List <Colaborador> colaborador;
 	
 	
 	
-	public Cargos () {}
+	public Cargo () {}
 	
 	
-	public Cargos(String nome, Colaborador colaborador) {
+	public Cargo(String nome, Colaborador colaborador) {
 		setNome(nome);
 		setColaborador(getColaborador());
 	}

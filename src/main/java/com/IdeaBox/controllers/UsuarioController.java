@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.IdeaBox.exceptions.ServiceExce;
+import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.sugestoes.Sugestao;
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
@@ -175,6 +176,19 @@ public class UsuarioController {
 	public String form(Gerente gerente) throws Exception {
 		su.salvarGerente(gerente);
 		return "redirect:/cadastrarGerente";
+	}
+	
+	@GetMapping("/cargos")
+	public ModelAndView Cargos() {
+		ModelAndView mv = new ModelAndView("Cargos");
+		return mv;
+	}
+	
+	@PostMapping("/cargos")
+	public String formCargos(Cargo cargo) {
+		su.salvarCargos(cargo);
+		return "redirect:/cargos";
+		
 	}
 
 }

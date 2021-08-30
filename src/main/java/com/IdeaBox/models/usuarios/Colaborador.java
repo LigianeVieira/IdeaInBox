@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.Target;
 
-import com.IdeaBox.models.cargos.Cargos;
+import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.sugestoes.Sugestao;
 @Entity
 public class Colaborador extends Usuario{
@@ -21,7 +21,7 @@ public class Colaborador extends Usuario{
 	
 	
 	
-	public Colaborador(Integer id, String nome, String CPF, Cargos cargo, String login, String senha, String email) {
+	public Colaborador(Integer id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {
 		super(id, nome, CPF,  cargo, login, senha, email);
 		
 		

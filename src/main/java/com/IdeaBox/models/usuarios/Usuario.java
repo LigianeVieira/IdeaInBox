@@ -14,11 +14,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 
-import com.IdeaBox.models.cargos.Cargos;
+import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.sugestoes.Sugestao;
 
 
@@ -37,20 +38,16 @@ public abstract class Usuario implements Serializable {
 	
 
 	@Column(length = 45, nullable = false, unique = false)
-
-
-
 	private String nome;
 	
 	@Column(length = 11, nullable = false, unique = true)
 	private String cpf;
-	
-
-    @Column(nullable = false, unique = false)
-	private Cargos cargo;
+	 
+	@ManyToOne
+	@JoinColumn(name = "cargo_id")
+	private Cargo cargo;
     
 
- SpringCargos
 	@Column(length = 25, nullable = false, unique = true)
 	private String login;
 	
@@ -67,7 +64,7 @@ public abstract class Usuario implements Serializable {
 	
 
 
-	public Usuario(long id, String nome, String cpf, Cargos cargo, String login, String senha, String email) {
+	public Usuario(long id, String nome, String cpf, Cargo cargo, String login, String senha, String email) {
 		setId(id);
 		setNome(nome);
 		setCpf(cpf);
@@ -110,10 +107,10 @@ public abstract class Usuario implements Serializable {
 		this.cpf = cpf;
 	}
 		
-	private Cargos getCargo() {
+	private Cargo getCargo() {
 		return cargo;
 	}
-	protected void setCargo(Cargos cargo) {
+	protected void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
 	public String getLogin() {
