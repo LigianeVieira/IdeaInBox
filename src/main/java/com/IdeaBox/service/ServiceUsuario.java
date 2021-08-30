@@ -7,11 +7,13 @@ import org.springframework.stereotype.Service;
 
 import com.IdeaBox.exceptions.CriptoExistException;
 import com.IdeaBox.exceptions.EmailExistException;
-
+import com.IdeaBox.exceptions.NomeCargoExistsException;
 import com.IdeaBox.exceptions.ServiceExce;
+import com.IdeaBox.models.cargos.Cargos;
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.models.usuarios.Gerente;
+import com.IdeaBox.repository.CargoRepository;
 import com.IdeaBox.repository.ColaboradorRepository;
 import com.IdeaBox.repository.GerenteRepository;
 import com.IdeaBox.util.Util;
@@ -23,6 +25,9 @@ public class ServiceUsuario {
 	
 	@Autowired
 	private GerenteRepository gr;
+	
+	@Autowired
+	private CargoRepository cgr;
 	
 	public void salvarColaborador(Colaborador colaborador) throws Exception {
 		try {
@@ -39,6 +44,16 @@ public class ServiceUsuario {
 		cr.save(colaborador);
 	}
 	
+	public void salvarCargos(Cargos cargo) {
+		try {
+			if(cgr.findNome(cargo.getNome()) != null) {
+				throw new NomeCargoExistsException("Este cargo ja existe!.");
+			}
+		} catch(NomeCargoExistsException e) {
+			System.out.println(e.getMessage());
+		}
+		cgr.save(cargo);
+	}
 	
 	public void salvarGerente(Gerente gerente) throws Exception {
 		try {
