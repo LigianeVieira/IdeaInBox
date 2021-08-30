@@ -20,6 +20,7 @@ import com.IdeaBox.models.sugestoes.Sugestao;
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.models.usuarios.Gerente;
+import com.IdeaBox.repository.CargoRepository;
 import com.IdeaBox.repository.ColaboradorRepository;
 import com.IdeaBox.repository.SugestaoRepository;
 import com.IdeaBox.service.ServiceUsuario;
@@ -36,6 +37,9 @@ public class UsuarioController {
 
 	@Autowired
 	private ServiceUsuario su;
+	
+	@Autowired
+	private CargoRepository crg;
 
 	@GetMapping("/timeline")
 	public ModelAndView listaSugestao(HttpSession session) {
@@ -149,6 +153,8 @@ public class UsuarioController {
 	@GetMapping("/cadastrarColaborador")
 	public ModelAndView form(HttpSession session) {
 		ModelAndView mv = new ModelAndView("colaborador/formColaborador");
+		Iterable<Cargo>cargos = crg.findAll();
+		mv.addObject("cargo", cargos);
 		if (session.getAttribute("AdmLogado") != null || session.getAttribute("gerenteLogado") != null) {
 			return mv;
 		} else {
