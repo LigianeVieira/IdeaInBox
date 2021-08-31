@@ -131,7 +131,9 @@ public class UsuarioController {
 		else if (session.getAttribute("AdmLogado") != null) {
 			Administrador administrador = (Administrador) session.getAttribute("AdmLogado");
 			ModelAndView mv = new ModelAndView("colaborador/profileadm");
+			Cargo cargo = administrador.getCargo();
 			mv.addObject("administrador", administrador);
+			mv.addObject("cargo",  cargo);
 			Iterable<Sugestao> sugestoes = sr.findAllInAnaliseG(); 
 			mv.addObject("sugestoes", sugestoes);
 			return mv;
@@ -171,6 +173,8 @@ public class UsuarioController {
 	@GetMapping("/cadastrarGerente")
 	public ModelAndView formGerente(HttpSession session) {
 		ModelAndView mv = new ModelAndView("colaborador/formGerente");
+		Iterable<Cargo>cargos = crg.findAll();
+		mv.addObject("cargo", cargos);
 		if (session.getAttribute("AdmLogado") != null) {
 			return mv;
 		} else {

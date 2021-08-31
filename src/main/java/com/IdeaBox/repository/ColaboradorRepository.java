@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.kotlin.CoroutineCrudRepository;
 
+import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.models.usuarios.Gerente;
@@ -27,7 +28,7 @@ public interface ColaboradorRepository extends CrudRepository<Colaborador, Strin
 	@Query("select u from Administrador u where u.login = :login and u.senha = :senha")
 	Administrador findByLoginA(String login, String senha);
 
-	
+
 }
 
 

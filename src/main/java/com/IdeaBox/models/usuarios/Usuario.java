@@ -107,10 +107,10 @@ public abstract class Usuario implements Serializable {
 		this.cpf = cpf;
 	}
 		
-	private Cargo getCargo() {
+	public Cargo getCargo() {
 		return cargo;
 	}
-	protected void setCargo(Cargo cargo) {
+	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
 	public String getLogin() {

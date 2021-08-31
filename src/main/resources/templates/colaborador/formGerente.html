@@ -99,22 +99,18 @@
 							<input type="email" id="email" class="form-control" value="" name="email" placeholder="Email do colaborador" required> 
 							<small class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
 						</div>
-					 <div class="form-group2">
-							<label for="cargo" class="form-label">Selecione o cargo</label>
-							<input class="form-control" list="datalistOptions" id="cargo" name="cargo" placeholder="Pesquisar por cargo">
-							<datalist id="datalistOptions">
-								<option>GERENTE</option>
-								<option>GERENTE_FINANCEIRO</option>
-								<option>GERENTE_TI</option>
-								<option>GERENTE_PROJETOS</option>
-								<option>GERENTE_SEGURANÇA_DA_INFORMAÇÃO</option>
-								<option>GERENTE_PRODUTOS_SOFTWARE</option>
-								<option>GERENTE_DE_NEGOCIOS</option>
-								<option>GERENTE_DE_SISTEMAS</option>
-								<option>GERENTE_DE_SUPORTE</option>
-								<option>GERENTE_TELEPROCESSAMENTO</option>
-								<option>GERENTE_DE_INFRAESTRUTURA</option>
-						    </datalist>
+					<div class="form-group2">
+							<select class="form-select" aria-label="Default select example">
+							<div th:each="cargo : ${cargo}">
+  <option><span th:text="${cargo.nome}"></span></option>
+</div>
+</select>
+							
+
+							
+							
+						
+									<a href="/cargos"><span>Não encontrou seu cargo? Clique aqui</span></a>
 							<button type="submit" class="btn btn-primary">Cadastrar Gerente  &nbsp;&nbsp;<i class="fas fa-user-plus"></i></button>
 						</div>
 					</div>

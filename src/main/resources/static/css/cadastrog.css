@@ -32,10 +32,12 @@ p, li{
     padding: 5px;
 }
 .btn-primary{
-    margin-top: 25px; 
+   position: absolute;
+    margin-top: 35px; 
     border-radius: 12px;
-   background-color:#000440;
+    background-color:#000440;
     border: none;
+    left: 48%;
     
 }
 .form-group2{
