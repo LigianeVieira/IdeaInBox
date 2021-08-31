@@ -103,6 +103,13 @@ public class SugestaoController {
 		}
 		return "redirect:/timeline";
 	}
+	@GetMapping("/sugestoes")
+	public ModelAndView listaSugestao() {
+		ModelAndView mv = new ModelAndView("listSugestoes");
+		Iterable<Sugestao> sugestoes = sr.findAll();
+		mv.addObject("sugestoes", sugestoes);
+		return mv;
+	}
 	
 	
 
