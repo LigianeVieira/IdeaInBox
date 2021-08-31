@@ -16,23 +16,28 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.Target;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.sugestoes.Sugestao;
 @Entity
 public class Colaborador extends Usuario{
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity=Sugestao.class)
 	protected List <Sugestao> sugestoes;
 	
+
 	@ManyToMany(cascade=CascadeType.PERSIST)
     @JoinTable(name="COLABORADOR_SUGESTOES_AVALIADAS", joinColumns={@JoinColumn(referencedColumnName="ID")}
                                         , inverseJoinColumns={@JoinColumn(referencedColumnName="ID")}) 
 	protected List <Sugestao> sugestoesAvaliadas;
+
 	
 	public Colaborador(Integer id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {
-		super(id, nome, CPF, cargo, login, senha, email);
+		super(id, nome, CPF,  cargo, login, senha, email);
+		
+		
 		setId(id);
 		setNome(nome);
 		setCpf(CPF);
-		setCargo(cargo);
+	    setCargo(cargo);
 		setLogin(login);
 		setSenha(senha);
 		setEmail(email); 

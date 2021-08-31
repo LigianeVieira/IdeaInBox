@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.IdeaBox.exceptions.ServiceExce;
+import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.sugestoes.Sugestao;
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;
 import com.IdeaBox.models.usuarios.Gerente;
+import com.IdeaBox.repository.CargoRepository;
 import com.IdeaBox.repository.ColaboradorRepository;
 import com.IdeaBox.repository.SugestaoRepository;
 import com.IdeaBox.service.ServiceUsuario;
@@ -35,6 +37,9 @@ public class UsuarioController {
 
 	@Autowired
 	private ServiceUsuario su;
+	
+	@Autowired
+	private CargoRepository crg;
 
 	@GetMapping("/timeline")
 	public ModelAndView listaSugestao(HttpSession session) {
@@ -126,7 +131,9 @@ public class UsuarioController {
 		else if (session.getAttribute("AdmLogado") != null) {
 			Administrador administrador = (Administrador) session.getAttribute("AdmLogado");
 			ModelAndView mv = new ModelAndView("colaborador/profileadm");
+			Cargo cargo = administrador.getCargo();
 			mv.addObject("administrador", administrador);
+			mv.addObject("cargo",  cargo);
 			Iterable<Sugestao> sugestoes = sr.findAllInAnaliseG(); 
 			mv.addObject("sugestoes", sugestoes);
 			return mv;
@@ -148,6 +155,8 @@ public class UsuarioController {
 	@GetMapping("/cadastrarColaborador")
 	public ModelAndView form(HttpSession session) {
 		ModelAndView mv = new ModelAndView("colaborador/formColaborador");
+		Iterable<Cargo>cargos = crg.findAll();
+		mv.addObject("cargo", cargos);
 		if (session.getAttribute("AdmLogado") != null || session.getAttribute("gerenteLogado") != null) {
 			return mv;
 		} else {
@@ -164,6 +173,8 @@ public class UsuarioController {
 	@GetMapping("/cadastrarGerente")
 	public ModelAndView formGerente(HttpSession session) {
 		ModelAndView mv = new ModelAndView("colaborador/formGerente");
+		Iterable<Cargo>cargos = crg.findAll();
+		mv.addObject("cargo", cargos);
 		if (session.getAttribute("AdmLogado") != null) {
 			return mv;
 		} else {
@@ -182,4 +193,13 @@ public class UsuarioController {
 		ModelAndView mv = new ModelAndView("cargos");
 		return mv;
 	}
+
+	
+	@PostMapping("/cargos")
+	public String formCargos(Cargo cargo) {
+		su.salvarCargos(cargo);
+		return "redirect:/cargos";
+		
+	}
+
 }

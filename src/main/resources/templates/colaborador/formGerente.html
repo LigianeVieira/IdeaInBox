@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <title>Registrar Colaborador</title>
 
 <!--Fonte-->
@@ -21,6 +21,7 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="css/barra_navegacao.css">
 <link rel="stylesheet" href="css/cadastrog.css">
   <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/b77074ccd5.js" crossorigin="anonymous"></script>
@@ -55,7 +56,7 @@
                     <a class="nav-item nav-link" id="services-menu" href="/cadastrarGerente">Cadastrar Gerente</a>
                     <a class="nav-item nav-link" id="team-menu" href="http://localhost:8080/timeline">Timeline</a>
                     <a class="nav-item nav-link" id="contact-menu" href="/profile">Perfil</a>
-                     <a class="nav-item nav-link" id="contact-menu" href="/logout">Sair</a>
+                     <a class="nav-item nav-link" id="exit-menu" href="/logout">Sair</a>
 					</div>
 				</div>
 			</nav>
@@ -69,60 +70,48 @@
 					<div class="col-sm">
 						<h2>Cadastrar Gerente</h2>
 						<div class="form-group">
-							<label for="nome">Nome</label> <input type="text"
-								class="form-control" value="" name="nome" placeholder="Nome">
-							<small id="nomeHelp" class="form-text text-muted">Nome
+							<label for="nome">Nome</label>
+							<input type="text" id="nome" class="form-control" value="" name="nome" placeholder="Nome" required>
+							<small  class="form-text text-muted">Nome
 								completo do Gerente</small>
 						</div>
 						<div class="form-group">
-							<label for="cpf">CPF</label> <input type="text"
-								class="form-control" value="" name="cpf"
-								placeholder="12345678910"> <small id="cpfHelp"
-								class="form-text text-muted">Numérico como no
-								exemplo</small>
+							<label for="cpf">CPF</label>
+							<input type="text" id="cpf" class="form-control" value="" name="cpf" placeholder="12345678910" required>
+							<small class="form-text text-muted">Numérico como no exemplo</small>
 						</div>
 						<div class="form-group">
-							<label for="login">Login</label> <input type="text"
-								class="form-control" value="" name="login" placeholder="Login">
-							<small id="loginHelp" class="form-text text-muted">Login
-								que o usuario acessara o sistema</small>
+							<label for="login">Login</label>
+							<input type="text" id="login" class="form-control" value="" name="login" placeholder="Login" required>
+							<small class="form-text text-muted">Login que o usuario acessara o sistema</small>
 						</div>
 						<div class="form-group">
-							<label for="senha">Senha</label> <input type="password"
-								class="form-control" value="" name="senha" placeholder="Senha">
-							<small id="loginHelp" class="form-text text-muted">Senha
-								para acessar o sistema</small>
+							<label for="senha">Senha</label>
+							<input type="password" id="senha" class="form-control" value="" name="senha" placeholder="Senha" required>
+							<small  class="form-text text-muted">Senha para acessar o sistema</small>
 						</div>
 
 					</div>
 					<!--FORMULARIO DIREITO-->
 					<div class="col-sm">
 						<div class="form-group2">
-							<label for="exampleInputEmail1">Email</label> <input type="email"
-								class="form-control" value="" name="email"
-								placeholder="Email do colaborador"> <small
-								id="emailHelp" class="form-text text-muted">Nunca vamos
-								compartilhar seu email, com ninguém.</small>
+							<label for="email">Email</label>
+							<input type="email" id="email" class="form-control" value="" name="email" placeholder="Email do colaborador" required> 
+							<small class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
 						</div>
-					 <div class="form-group2">
-							<label for="exampleDataList" class="form-label">Selecione o cargo
-								</label> <input class="form-control" list="datalistOptions"
-								id="cargo" name="cargo" placeholder="Pesquisar por cargo">
-							<datalist id="datalistOptions">
-								<option>GERENTE</option>
-								<option>GERENTE_FINANCEIRO</option>
-								<option>GERENTE_TI</option>
-								<option>GERENTE_PROJETOS</option>
-								<option>GERENTE_SEGURANÇA_DA_INFORMAÇÃO</option>
-								<option>GERENTE_PRODUTOS_SOFTWARE</option>
-								<option>GERENTE_DE_NEGOCIOS</option>
-								<option>GERENTE_DE_SISTEMAS</option>
-								<option>GERENTE_DE_SUPORTE</option>
-								<option>GERENTE_TELEPROCESSAMENTO</option>
-								<option>GERENTE_DE_INFRAESTRUTURA</option>
-								</datalist>
-								<button type="submit" class="btn btn-primary">Cadastrar
-									Gerente  &nbsp&nbsp<i class="fas fa-user-plus"></i></button>
+					<div class="form-group2">
+							<select class="form-select" aria-label="Default select example">
+							<div th:each="cargo : ${cargo}">
+  <option><span th:text="${cargo.nome}"></span></option>
+</div>
+</select>
+							
+
+							
+							
+						
+									<a href="/cargos"><span>Não encontrou seu cargo? Clique aqui</span></a>
+							<button type="submit" class="btn btn-primary">Cadastrar Gerente  &nbsp;&nbsp;<i class="fas fa-user-plus"></i></button>
 						</div>
 					</div>
 				</div>

@@ -19,7 +19,8 @@ p, li{
 }
 
 
-/*Barra de navegação*/
+
+/*Barra de navegaï¿½ï¿½o*/
 header, .navbar{
     background-color:#F3CA06;
     
@@ -54,6 +55,7 @@ header, .navbar{
 
 
 
+
 .form-1 .form-control{
     width: 400px;
 }
@@ -63,9 +65,6 @@ header, .navbar{
 .form-1 label{
     padding: 5px;
 }
-
-
-
 .card{
     
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);

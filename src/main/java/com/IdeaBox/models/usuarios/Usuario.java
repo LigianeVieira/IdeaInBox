@@ -14,9 +14,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 
+import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.sugestoes.Sugestao;
 
 
@@ -32,20 +35,29 @@ public abstract class Usuario implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private long id;
-	@Column(length = 25, nullable = false, unique = false)
+	
+
+	@Column(length = 45, nullable = false, unique = false)
 	private String nome;
+	
 	@Column(length = 11, nullable = false, unique = true)
 	private String cpf;
-	
-	@Enumerated(EnumType.STRING)
+	 
+	@ManyToOne
+	@JoinColumn(name = "cargo_id")
 	private Cargo cargo;
+    
+
 	@Column(length = 25, nullable = false, unique = true)
 	private String login;
+	
 	@Column(nullable = false, unique = false)
 	private String senha;
+	
 	@Email
 	@Column(nullable = false, unique = false)
 	private String email;
+	
 	@Enumerated(EnumType.STRING)
 	private StatusColaborador status;
 	
@@ -94,13 +106,13 @@ public abstract class Usuario implements Serializable {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+		
 	public Cargo getCargo() {
 		return cargo;
 	}
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
-	
 	public String getLogin() {
 		return login;
 	}

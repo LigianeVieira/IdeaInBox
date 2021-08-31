@@ -18,7 +18,8 @@ p, li{
     font-size: 14px;
 }
 
-/*Barra de navegação*/
+
+/*Barra de navegaï¿½ï¿½o*/
 header, .navbar{
     background-color:#F3CA06;
     
@@ -52,6 +53,9 @@ header, .navbar{
 
     
       /* questionario*/ 
+
+/* questionario*/ 
+
 .form-1{
     margin-top: 140px;
     margin-right: 90px;
@@ -66,10 +70,12 @@ header, .navbar{
     padding: 5px;
 }
 .btn-primary{
-    margin-top: 25px; 
+	position: absolute;
+    margin-top: 35px; 
     border-radius: 12px;
     background-color:#000440;
     border: none;
+    left: 48%;
     
 }
 .form-group2{
@@ -79,9 +85,6 @@ margin-top: 45px;
     
    background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
-
-
-
 
 .form-control#SelectForm{
 	 text-transform: lowercase;

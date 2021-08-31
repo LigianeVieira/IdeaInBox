@@ -3,6 +3,7 @@
 body{
     
     font-family: 'Roboto', sans-serif;
+
     background: url("../img/equipe3-removebg-preview.png") no-repeat 55%  320px;
     
      
@@ -47,6 +48,19 @@ header, .navbar{
     margin-left: 40%;
     
     
+
+    background: url("../img/equipe3-removebg-preview.png") no-repeat 50%  450px;
+    background-attachment: scroll;
+    position: relative;
+        
+} 
+
+/* questionario*/ 
+.form-1{
+    margin-top: 300px;
+    margin-left: 40%;
+     
+
 }
 legend{
     color: #000440;
