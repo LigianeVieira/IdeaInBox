@@ -155,7 +155,7 @@ public class UsuarioController {
 	@GetMapping("/cadastrarColaborador")
 	public ModelAndView form(HttpSession session) {
 		ModelAndView mv = new ModelAndView("colaborador/formColaborador");
-		Iterable<Cargo>cargos = crg.findAll();
+		Iterable<Cargo>cargos = crg.findAllexceptGerente();
 		mv.addObject("cargo", cargos);
 		if (session.getAttribute("AdmLogado") != null || session.getAttribute("gerenteLogado") != null) {
 			return mv;
@@ -173,7 +173,7 @@ public class UsuarioController {
 	@GetMapping("/cadastrarGerente")
 	public ModelAndView formGerente(HttpSession session) {
 		ModelAndView mv = new ModelAndView("colaborador/formGerente");
-		Iterable<Cargo>cargos = crg.findAll();
+		Iterable<Cargo>cargos = crg.findAllexceptAdm();
 		mv.addObject("cargo", cargos);
 		if (session.getAttribute("AdmLogado") != null) {
 			return mv;

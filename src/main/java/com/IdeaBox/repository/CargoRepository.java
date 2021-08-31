@@ -10,4 +10,9 @@ public interface CargoRepository extends CrudRepository<Cargo, String>{
 	@Query(value = "select nome from Cargo where nome=?", nativeQuery = true)
 	Cargo findNome(String nome);
 	
+	@Query(value = "select * from Cargo where nome <> 'Administrador'", nativeQuery = true)
+	Iterable<Cargo> findAllexceptAdm();
+	
+	@Query(value = "select * from Cargo where nome <> 'Administrador' and nome <> 'Gerente' ", nativeQuery = true)
+	Iterable<Cargo> findAllexceptGerente();
 }
