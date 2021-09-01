@@ -6,9 +6,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.kotlin.CoroutineCrudRepository;
-import org.springframework.data.repository.query.Param;
-
 import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.usuarios.Administrador;
 import com.IdeaBox.models.usuarios.Colaborador;

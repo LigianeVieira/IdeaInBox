@@ -2,62 +2,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #F5F5F5;
+    background-image: url(../img/fundoazul.jpg);
+    background-size: 65%;
+    background-repeat: repeat;
     color: aliceblue;
+    width: 70%;
+   
+
 }
 .row{
     margin: 0;
 }
 
 .container{
-    margin-top: 10%;
+    margin-top: 15%;
+    
 }
 
 p, li{
     color: #444;
     font-size: 14px;
 }
-
-
-
-/*Barra de navega��o*/
-header, .navbar{
-    background-color:#F3CA06;
-    
-    }
-    #nav-container{
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-    
-    #logo{
-         width: 160px;
-    }
-    
-    .navbar-brand{
-    padding: 0;
-    color: white;
-    }
-    
-    .navbar-brand:hover{
-        color: white;
-    }
-    
-    #navbar-links a{
-        color: white;
-          font-weight: bolder;
-    }
-    .navbar-expand-lg .navbar-nav .nav-link{
-        padding: 1rem .8rem;
-    }
-
-
-
-
-
-
 .form-1 .form-control{
-    width: 400px;
+    width: 100%;
 }
 .form-1 h2{
     color:#ffae00;
@@ -69,7 +36,7 @@ header, .navbar{
     
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     background-color: #F3CA06;
-    padding: 20px;
+    padding:10% ;
     border-radius: 25px;
     padding-bottom: 15%;
 }

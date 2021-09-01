@@ -1,7 +1,8 @@
 /*Barra de navegacao*/
 header, .navbar{
     background-color:#F3CA06;
-    
+    position: -webkit-sticky
+    position-webkit-sticky;
 }
 #nav-container{
     padding-top: 0;
