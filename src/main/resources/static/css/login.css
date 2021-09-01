@@ -3,10 +3,10 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-image: url(../img/fundoazul.jpg);
-    background-size: 65%;
+    background-size: 50%;
     background-repeat: repeat;
-    color: aliceblue;
-    width: 70%;
+    width: 50%;
+    heidth: 50%;
    
 
 }
@@ -16,6 +16,7 @@ body{
 
 .container{
     margin-top: 15%;
+    margin-left:25%;
     
 }
 
@@ -25,6 +26,7 @@ p, li{
 }
 .form-1 .form-control{
     width: 100%;
+    
 }
 .form-1 h2{
     color:#ffae00;
@@ -36,7 +38,7 @@ p, li{
     
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     background-color: #F3CA06;
-    padding:10% ;
+    padding:5%;
     border-radius: 25px;
     padding-bottom: 15%;
 }
@@ -80,14 +82,4 @@ p, li{
     background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
 
-.bg_video{
-	position: fixed; 
-	right: 0; 
-	bottom: -10%;
-	min-width: 100%; 
-	min-height: 90%;
-	width: auto; 
-	height: auto; 
-	z-index: -1000;
-	background-size: cover; 
-}
+
