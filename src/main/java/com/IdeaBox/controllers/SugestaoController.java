@@ -67,7 +67,11 @@ public class SugestaoController {
 	@RequestMapping("/aprovarSugestao")
 	public String aprovarSugestao(long Id) {
 		Sugestao sugestao = sr.findById(Id);
-		sugestao.setStatus(Status_Sugestao.APROVADO_PELO_RH);
+		if(sugestao.getStatus() == Status_Sugestao.EM_ANALISE_RH) {
+		sugestao.setStatus(Status_Sugestao.APROVADO_PELO_RH);}
+		if(sugestao.getStatus() == Status_Sugestao.APROVADO_PELO_RH) {
+			sugestao.setStatus(Status_Sugestao.APROVADO_GERENCIA);
+		}
 		sr.save(sugestao);
 		return "redirect:/profile";
 	}

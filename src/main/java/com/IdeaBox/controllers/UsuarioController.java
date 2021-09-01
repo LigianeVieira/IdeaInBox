@@ -134,8 +134,8 @@ public class UsuarioController {
 			Cargo cargo = administrador.getCargo();
 			mv.addObject("administrador", administrador);
 			mv.addObject("cargo",  cargo);
-			Iterable<Sugestao> sugestoes = sr.findAllInAnaliseG(); 
-			mv.addObject("sugestoes", sugestoes);
+			Iterable<Sugestao> topSugestoes = sr.findTop();
+			mv.addObject("sugestoes", topSugestoes);
 			return mv;
 		} else if (session.getAttribute("gerenteLogado") != null) {
 			Gerente gerente = (Gerente) session.getAttribute("gerenteLogado");
@@ -145,7 +145,6 @@ public class UsuarioController {
 			mv.addObject("sugestoes", sugestoes);
 			Iterable<Sugestao> todas = sr.findByColaborador(gerente);
 			mv.addObject("sugestoesGerente", todas);
-			
 			return mv;
 		} else {
 			return loginGet();
