@@ -42,7 +42,7 @@ public class UsuarioController {
 	private CargoRepository crg;
 
 	@GetMapping("/timeline")
-	public ModelAndView listaSugestao(HttpSession session) {
+	public ModelAndView feed(HttpSession session) {
 		if (session.getAttribute("colaboradorLogado") != null || session.getAttribute("gerenteLogado") != null) {
 			ModelAndView mv = new ModelAndView("feed");
 			Iterable<Sugestao> sugestoes = sr.findAllByStatus();
@@ -200,6 +200,19 @@ public class UsuarioController {
 		su.salvarCargos(cargo);
 		return "redirect:/cargos";
 		
+	}
+	
+
+@GetMapping("/sugestoes")
+	public ModelAndView listaSugestao(HttpSession session) {
+	if(session.getAttribute("AdmLogado") != null) {
+		ModelAndView mv = new ModelAndView("listSugestoes");
+		Iterable<Sugestao> sugestoes = sr.findAll();
+		mv.addObject("sugestoes", sugestoes);
+		return mv;}
+	else {
+		return loginGet();
+	}
 	}
 
 }
