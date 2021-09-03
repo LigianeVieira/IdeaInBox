@@ -69,12 +69,24 @@ public class SugestaoController {
 		Sugestao sugestao = sr.findById(Id);
 		if(sugestao.getStatus() == Status_Sugestao.EM_ANALISE_RH) {
 		sugestao.setStatus(Status_Sugestao.APROVADO_PELO_RH);}
-		if(sugestao.getStatus() == Status_Sugestao.APROVADO_PELO_RH) {
+		else {
 			sugestao.setStatus(Status_Sugestao.APROVADO_GERENCIA);
 		}
+		
 		sr.save(sugestao);
 		return "redirect:/profile";
 	}
+	
+	@RequestMapping("/reprovarSugestao")
+	public String reprovarSugestao(long Id) {
+		Sugestao sugestao = sr.findById(Id);
+		if(sugestao.getStatus() == Status_Sugestao.EM_ANALISE_RH) {
+		sugestao.setStatus(Status_Sugestao.REPROVADO_PELO_RH);}
+		
+		sr.save(sugestao);
+		return "redirect:/profile";
+	}
+	
 	
 	@PostMapping("/avaliar")
 	public String avaliarSugestao(@RequestParam(required = true) long id, ClassificacaoRequest classificacao, HttpSession session) {

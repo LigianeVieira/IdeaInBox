@@ -145,7 +145,10 @@
                                             <a
                                                     th:href="${(#mvc.url('SC#aprovarSugestao').arg(0, sugestao.id)).build()}"><i
                                                         class="fas fa-check"></i></a>
-                                            
+                                                        
+                                             <a
+                                                    th:href="${(#mvc.url('SC#reprovarSugestao').arg(0, sugestao.id)).build()}"><i
+                                                        class="fas fa-times"></i></a>
                                             <button type="button" class="btn1" data-bs-toggle="modal" th:attr="data-bs-target='#exampleModal' +*{sugestao.id}"><i class="far fa-edit"></i>
 </button>
 <div class="modal fade" th:id="*{'exampleModal' + {sugestao.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

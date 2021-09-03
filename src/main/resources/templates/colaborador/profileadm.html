@@ -104,7 +104,7 @@
                                <tr th:each="sugestao : ${sugestoes}">
                                <td><span th:text="${sugestao.texto}"></span><a th:href="${(#mvc.url('SC#aprovarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-check"></i></a>
 
-                                <a th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-trash-alt"></i></a>
+                             
                                 </tr>
                             </tbody>
                          </table>

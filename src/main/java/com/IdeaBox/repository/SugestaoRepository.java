@@ -14,7 +14,7 @@ public interface SugestaoRepository extends CrudRepository<Sugestao, String>{
 	
 	Iterable<Sugestao> findByColaborador(Colaborador colaborador);
 	
-	@Query(value = "SELECT * FROM sugestao WHERE status != 'EM_ANALISE_RH'", nativeQuery = true)
+	@Query(value = "SELECT * FROM sugestao WHERE status != 'EM_ANALISE_RH' and status <>'REPROVADO_PELO_RH' ", nativeQuery = true)
 	Iterable<Sugestao> findAllByStatus();
 
 	@Query(value = "SELECT * FROM sugestao WHERE status = 'EM_ANALISE_RH'", nativeQuery = true)
