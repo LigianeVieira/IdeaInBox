@@ -109,8 +109,9 @@ public class SugestaoController {
 	}
 	
  @PostMapping("/editar")
- public String editarSugestao(long id) {
+ public String editarSugestao(@RequestParam long id, @RequestParam("texto") String texto) {
 		Sugestao sugestao = sr.findById(id);
+		sugestao.setTexto(texto);
 		sr.save(sugestao);
 			return "redirect:/profile";
 		}
