@@ -152,12 +152,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="post" action="/editar">
+        <form method="post" action=th:action="${(#mvc.url('SC#editarSugestao').arg(0, sugestao.id)).build()}">
         <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Nova sugestão</label>
     <input type="texto" class="form-control" id="texto" name="texto">
   </div>
-      </div>
+     
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
        <button type="submit" class="btn btn-secondary">Aceitar</button>
