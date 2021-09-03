@@ -1,11 +1,8 @@
 /* Gerais */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 body{
-    
-    font-family: 'Roboto', sans-serif;
 
-    background: url("../img/equipe3-removebg-preview.png") no-repeat 55%  320px;
-    
+    font-family: 'Roboto', sans-serif;    
      
        
 } 
@@ -41,23 +38,10 @@ header, .navbar{
     }
     
 
-    
-      /* questionario*/ 
-.form-1{
-    margin-top: 200px;
-    margin-left: 40%;
-    
-    
-
-    background: url("../img/equipe3-removebg-preview.png") no-repeat 50%  450px;
-    background-attachment: scroll;
-    position: relative;
-        
-} 
 
 /* questionario*/ 
 .form-1{
-    margin-top: 300px;
+    margin-top: 20%;
     margin-left: 40%;
      
 
@@ -84,4 +68,8 @@ label{
 
 .form-control#SelectForm{
 	 text-transform: lowercase;
+}
+
+.img{
+	
 }
