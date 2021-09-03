@@ -79,19 +79,43 @@
                             </div>
                      </div>
                 </div>  
-                      <div class="Sugestoes">
-                    <p>
-                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Suas sugestões &nbsp; <i class="fas fa-lightbulb"></i>
-                        </a>
-                    </p>
-                    <div class="collapse" id="collapseExample">
-                      <div class="card card-body w-100">
-                        <table class="table">
-                            <tbody>
-                              <tr th:each="sugestao : ${sugestoes}">
-                                <td><span th:text="${sugestao.texto}"></span><a th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-trash-alt"></i></a>
-
+                       <div class="Sugestoes">
+                        <p><a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                Suas Sugestões &nbsp; <i class="fas fa-lightbulb"></i></a></p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body w-100">
+                                <table class="table">
+                                    <tbody>
+                                        <tr th:each="sugestao : ${sugestoes}">
+                                            <td><span th:text="${sugestao.texto}"></span>
+                                            <button type="button" class="btn1" data-bs-toggle="modal" th:attr="data-bs-target='#exampleModal' +*{sugestao.id}"><i class="far fa-edit"></i>
+</button>
+<div class="modal fade" th:id="*{'exampleModal' + {sugestao.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Sugestão</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/editar">
+        <div class="mb-3">
+        <label for="id">Id</label>
+       <input type="text" th:value="*{sugestao.id}" class="form-control" name="id" >
+    <label for="exampleInputPassword1" class="form-label">Nova sugestão</label>
+    <input type="texto" class="form-control" id="texto" name="texto">
+  </div>
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+       <button type="submit" class="btn btn-outline-success">Aceitar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+								
                                 </td>
                               </tr>
                               </tbody>
