@@ -67,21 +67,12 @@ header, .navbar{
 .profile h4{
     margin-top: 3%;
 }
-.fa-edit{
-position: absolute;
-left: 95%;
-color: #000440;
-	
-}
+
 .table tr{
 word-wrap: break-word
 }
 
-.fa-check{
-position: absolute;
-left: 90%;
-color: #000440;
-}
+
 .btn-primary a{
 	text-decoration: none;
     color: white;
@@ -106,7 +97,27 @@ color: #000440;
 }
  .btn1{
 position: absolute;
-left: 95%;
+left: 86%;
 background-color: transparent;
 border: none;
  }
+ 
+ .fa-times{
+ position: absolute;
+left: 96%;
+color: #000440;
+ 
+ }
+ 
+ .fa-check{
+position: absolute;
+left: 92%;
+color: #000440;
+}
+
+.fa-edit{
+position: absolute;
+left: 92%;
+color: #000440;
+	
+}
