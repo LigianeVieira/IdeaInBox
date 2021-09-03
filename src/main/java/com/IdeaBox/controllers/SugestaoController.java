@@ -108,6 +108,12 @@ public class SugestaoController {
 		return "redirect:/timeline";
 	}
 	
+ @PostMapping("/editar")
+ public String editarSugestao(long id) {
+		Sugestao sugestao = sr.findById(id);
+		sr.save(sugestao);
+			return "redirect:/profile";
+		}
 
 
 

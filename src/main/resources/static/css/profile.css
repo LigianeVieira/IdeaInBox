@@ -67,7 +67,7 @@ header, .navbar{
 .profile h4{
     margin-top: 3%;
 }
-.fa-trash-alt{
+.fa-edit{
 position: absolute;
 left: 95%;
 color: #000440;
@@ -104,4 +104,9 @@ color: #000440;
     position: relative;
     right: 20%;
 }
- 
+ .btn1{
+position: absolute;
+left: 95%;
+background-color: transparent;
+border: none;
+ }
