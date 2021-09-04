@@ -5,18 +5,19 @@ body{
     background-image: url(../img/fundoazul.jpg);
     background-size: 50%;
     background-repeat: repeat;
-    width: 50%;
-    heidth: 50%;
    
-
 }
+
 .row{
     margin: 0;
+    width: 90%;
+
 }
 
 .container{
-    margin-top: 15%;
-    margin-left:25%;
+    margin-top: 105px;
+    margin-left: 60px;
+    z-index: 1;
     
 }
 
@@ -25,7 +26,9 @@ p, li{
     font-size: 14px;
 }
 .form-1 .form-control{
-    width: 100%;
+     display: block;
+     width:100%;
+     
     
 }
 .form-1 h2{
@@ -55,7 +58,15 @@ p, li{
 }
 .card-group{
     margin-bottom: 10px;
+    
 }
+.lnr-eye {
+    position: absolute;
+    bottom: 245px;
+    right: 40px;
+    cursor: pointer;
+    width:20px;
+    }
 .imglogin{
     
     width: 200px;
@@ -81,5 +92,6 @@ p, li{
 .btn-primary:hover{
     background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
+
 
 

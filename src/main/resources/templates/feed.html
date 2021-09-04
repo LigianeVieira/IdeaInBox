@@ -55,12 +55,14 @@
 		</div>
 	</header>
 	<form method="post">
+	<h1> Faça sua sugestão e avalie as sugestões que você mais gostar!</h1>
+	
 		<div class="container">
 			<div class="mb-3">
 				<label for="texto" class="form-label"></label>
 				<div class="mb-3">
 					<textarea class="form-control" id="texto" name="texto" rows="3"
-						placeholder="Digite sua sugestão"></textarea>
+						placeholder="Digite sua sugestão" maxlength="200" ></textarea>
 				</div>
 
 				<select class="form-select" aria-label="Default select example" name="categoria">
@@ -80,7 +82,7 @@
 
 	<!-- Area de sugestoes -->
 	<div class="container">
-		<div th:each="sugestao : ${sugestoes}">
+			<div th:each="sugestao : ${sugestoes}">
 			<ul class="list-group">
 				<li class="list-group-item"><span th:text="${sugestao.texto}"></span><span class="data"
 						th:text="${sugestao.dataEnvio}"></span>

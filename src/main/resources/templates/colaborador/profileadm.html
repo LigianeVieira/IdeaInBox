@@ -19,7 +19,7 @@
         rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="css/barra_navegacao.css">
+    <link rel="stylesheet" href="../css/barra_navegacao.css">
     <link rel="stylesheet" href="css/profile.css">
     
     <script
@@ -110,16 +110,21 @@
                          </table>
                       </div>
                     </div> 
-                </div>       
-               <a href="/cadastrarColaborador"><button class="btn btn-primary">Cadastrar Colaborador  &nbsp;&nbsp;<i class="fas fa-user-plus"></i></button> </a>
-			   <a href="/cadastrarGerente"><button class="btn btn-primary">Cadastrar Gerente  &nbsp;&nbsp;<i class="fas fa-user-plus"></i></button></a>
-			   <a href="/colaboradores"><button class="btn btn-primary">Lista de Colaboradores  &nbsp;&nbsp;<i class="fas fa-address-card"></i></button></a>
+                </div> 
+               <div class="dropdown">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Cadastros &nbsp;&nbsp;<i class="fas fa-address-card"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                     <li><a class="dropdown-item" href="/cadastrarColaborador"> Cadastrar Colaborador &nbsp;&nbsp;</a></li>
+                    <li><a class="dropdown-item" href="/cadastrarGerente"> Cadastrar Gerente &nbsp;&nbsp;</a></li>
+                    <li><a class="dropdown-item" href="/cadastrarCargos"> Cadastrar Cargos &nbsp;&nbsp;</a></li>
+                    <li><a class="dropdown-item"  href="/atualizarCadastro"> Atualizar Cadastro &nbsp;&nbsp;</a></li>
+                     </ul>
+                     </div>                      
+                  <a href="/colaboradores"><button class="btn btn-primary">Lista de Colaboradores  &nbsp;&nbsp;<i class="fas fa-address-card"></i></button></a>
 									  
                 </div>
             </div>
-        </div>      
-     
-    </main>
+           </main>
      <!-- End conteúdo Main -->
 
 

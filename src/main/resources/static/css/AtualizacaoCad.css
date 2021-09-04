@@ -2,9 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 body{
     font-family: 'Roboto', sans-serif;
-    background: url("../img/grupotransp.png") no-repeat 80% 450px;
+    background: url(../../static/img/grupo3-removebg-preview.png) no-repeat;
+    background-position: right;
     background-color:#f9f9f9;
+    margin-left: 300px;
+ 
+    
 }
+
 .row{
     margin: 0;
 }
@@ -17,15 +22,14 @@ p, li{
     color: #DB8F02;
     font-size: 14px;
 }
-
- 
 /* questionario*/ 
 
 .form-1{
-    margin-top: 140px;
-    margin-right: 90px;
+    margin-top: 70px;
+    margin-right: 150px;
+    z-index: 1;
 }
-.form-1 .form-control{
+.form-1 ,.form-control,.form-select{
     width: 400px;
 }
 .form-1 h2{
@@ -40,20 +44,15 @@ p, li{
     border-radius: 12px;
     background-color:#000440;
     border: none;
-    left: 48%;
-    
-}
-.form-group2{
-margin-top: 45px;
-}
+    left: 310px;
+}    
 .btn-primary:hover{
     
-   background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
+background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
-
 .form-control#SelectForm{
-	 text-transform: lowercase;
+	text-transform: lowercase;
+   
 }
-.error-email{ 
-    color: red;
- }
+.error-email{ color: red; }
+	

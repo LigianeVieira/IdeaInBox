@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-<title>Lista de colaboradores</title>
+<title>Suas Sugestões</title>
 
 <!--Fonte-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,8 +21,8 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/barra_navegacao.css">
-<link rel="stylesheet" href="css/listagem.css">
+<link rel="stylesheet" href="../../static/css/barra_navegacao.css">
+<link rel="stylesheet" href="../../static/css/listagem.css">
  <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/b77074ccd5.js" crossorigin="anonymous"></script>
 
@@ -59,28 +59,24 @@
 	<table class="table">
    <thead>
     <tr>
-     <th scope="col">Nº</th>
-      <th scope="col">Colaborador</th>
-      <th scope="col">Sugestao</th>
       <th scope="col">Status</th>
-      <th scope="col">Classificação</th>
-      <th scope="col"> </th>
-    </tr>
+      <th scope="col">Mês</th>
+      <th scope="col">Sua sugestão</th>
+     </tr>
   </thead>
   <tbody>
-    <tr th:each="sugestao : ${sugestoes}" >
-    	<td><span th:text="${sugestao.id}"></span></td>
-    	    	<td><span th:text="${sugestao.colaborador.nome}"></span></td>
-      <td><span th:text="${sugestao.texto}"></span></td>
-            <td><span th:text="${sugestao.status}"></span></td>
-             <td><span th:text="${sugestao.classificacao}"></span></td>
-      
+    <tr th:each=" >
+      <td><span th:text="${}"></span></td>
+      <td><span th:text="${}"></span></td>
+      <td><span th:text="${}"></span></td>
+      <td><a th:href="${}">
       </tr>
   </tbody>
 </table>
-	</div>
+</div>
 
 
 <script src="js/scripts.js"></script> 
 
 </body>
+</html>
