@@ -92,24 +92,8 @@
                      </div>
                 </div>  
                 <div class="Sugestoes">
-                    <p>
-                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Melhores sugestões &nbsp; <i class="fas fa-lightbulb"></i>
-                        </a>
+                    <p><a href="../sugestaoadmanalisar.html"><button class="btn btn-primary">Melhores sugestões para analise  &nbsp;&nbsp;<i class="fas fa-lightbulb"></i></button></a>
                     </p>
-                    <div class="collapse" id="collapseExample">
-                      <div class="card card-body w-100">
-                         <table class="table">
-                            <tbody>
-                               <tr th:each="sugestao : ${sugestoes}">
-                               <td><span th:text="${sugestao.texto}"></span><a th:href="${(#mvc.url('SC#aprovarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-check"></i></a>
-
-                                <a th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-trash-alt"></i></a>
-                                </tr>
-                            </tbody>
-                         </table>
-                      </div>
-                    </div> 
                 </div> 
                <div class="dropdown">
                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Cadastros &nbsp;&nbsp;<i class="fas fa-address-card"></i></a>
