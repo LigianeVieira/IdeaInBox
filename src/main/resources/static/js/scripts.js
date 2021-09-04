@@ -2,8 +2,26 @@
 
  document.getElementById("ano").innerHTML = new Date().getFullYear();
 
+function recuperarSenha(){
+  var senha= formuser.senha.value;
+  var senha_repet= formuser.rep_senha.value;
 
-
+  if(senha ==""|| length!=8){
+    alert("Preencha o campo senha com no mínimo 8 caracteres");
+    formuser.senha.focus();
+    return false;
+  }
+  if(senha_repet ==""|| length!=8){
+    alert("Preencha o campo senha com no mínimo 8 caracteres");
+    formuser.rep_senha.focus();
+    return false;
+  }
+  if(senha!=senha_repet){
+    alert("As senhas são diferentes")
+    form1.senha.focus();
+    return false;
+  }
+}
 
 //senha eye testar
 var input = document.querySelector("#password");
