@@ -142,6 +142,9 @@
                                     <tbody>
                                         <tr th:each="sugestao : ${sugestoes}">
                                             <td><span th:text="${sugestao.texto}"></span>
+                                                 <button type="button" class="btn2" data-bs-toggle="modal" data-bs-target="exampleModal"><i class="far fa-envelope"></i></button>
+														
+                                            
                                             <a
                                                     th:href="${(#mvc.url('SC#aprovarSugestao').arg(0, sugestao.id)).build()}"><i
                                                         class="fas fa-check"></i></a>
@@ -192,7 +195,6 @@
                 </div>
             </div>
         </div>
-
 
 
     </main>

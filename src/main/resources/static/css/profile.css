@@ -101,6 +101,12 @@ left: 86%;
 background-color: transparent;
 border: none;
  }
+ .btn2{
+ position: absolute;
+left: 81.5%;
+background-color: transparent;
+border: none;
+ }
  
  .fa-times{
  position: absolute;
@@ -120,4 +126,11 @@ position: absolute;
 left: 92%;
 color: #000440;
 	
+}
+
+.fa-envelope{
+	position: absolute;
+left: 83%;
+color: #000440;
+font-size: 14pt;
 }
