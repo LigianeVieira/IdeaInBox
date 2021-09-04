@@ -84,45 +84,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="Sugestoes">
-                        <p><a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                                aria-expanded="false" aria-controls="collapseExample">
-                                Suas Sugestões &nbsp; <i class="fas fa-lightbulb"></i></a></p>
-                        <div class="collapse" id="collapseExample">
-                            <div class="card card-body w-100">
-                                <table class="table">
-                                    <tbody>
-                                        <tr th:each="sugestao : ${sugestoesGerente}">
-                                            <td><span th:text="${sugestao.texto}"></span><a
-                                            th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-trash-alt"></i></a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Sugestoes">
-                        <p><a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                                aria-expanded="false" aria-controls="collapseExample">
-                                Sugestões Pendentes &nbsp; <i class="fas fa-lightbulb"></i></a></p>
-                        <div class="collapse" id="collapseExample">
-                            <div class="card card-body w-100">
-                                <table class="table">
-                                    <tbody>
-                                        <tr th:each="sugestao : ${sugestoes}">
-                                            <td><span th:text="${sugestao.texto}"></span>
-                                            <a th:href="${(#mvc.url('SC#aprovarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-check"></i></a>
-                                            <a th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                     <div class="dropdown">
-                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Cadastros &nbsp;&nbsp;<i class="fas fa-address-card"></i></a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownSugestao" data-bs-toggle="dropdown" aria-expanded="false">Sugestões &nbsp;&nbsp;<i class="fas fa-lightbulb"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownSugestao">
+                             <li><a class="dropdown-item" href="listasugestColaborador.html"> Suas Sugestões &nbsp;&nbsp;</a></li>
+                             <li><a class="dropdown-item" href="../sugestoesPendentes.html"> Sugestões Pendentes &nbsp;&nbsp;</a></li>
+                            <li><a class="dropdown-item"  href="../sugestoesmaisvotadas.html"> Sugestões mais votadas &nbsp;&nbsp;</a></li>
+                             </ul>
+                    </div>       
+                    <div class="dropdown">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownCadastro" data-bs-toggle="dropdown" aria-expanded="false">Cadastros &nbsp;&nbsp;<i class="fas fa-address-card"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownCadastro">
                      <li><a class="dropdown-item" href="/cadastrarColaborador"> Cadastrar Colaborador &nbsp;&nbsp;</a></li>
                      <li><a class="dropdown-item" href="/cadastrarCargos"> Cadastrar Cargos &nbsp;&nbsp;</a></li>
                     <li><a class="dropdown-item"  href="atualizarCadastro.html"> Atualizar Cadastro &nbsp;&nbsp;</a></li>
