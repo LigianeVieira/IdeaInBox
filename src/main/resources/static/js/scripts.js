@@ -2,7 +2,22 @@
 
  document.getElementById("ano").innerHTML = new Date().getFullYear();
 
-function recuperarSenha(){
+
+//Mostrar senha eye
+ function mostrarOcultarSenha(){
+ var senha = document.getElementById("password");
+  if(senha.type=="password"){
+    senha.type =="text";
+  }else{senha.type="pasword";
+}
+}
+
+//Validar senha
+
+function validacaoSenha(){}
+
+
+ function recuperarSenha(){
   var senha= formuser.senha.value;
   var senha_repet= formuser.rep_senha.value;
 
@@ -23,44 +38,13 @@ function recuperarSenha(){
   }
 }
 
-//senha eye testar
-var input = document.querySelector("#password");
-var img = document.querySelector('#lnr-eye');
-var visivel = false;
-img.addEventListener('mousedown', function () {
-  visivel = true;
-  input.type = 'text';
-});
-window.addEventListener('mouseup', function () {
-  if (visivel) visivel = !visivel;
-  input.type = 'password';
-});
-
-
-
-
-
-//ou senha eye testar
-
-/*let btn = document.querySelector('.lnr lnr-eye');
-
-  btn.addEventListener('click', function() {
-
-    let input = document.querySelector('.password');
-
-    if(input.getAttribute('type' == 'password')) {
-        input.setAttribute('type', 'text');
-    } else {
-        input.setAttribute('type', 'password');}
- });*/
-
  //Validações formulario
 
 //cpf erro
 
 
 
-function validacaoCpf(cpf) {
+function validacaoCpf() {
 var cpf = document.getElementById("cpf").value;
  cpf = cpf.replace(/[\s.-]*/igm, '')
    

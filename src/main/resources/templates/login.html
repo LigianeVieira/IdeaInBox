@@ -18,6 +18,7 @@
    
     <link rel="stylesheet" href="css/barra_navegacao.css">
     <link rel="stylesheet" href="css/login.css">
+    <script  src="js/scripts.js"></script>
   
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -78,22 +79,21 @@
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Senha</label>
-              <input type="password" id="password" class="form-control" value="password" th:field="*{senha}" placeholder="Digite sua senha" required>
-           <span class="lnr lnr-eye" id= "lnr-eye"></span>
-            </div>
+              <input type="password" id="password" class="form-control" value="password" th:field="*{senha}" placeholder="Digite sua senha" size="8" required>
+              <buttom type="buttom" class="lnr lnr-eye" onclick= "mostrarOcultarSenha()">
+             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
               </div>
               <a href="recuperarSenha.html" ><span>Esqueceu a senha? Clique aqui</span></a>
               <button type="submit" class="btn btn-primary">ENTRAR</button>
-              
-             </div>
+              </div>
           </form>
       </div>
      </div>
     </div>
    </main>
-<script  src="js/scripts.js"></script>
+
  </body> 
 </html>
