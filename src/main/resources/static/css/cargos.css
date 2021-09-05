@@ -30,7 +30,6 @@ label{
     border: none;
     
 }
-
 .btn-primary:hover{
     
    background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
@@ -38,4 +37,12 @@ label{
 
 .form-control#SelectForm{
 	 text-transform: lowercase;
+}
+h5{
+    font-weight: 700;
+}
+h6{
+    font-size: 18px;
+    font-weight: 500;
+    color:#000440;
 }

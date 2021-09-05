@@ -61,3 +61,11 @@ margin-top: 45px;
 .error-email{ 
     color: red;
 }
+h5{
+    font-weight: 700;
+}
+h6{
+    font-size: 18px;
+    font-weight: 500;
+    color:#000440;
+}
