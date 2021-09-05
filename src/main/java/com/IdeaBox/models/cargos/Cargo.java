@@ -71,6 +71,16 @@ public class Cargo implements Serializable {
 	}
 
 
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
