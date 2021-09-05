@@ -46,7 +46,11 @@ p, li{
 .form-group2{
 margin-top: 45px;
 }
-.btn-primary:hover{
+.btn-secondary{
+	background-color:#000440;
+}
+    
+.btn-primary:hover, .btn-secondary:hover{
     
    background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
@@ -56,4 +60,4 @@ margin-top: 45px;
 }
 .error-email{ 
     color: red;
- }
+}

@@ -105,10 +105,28 @@
 							<div th:each="cargo : ${cargo}"><option><span th:text="${cargo.nome}"></span></option>
 							</div></select>
 								<a href="/cargos"><span>Não encontrou seu cargo? Clique aqui</span></a>
-								<button type="submit" class="btn btn-primary">Cadastrar Colaborador  &nbsp;&nbsp;<i class="fas fa-user-plus"></i>
-								</button>
+
+							<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-mensagem">Cadastrar Colaborador  &nbsp;&nbsp;<i class="fas fa-user-plus"></i></button>
 						</div>
 					</div>
+					<!--Modal pop up-->
+					<div class="modal" tabindex="-1" id="modal-mensagem">
+						<div class="modal-dialog">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title">Confirmação de dados</h5>
+							  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+							  <p>Os dados estão corretos? Confirma o envio do formulário?</p>
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+							  <button type="submit" class="btn btn-secondary">Confirmar</button>
+							</div>
+						  </div>
+						</div>
+					  </div>
 				</div>
 			</form>
 		</div>
