@@ -89,9 +89,17 @@ p, li{
     
 
 }
-.btn-primary:hover{
+.btn-primary:hover, .btn-secondary:hover{
     background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
-
-
-
+.btn-secondary{
+	background-color:#000440;
+}
+h3{
+	font-size: 16px;
+    font-weight: 500;
+    color:#000440;
+}
+h5{
+    font-weight: 700;
+}

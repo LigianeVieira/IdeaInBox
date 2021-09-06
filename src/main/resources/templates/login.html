@@ -86,11 +86,34 @@
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
               </div>
-              <a href="recuperarSenha.html" ><span>Esqueceu a senha? Clique aqui</span></a>
               <button type="submit" class="btn btn-primary">ENTRAR</button>
+              <button type="button" class="btn btn-secundary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Esqueceu a senha? Click Aqui!</button>
               </div>
           </form>
       </div>
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Redefinir senha</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+          <h3>Digite seu e-mail para redefinir sua senha que lhe enviaremos um link com as instruções!</h3>
+            <label for="recipient-name" class="col-form-label">E-mail:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+        <button type="button" class="btn btn-secondary">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
      </div>
     </div>
    </main>
