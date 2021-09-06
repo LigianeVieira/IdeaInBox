@@ -65,36 +65,36 @@
 	<main>
 		<!--FORMULARIO ESQUERDO-->
 		<div class="container">
-			<form class="form-1" method="post">
+			<form class="formulaario" id="form-1" method="post">
 				<div class="row">
 					<div class="col-sm">
 						<h2>Cadastrar Gerente</h2>
 						<div class="form-group">
 							<label for="nome">Nome</label>
-							<input type="text" id="nome" class="form-control" value="" name="nome" placeholder="Nome" required>
+							<input type="text" id="nome" class="nome validar" value="" name="nome" placeholder="Nome" required>
 							<small  class="form-text text-muted">Nome
 								completo do Gerente</small>
 						</div>
 						<div class="form-group">
 							<label for="cpf">CPF</label>
-							<input type="text" id="cpf" class="form-control" value="" name="cpf" placeholder="12345678910" required>
+							<input type="text" id="cpf" class="cpf validar" value="" name="cpf" placeholder="12345678910" required>
 							<small class="form-text text-muted">Numérico como no exemplo</small>
 						</div>
 						<div class="form-group">
 							<label for="login">Login</label>
-							<input type="text" id="login" class="form-control" value="" name="login" placeholder="Login" required>
+							<input type="text" id="login" class="usuario validar" value="" name="login" placeholder="Login" required>
 							<small class="form-text text-muted">Login que o usuario acessara o sistema</small>
 						</div>
 						<div class="form-group">
 							<label for="senha">Senha</label>
-							<input type="password" id="senha" class="form-control" value="" name="senha" placeholder="Senha" required>
+							<input type="password" id="senha" class="senha validar" value="" name="senha" placeholder="Senha" required>
 							<small  class="form-text text-muted">Senha para acessar o sistema</small>
 						</div>
 
 					</div>
 					<!--FORMULARIO DIREITO-->
 					<div class="col-sm">
-						<div class="form-group2">
+						<div class= "form-group2">
 							<label for="email">Email</label>
 							<input type="email" id="email" class="form-control" value="" name="email" placeholder="Email do colaborador" required> 
 							<small class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
@@ -128,7 +128,8 @@
 				</div>
 			</form>
 		</div>
-		
+		<script src="js/validaCpf.js"></script>
+		<script src="js/validaFormulario.js"></script>
 	</main> 
 </body>
 

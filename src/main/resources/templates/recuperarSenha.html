@@ -55,20 +55,21 @@
         <img src="img/Grande-Ideia-PNG-Sem-Fundo.png" alt="Grande ideia">
         <main class="container">
             <h2>Recuperar a senha</h2>
-            <form name="formuser" method="post" action="/recuperarSenha" th:object="${colaborador}">
+            <form name="formuser"  classe="formulario" method="post" action="/recuperarSenha" th:object="${colaborador}">
               <div class="input-field">
                 <label for="senha" class="form-label" name="senha">Nova Senha</label>
-                <input type="password" id="senha" class="form" value="" th:field="*{senha}" placeholder="" minlength="8" maxlength="8" required>
+                <input type="password" id="senha" class="senha validar" value="" th:field="*{senha}" placeholder="" size="8"  required>
                </div>     
               <div class="input-field">
                 <label for="repitaSenha" class="form-label">Repita a senha digitada</label>
-                <input type="password" id="repitaSenha" name="rep_senha" class="form" value="repita a senha" th:field="*{senha}" placeholder="" minlength="8"  maxlength="8" required>
+                <input type="password" id="repitaSenha" name="rep_senha" class="repetir-senha validar" value="repita a senha" th:field="*{senha}" placeholder="" size="8"  required>
                 </div> 
                  <div>   
-              <button type="submit"class="btn btn-primary" onclick="return recuperarSenha()">CONFIRMAR</button></div>
+              <button type="submit"class="btn btn-primary" >CONFIRMAR</button></div>
             </form>
         </main>
         <script  src="js/scripts.js"></script>
+        <script  src="js/validaFormulario.js"></script>
     <body> 
 
 </html>

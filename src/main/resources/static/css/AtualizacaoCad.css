@@ -29,7 +29,7 @@ p, li{
     margin-right: 150px;
     z-index: 1;
 }
-.form-1 ,.form-control,.form-select{
+.form-1 ,.form-control,.form-select, #cpf,#nome{
     width: 400px;
 }
 .form-1 h2{
@@ -54,5 +54,8 @@ background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 	text-transform: lowercase;
    
 }
-.error-email{ color: red; }
+.error-text {
+    font-size: 12px;
+    color: red;
+  }
 	

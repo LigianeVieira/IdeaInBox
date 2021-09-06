@@ -23,17 +23,17 @@ p, li{
 
 /* questionario*/ 
 
-.form-1{
+#form-1{
     margin-top: 140px;
     margin-right: 90px;
 }
-.form-1 .form-control{
+#form-1 .form-control, #nome, #cpf, #login,#senha{
     width: 400px;
 }
-.form-1 h2{
+#form-1 h2{
     color:#DB8F02;
 }
-.form-1 label{
+#form-1 label{
     padding: 5px;
 }
 .btn-primary{
@@ -65,3 +65,7 @@ h6{
     font-weight: 500;
     color:#000440;
 }
+.error-text {
+    font-size: 12px;
+    color: red;
+  }
