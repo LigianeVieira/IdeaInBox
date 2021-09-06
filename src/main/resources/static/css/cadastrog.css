@@ -4,16 +4,17 @@ body{
     font-family: 'Roboto', sans-serif;
     background: url("../img/criat2.png") no-repeat 110% 75%;
     background-color: #F5F5F5;
-    
    
     
 }
 .row{
     margin: 0;
+    
 }
 
 .container{
     padding: 70px 0;
+    margin-top:70px;
 }
 
 p, li{
@@ -23,17 +24,18 @@ p, li{
 
 /* questionario*/ 
 
-#form-1{
-    margin-top: 140px;
+
+.form-1{
+    margin-top: 50px;
     margin-right: 90px;
 }
-#form-1 .form-control, #nome, #cpf, #login,#senha{
+.form-1 .form-control{
     width: 400px;
 }
-#form-1 h2{
-    color:#DB8F02;
+.form-1 h2{
+    color:#DB8F02
 }
-#form-1 label{
+.form-1 label{
     padding: 5px;
 }
 .btn-primary{

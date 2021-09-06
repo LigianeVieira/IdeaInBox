@@ -1,4 +1,4 @@
-class ValidaCPF {
+  class  ValidaCPF{
     constructor(cpfEnviado) {
       Object.defineProperty(this, 'cpfLimpo', {
         writable: false,
