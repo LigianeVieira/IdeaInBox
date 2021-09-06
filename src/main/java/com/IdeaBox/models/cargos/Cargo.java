@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -25,6 +26,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 import com.IdeaBox.models.usuarios.Colaborador;
+import com.IdeaBox.models.usuarios.Usuario;
 
 @Entity
 public class Cargo implements Serializable {
@@ -42,16 +44,16 @@ public class Cargo implements Serializable {
 	private String nome;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	private List <Colaborador> colaborador;
+	private List <Usuario> colaboradores;
 	
 	
 	
 	public Cargo () {}
 	
 	
-	public Cargo(String nome, Colaborador colaborador) {
+	public Cargo(String nome) {
 		setNome(nome);
-		setColaborador(getColaborador());
+		colaboradores = new ArrayList<Usuario>();
 	}
 	
 	public String getNome() {
@@ -62,12 +64,12 @@ public class Cargo implements Serializable {
 		this.nome = nome;
 	}
 	
-	private List<Colaborador> getColaborador() {
-		return colaborador;
+	private List<Usuario> getColaborador() {
+		return colaboradores;
 	}
 
-	private void setColaborador(List<Colaborador> colaborador) {
-		this.colaborador = colaborador;
+	private void setColaborador(List<Usuario> colaboradores) {
+		this.colaboradores = colaboradores;
 	}
 
 

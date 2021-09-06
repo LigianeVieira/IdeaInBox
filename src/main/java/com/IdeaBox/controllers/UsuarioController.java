@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.IdeaBox.exceptions.ServiceExce;
@@ -174,6 +175,10 @@ public class UsuarioController {
 		ModelAndView mv = new ModelAndView("colaborador/formGerente");
 		Iterable<Cargo>cargos = crg.findAllexceptAdm();
 		mv.addObject("cargo", cargos);
+		Gerente gerente = new Gerente();
+		mv.addObject("gerente", gerente);
+		Cargo cargo = new Cargo();
+		mv.addObject("cargoGerente", cargo);
 		if (session.getAttribute("AdmLogado") != null) {
 			return mv;
 		} else {
@@ -182,7 +187,9 @@ public class UsuarioController {
 	}
 
 	@RequestMapping(value = "/cadastrarGerente", method = RequestMethod.POST)
-	public String form(Gerente gerente) throws Exception {
+	public String form(Gerente gerente, @RequestParam long cargoId) throws Exception {
+		Cargo cargo = crg.findById(cargoId);
+		gerente.setCargo(cargo);
 		su.salvarGerente(gerente);
 		return "redirect:/cadastrarGerente";
 	}
