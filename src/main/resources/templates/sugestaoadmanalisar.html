@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-<title>Lista de colaboradores</title>
+<title>Sugestões enviadas para administração</title>
 
 <!--Fonte-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,8 +21,9 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/barra_navegacao.css">
-<link rel="stylesheet" href="css/listagem.css">
+<link rel="stylesheet" href="/css/barra_navegacao.css">
+<link rel="stylesheet" href="/css/sugestaoadmanalisar.css">
+
  <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/b77074ccd5.js" crossorigin="anonymous"></script>
 
@@ -49,40 +50,40 @@
                     <a class="nav-item nav-link" id="services-menu" href="/cadastrarColaborador">Cadastrar Colaborador</a>
                     <a class="nav-item nav-link" id="team-menu" href="http://localhost:8080/timeline">Timeline</a>
                     <a class="nav-item nav-link" id="contact-menu" href="/profile">Perfil</a>
-                     <a class="nav-item nav-link" id="exit-menu" href="/logout">Sair</a>
+                     <a class="nav-item nav-link" id="exit-menu" href="/logout" >Sair</a>
 					</div>
 				</div>
 			</nav>
 		</div>
 	</header>
+    <h1>Sugestões a analisar para possível implementação</h1>
 	<div class="container-fluid">
-	<table class="table table-striped">
+    <fieldset>
+    <table class="table table-striped">
    <thead>
     <tr>
-     <th scope="col">Nº</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Cpf</th>
-      <th scope="col">Cargo</th>
-      <th scope="col">Login</th>
-      <th scope="col">Email</th>
-      <th scope="col"> </th>
-    </tr>
+      <th scope="col"  class="col-1"></a></th>
+      <th scope="col"  class="col-2">Status</th>
+      <th scope="col"  class="col-3">Colaborador</th>
+      <th scope="col"  class="col-4">Cargo</th>
+      <th scope="col"  class="col-5">Data</th>
+     </tr>
   </thead>
   <tbody>
-    <tr th:each="colaborador : ${colaboradores}" >
-    	<td><span th:text="${colaborador.id}"></span></td>
-      <td><span th:text="${colaborador.nome}"></span></td>
-      <td><span th:text="${colaborador.cpf}"></span></td>
-      <td><span th:text="${colaborador.cargo}"></span></td>
-      <td><span th:text="${colaborador.login}"></span></td>
-      <td><span th:text="${colaborador.email}"></span></td>
-      <td><a th:href="${(#mvc.url('CC#deletarColaborador').arg(0, colaborador.id)).build()}"><i class="fas fa-trash-alt"></i></a></td>
+    <tr th:each="">
+        <td><div class="icons"><span class="mail"><a href="#"><i class="far fa-comment"></i></a></span>
+            <span class="analise"><a href="#"><i class="fas fa-folder-open"></i></a></span>
+            <span class="sugestao"><a href="#"><i class="fas fa-at"></i></a></span>
+            </div></td>  
+      <td><span th:text="${}"></span></td>
+      <td><span th:text="${}"></span></td>
+      <td><span th:text="${}"></span></td>
+      <td><a th:href="${}"></a></td>
       </tr>
   </tbody>
 </table>
-<button class="btn btn-primary"><a href="/cadastrarColaborador">Cadastrar
-Colaborador  &nbsp;&nbsp;<i class="fas fa-user-plus"></i></a></button>
-	</div>
+</fieldset>
+</div>
 
 
 <script src="js/scripts.js"></script> 

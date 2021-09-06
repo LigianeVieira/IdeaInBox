@@ -1,0 +1,52 @@
+body{
+   font-family: 'Roboto', sans-serif;
+   background-color: #F5F5F5;
+   margin:0;
+   padding:0;
+   border:0;
+}
+
+.container{
+   margin-top: 60px;
+   width:100%;
+}
+h1{
+    margin-top: 70px;
+    font-size: 25px;
+    background-color: #000440;
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    padding: 8px;
+    
+}
+fieldset{
+    box-sizing: border-box;
+    z-index: 1;
+}
+.email, .doc{
+    
+    content: icon;
+    width: 10px;    
+}
+.icons{
+   width: 20px;
+  
+}
+.col-1{
+    width:10%;
+}
+.col-2{
+    width: 25%;
+}
+.col-3{
+    width:30%;
+}
+.col-4{
+    width:35%;
+}
+th{
+    text-align: center;
+    border: #000440;
+}   
+

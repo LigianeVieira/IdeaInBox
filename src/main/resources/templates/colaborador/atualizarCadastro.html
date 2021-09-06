@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   
-<title>Registrar Colaborador</title>
+<title>Atualizar Cadastro</title>
 
 <!--Fonte-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +22,10 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
+	
+	<!--Estilos nossos--->
 <link rel="stylesheet" href="css/barra_navegacao.css">
-<link rel="stylesheet" href="css/cadastro.css">
-<script  src="js/scripts.js"></script>
+<link rel="stylesheet" href="css/AtualizacaoCad.css">
   <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/b77074ccd5.js" crossorigin="anonymous"></script>
 <script
@@ -35,6 +36,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
+	
 	
 </head>
 	
@@ -67,100 +69,43 @@
 		</div>
 	</header>
 	<main>
-		<!--FORMULARIO ESQUERDO-->
 		<div class="container">
-			<form class="form-1 needs-validation" method="post">
+			<form class="form-1" method="post">
 				<div class="row">
 					<div class="col-sm">
-						<h2>Cadastrar colaborador</h2>
-						<div class="form-group">
-							<label for="nome">Nome</label>
-							 <input type="text"  id="nome" class="form-control" value="" name="nome" placeholder="Nome" size="45" required>
-							<small class="form-text text-muted">Nome completo do colaborador</small>
-						</div>
+						<h2>Atualização de cadastro</h2>
 						<div class="form-group">
 							<label for="cpf">CPF</label>
-							<input type="text" id="cpf" class="form-control" value="" name="cpf" placeholder="12345678910"  size="11"  required>
+							<input type="text" id="cpf" class="cpf validar" value="" name="cpf" placeholder="12345678910"  size="11" required>
 						</div>
 						<div class="form-group">
-							<label for="login">Login</label> 
-							<input type="text" id="login" class="form-control" value="" name="login" placeholder="Login" size="25" required>
-							<small  class="form-text text-muted">Login que o usuario acessara o sistema</small>
+							<label for="nome">Nome</label>
+							 <input type="text"  id="nome" class="nome validar" value="" name="nome" placeholder="Nome" size="45" required>
+							<small class="form-text text-muted">Nome completo do colaborador</small>
 						</div>
-						<div class="form-group">
-							<label for="senha">Senha</label> 
-							<input type="password" id="senha" class="form-control"  value="" name="senha" placeholder="Senha"  size="8"  required onClick="mostrarOcultarSenha()">
-							 <small class="form-text text-muted">Senha para acessar o sistema</small>
-						</div>
-
-					</div>
-					<!--FORMULARIO DIREITO-->
-					<div class="col-sm">
-						<div class="form-group2">
+							<div class="form-group">
 							<label for= "email">Email</label> 
-							<input  type="email" id="email" class="form-control" value="" name="email" placeholder="Email do colaborador"  size="60" required>
+							<input  type="email" id="email" class="form-control" value="" name="email" placeholder="Email do colaborador"   size="65" required>
 							<small class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-							 <span class="error-email"></span>
-						</div>
-						<div class="form-group2">
-<<<<<<< HEAD
-							<select class="form-select" name="cargoId">
-							
-  <option th:each="cargo : ${cargo}" th:value="*{cargo.id}" th:text="${cargo.nome}"></option>
-</select>
-
-							
-							
-						
-									<a href="" onclick="open('cargos','cargos.html','status=no,Width=820,Height=485');"><span>Não encontrou seu cargo? Clique aqui</span></a>
-								
-									
-								<button type="submit" class="btn btn-primary">Cadastrar Colaborador  &nbsp;&nbsp;<i class="fas fa-user-plus"></i>
-								</button>
-=======
+							</div>
+						<div class="form-group">
 							<select class="form-select" aria-label="Default select example">
 							<div th:each="cargo : ${cargo}"><option><span th:text="${cargo.nome}"></span></option>
 							</div></select>
 								<a href="/cargos"><span>Não encontrou seu cargo? Clique aqui</span></a>
-
-							<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-mensagem">Cadastrar Colaborador  &nbsp;&nbsp;<i class="fas fa-user-plus"></i></button>
->>>>>>> task20
+								<button type="submit" class="btn btn-primary">Atualizar Cadastro &nbsp;&nbsp;<i class="fas fa-user-plus"></i>
+								</button>
 						</div>
 					</div>
-					<!--Modal pop up-->
-					<div class="modal" tabindex="-1" id="modal-mensagem">
-						<div class="modal-dialog">
-						  <div class="modal-content">
-							<div class="modal-header">
-							  <h5 class="modal-title">Confirmação de dados</h5>
-							  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">
-							  <h6>Os dados estão corretos? Confirma o envio do formulário?</h6>
-							</div>
-							<div class="modal-footer">
-							  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
-							  <button type="submit" class="btn btn-secondary">Confirmar</button>
-							</div>
-						  </div>
-						</div>
-					  </div>
-					  <!---End Modal-->
 				</div>
 			</form>
 		</div>
 		
 	</main>
-<<<<<<< HEAD
-	
-	
-=======
 	<script  src="js/scripts.js"></script>
 	<script  src="js/validaCpf.js"></script>
+	<script  src="js/validaFormulario.js"></script>
 	
-	
-		
->>>>>>> task20
 </body>
 
 </html>

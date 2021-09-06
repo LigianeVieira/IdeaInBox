@@ -2,15 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 body{
     font-family: 'Roboto', sans-serif;
-    background: url("../img/criat2.png") no-repeat 120% 85%;
+    background: url("../img/criat2.png") no-repeat 110% 75%;
     background-color: #F5F5F5;
+   
+    
 }
 .row{
     margin: 0;
+    
 }
 
 .container{
     padding: 70px 0;
+    margin-top:70px;
 }
 
 p, li{
@@ -18,45 +22,11 @@ p, li{
     font-size: 14px;
 }
 
-/*Barra de navega��o*/
-header, .navbar{
-    background-color:#F3CA06;
-    
-    }
-    #nav-container{
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-    
-    #logo{
-        width: 160px;
-    }
-    
-    .navbar-brand{
-    padding: 0;
-    color: white;
-    }
-    
-    .navbar-brand:hover{
-        color: white;
-    }
-    
-    #navbar-links a{
-        color: white;
-          font-weight: bolder;
-    }
-    .navbar-expand-lg .navbar-nav .nav-link{
-        padding: 1rem .8rem;
-    }
-    
-
-    
-      /* questionario*/ 
-
 /* questionario*/ 
 
+
 .form-1{
-    margin-top: 140px;
+    margin-top: 50px;
     margin-right: 90px;
 }
 .form-1 .form-control{
@@ -80,9 +50,24 @@ header, .navbar{
 .form-group2{
 margin-top: 45px;
 }
-.btn-primary:hover{
+.btn-secondary{
+	background-color:#000440;
+}
+.btn-primary:hover,.btn-secondary:hover{
    background-image: linear-gradient(to left,#F3B507,#DB8F02,#F3CA06);
 }
 .form-control#SelectForm{
 	 text-transform: lowercase;
 }
+h5{
+    font-weight: 700;
+}
+h6{
+    font-size: 18px;
+    font-weight: 500;
+    color:#000440;
+}
+.error-text {
+    font-size: 12px;
+    color: red;
+  }

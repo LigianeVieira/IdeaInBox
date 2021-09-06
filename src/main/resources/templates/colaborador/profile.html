@@ -79,6 +79,7 @@
                             </div>
                      </div>
                 </div>  
+<<<<<<< HEAD
                        <div class="Sugestoes">
                         <p><a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
                                 aria-expanded="false" aria-controls="collapseExample">
@@ -122,13 +123,32 @@
                               </table>
                       </div>
                     </div> 
+=======
+                      <div class="Sugestoes">
+                    <p>
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            Sugestões recentes &nbsp; <i class="fas fa-lightbulb"></i>
+                        </a>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                      <div class="card card-body w-100">
+                        <table class="table">
+                            <tbody>
+                              <tr th:each="sugestao : ${sugestoes}">
+                                <td><span th:text="${sugestao.texto}"></span><a th:href="${(#mvc.url('SC#deletarSugestao').arg(0, sugestao.id)).build()}"><i class="fas fa-trash-alt"></i></a></td>
+                               </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        </div> 
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="/listSugestoes" target="_blank"  role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Suas Sugestões  &nbsp; <i class="fas fa-lightbulb"></i></a>
+>>>>>>> task20
                 </div>          
                   </div> 
                 </div>
             </div>
-         
-          
-     </main>
+        </main>
      
 </body>
 </html>

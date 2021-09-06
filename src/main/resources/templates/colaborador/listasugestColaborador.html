@@ -49,7 +49,7 @@
                     <a class="nav-item nav-link" id="services-menu" href="/cadastrarColaborador">Cadastrar Colaborador</a>
                     <a class="nav-item nav-link" id="team-menu" href="http://localhost:8080/timeline">Timeline</a>
                     <a class="nav-item nav-link" id="contact-menu" href="/profile">Perfil</a>
-                     <a class="nav-item nav-link" id="exit-menu" href="/logout">Sair</a>
+                     <a class="nav-item nav-link" id="exit-menu" href="/logout" >Sair</a>
 					</div>
 				</div>
 			</nav>
@@ -59,30 +59,21 @@
 	<table class="table table-striped">
    <thead>
     <tr>
-     <th scope="col">Nº</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Cpf</th>
-      <th scope="col">Cargo</th>
-      <th scope="col">Login</th>
-      <th scope="col">Email</th>
-      <th scope="col"> </th>
-    </tr>
+      <th scope="col">Status</th>
+      <th scope="col">Mês</th>
+      <th scope="col">Sua sugestão</th>
+     </tr>
   </thead>
   <tbody>
-    <tr th:each="colaborador : ${colaboradores}" >
-    	<td><span th:text="${colaborador.id}"></span></td>
-      <td><span th:text="${colaborador.nome}"></span></td>
-      <td><span th:text="${colaborador.cpf}"></span></td>
-      <td><span th:text="${colaborador.cargo}"></span></td>
-      <td><span th:text="${colaborador.login}"></span></td>
-      <td><span th:text="${colaborador.email}"></span></td>
-      <td><a th:href="${(#mvc.url('CC#deletarColaborador').arg(0, colaborador.id)).build()}"><i class="fas fa-trash-alt"></i></a></td>
+    <tr th:each="" >
+      <td><span th:text="${}"></span></td>
+      <td><span th:text="${}"></span></td>
+      <td><span th:text="${}"></span></td>
+      <td><a th:href="${}">
       </tr>
   </tbody>
 </table>
-<button class="btn btn-primary"><a href="/cadastrarColaborador">Cadastrar
-Colaborador  &nbsp;&nbsp;<i class="fas fa-user-plus"></i></a></button>
-	</div>
+</div>
 
 
 <script src="js/scripts.js"></script> 

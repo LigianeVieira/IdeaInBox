@@ -1,8 +1,7 @@
 package com.IdeaBox.models.usuarios;
 
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+
 
 @Entity
 public class Gerente extends Colaborador{

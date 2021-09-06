@@ -2,43 +2,8 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #F5F5F5;
-
-   
-
+    margin-top:60px;
 }
-
-/*Barra de navegação*/
-header, .navbar{
-   background-color:#F3CA06;
-    margin-bottom: 80px;
-    
-    }
-    #nav-container{
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-    
-    #logo{
-        width: 160px;
-    }
-    
-    .navbar-brand{
-    padding: 0;
-    color: white;
-    }
-    
-    .navbar-brand:hover{
-        color: white;
-    }
-    
-    #navbar-links a{
-        color: white;
-          font-weight: bolder;
-    }
-    .navbar-expand-lg .navbar-nav .nav-link{
-        padding: 1rem .8rem;
-    }
-
 
 
 .img-thumbnail{

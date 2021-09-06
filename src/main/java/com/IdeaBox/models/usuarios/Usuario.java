@@ -1,10 +1,7 @@
 package com.IdeaBox.models.usuarios;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -16,11 +13,9 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 
 import com.IdeaBox.models.cargos.Cargo;
-import com.IdeaBox.models.sugestoes.Sugestao;
 
 
 
@@ -55,7 +50,7 @@ public abstract class Usuario implements Serializable {
 	private String senha;
 	
 	@Email
-	@Column(nullable = false, unique = false)
+	@Column(length = 50,nullable = false, unique = false)
 	private String email;
 	
 	@Enumerated(EnumType.STRING)
