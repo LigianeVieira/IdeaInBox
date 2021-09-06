@@ -157,6 +157,10 @@ public class UsuarioController {
 		ModelAndView mv = new ModelAndView("colaborador/formColaborador");
 		Iterable<Cargo>cargos = crg.findAllexceptGerente();
 		mv.addObject("cargo", cargos);
+		Colaborador colaborador = new Colaborador();
+		mv.addObject("gerente", colaborador);
+		Cargo cargo = new Cargo();
+		mv.addObject("cargoColaborador", cargo);
 		if (session.getAttribute("AdmLogado") != null || session.getAttribute("gerenteLogado") != null) {
 			return mv;
 		} else {
@@ -165,7 +169,9 @@ public class UsuarioController {
 	}
 
 	@RequestMapping(value = "/cadastrarColaborador", method = RequestMethod.POST)
-	public String form(Colaborador colaborador) throws Exception {
+	public String form(Colaborador colaborador,  @RequestParam long cargoId) throws Exception {
+		Cargo cargo = crg.findById(cargoId);
+		colaborador.setCargo(cargo);
 		su.salvarColaborador(colaborador);
 		return "redirect:/cadastrarColaborador";
 	}

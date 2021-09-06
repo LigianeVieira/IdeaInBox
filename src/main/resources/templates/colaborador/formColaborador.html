@@ -99,12 +99,10 @@
 							<small class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
 						</div>
 						<div class="form-group2">
-							<select class="form-select" aria-label="Default select example">
-							<div th:each="cargo : ${cargo}">
-  <option><span th:text="${cargo.nome}"></span></option>
-</div>
-</select>
+							<select class="form-select" name="cargoId">
 							
+  <option th:each="cargo : ${cargo}" th:value="*{cargo.id}" th:text="${cargo.nome}"></option>
+</select>
 
 							
 							
