@@ -64,7 +64,7 @@
        </div>
        
       </div>
-      <div class="col">
+      <div class="col ">
         <form class="form-1" method="post" action="/login" th:object="${colaborador}">
             <div class="card">
                 <div class="card-top">
@@ -80,7 +80,7 @@
             <div class="mb-3">
               <label for="password" class="form-label">Senha</label>
               <input type="password" id="password" class="form-control" value="password" th:field="*{senha}" placeholder="Digite sua senha" size="8" required>
-              <buttom type="buttom" class="lnr lnr-eye" onclick= "mostrarOcultarSenha()">
+              <button type="button" class ="lnr lnr-eye" onClick = "mostrarOcultarSenha()"></button>
              </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">

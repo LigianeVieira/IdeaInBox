@@ -27,13 +27,13 @@ class ValidaFormulario {
       const senha = this.formulario.querySelector('.senha');
       const repetirSenha = this.formulario.querySelector('.repetir-senha');
   
-      if(senha.value !== repetirSenha.value) {
+      if(senha.value != repetirSenha.value) {
         valid = false;
         this.criaErro(senha, 'Campos senha e repetir senha precisar ser iguais.');
         this.criaErro(repetirSenha, 'Campos senha e repetir senha precisar ser iguais.');
       }
   
-      if(senha.value.length ==8) {
+      if(senha.value.length =8) {
         valid = false;
         this.criaErro(senha, 'Senha precisa ter 8 caracteres.');
       }
