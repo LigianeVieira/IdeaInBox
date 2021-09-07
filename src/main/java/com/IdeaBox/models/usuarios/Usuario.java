@@ -19,6 +19,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 
+import com.IdeaBox.exceptions.CpfException;
 import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.sugestoes.Sugestao;
 
@@ -41,7 +42,7 @@ public abstract class Usuario implements Serializable {
 	private String nome;
 	
 	@Column(length = 11, nullable = false, unique = true)
-	private String cpf;
+	private String cpf = "12345678912";
 	 
 	@ManyToOne
 	@JoinColumn(name = "cargo_id")
@@ -64,7 +65,7 @@ public abstract class Usuario implements Serializable {
 	
 
 
-	public Usuario(long id, String nome, String cpf, Cargo cargo, String login, String senha, String email) {
+	public Usuario(long id, String nome, String cpf, Cargo cargo, String login, String senha, String email) throws CpfException {
 		setId(id);
 		setNome(nome);
 		setCpf(cpf);
@@ -75,7 +76,7 @@ public abstract class Usuario implements Serializable {
 		setStatus(StatusColaborador.ATIVO); 
 		
 	}
-	public Usuario() {
+	public Usuario() throws CpfException {
 		setId(id);
 		setNome(nome);
 		setCpf(cpf);
@@ -103,7 +104,13 @@ public abstract class Usuario implements Serializable {
 	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(String cpf) {
+	public void setCpf(String cpf) throws CpfException {
+		if(cpf.isEmpty()) {
+			throw new CpfException("Cpf incorreto");
+		}
+		if(cpf.length() > 11 || cpf.length() < 11) {
+			throw new CpfException("quantidade de numeros do cpf incorretos.");
+		}
 		this.cpf = cpf;
 	}
 		

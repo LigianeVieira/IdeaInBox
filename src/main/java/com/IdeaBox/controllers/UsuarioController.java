@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.IdeaBox.exceptions.CpfException;
 import com.IdeaBox.exceptions.ServiceExce;
 import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.sugestoes.Sugestao;
@@ -62,7 +63,7 @@ public class UsuarioController {
 
 	@PostMapping("/login")
 	public ModelAndView login(Colaborador colaborador, Gerente gerente, Administrador adm, BindingResult br,
-			HttpSession session) throws NoSuchAlgorithmException, ServiceExce {
+			HttpSession session) throws NoSuchAlgorithmException, ServiceExce, CpfException {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("colaborador", new Colaborador());
 		if (br.hasErrors()) {
@@ -90,12 +91,21 @@ public class UsuarioController {
 	}
 
 	@GetMapping("/login")
-	public ModelAndView loginGet() {
+	public ModelAndView loginGet()  {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("login");
-		mv.addObject("colaborador", new Colaborador());
-		mv.addObject("gerente", new Gerente());
-		return mv;
+		try {
+			mv = new ModelAndView();
+			mv.setViewName("login");
+			mv.addObject("colaborador", new Colaborador());
+			mv.addObject("gerente", new Gerente());
+			return mv;
+		}
+		catch(CpfException e) {
+			e.printStackTrace();
+		}
+		finally {
+			return mv;
+		}
 	}
 
 	@GetMapping("/")
@@ -119,7 +129,7 @@ public class UsuarioController {
 	}
 
 	@GetMapping("/profile")
-	public ModelAndView perfilGet(HttpSession session) {
+	public ModelAndView perfilGet(HttpSession session) throws CpfException {
 		if (session.getAttribute("colaboradorLogado") != null) {
 			Colaborador colaborador = (Colaborador) session.getAttribute("colaboradorLogado");
 			ModelAndView mv = new ModelAndView("colaborador/profile");
@@ -153,11 +163,16 @@ public class UsuarioController {
 	}
 
 	@GetMapping("/cadastrarColaborador")
-	public ModelAndView form(HttpSession session) {
+	public ModelAndView form(HttpSession session) throws CpfException {
 		ModelAndView mv = new ModelAndView("colaborador/formColaborador");
 		Iterable<Cargo>cargos = crg.findAllexceptGerente();
 		mv.addObject("cargo", cargos);
-		Colaborador colaborador = new Colaborador();
+		Colaborador colaborador = null;
+		try {
+			colaborador = new Colaborador();
+		} catch (CpfException e) {
+			e.printStackTrace();
+		}
 		mv.addObject("gerente", colaborador);
 		Cargo cargo = new Cargo();
 		mv.addObject("cargoColaborador", cargo);
@@ -181,7 +196,12 @@ public class UsuarioController {
 		ModelAndView mv = new ModelAndView("colaborador/formGerente");
 		Iterable<Cargo>cargos = crg.findAllexceptAdm();
 		mv.addObject("cargo", cargos);
-		Gerente gerente = new Gerente();
+		Gerente gerente = null;
+		try {
+			gerente = new Gerente();
+		} catch (CpfException e) {
+			e.printStackTrace();
+		}
 		mv.addObject("gerente", gerente);
 		Cargo cargo = new Cargo();
 		mv.addObject("cargoGerente", cargo);

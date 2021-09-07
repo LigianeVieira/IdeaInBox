@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.Target;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.IdeaBox.exceptions.CpfException;
 import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.sugestoes.Sugestao;
 @Entity
@@ -30,7 +31,7 @@ public class Colaborador extends Usuario{
 	protected List <Sugestao> sugestoesAvaliadas;
 
 	
-	public Colaborador(Integer id, String nome, String CPF, Cargo cargo, String login, String senha, String email) {
+	public Colaborador(Integer id, String nome, String CPF, Cargo cargo, String login, String senha, String email) throws CpfException {
 		super(id, nome, CPF,  cargo, login, senha, email);
 		
 		
@@ -46,7 +47,7 @@ public class Colaborador extends Usuario{
 		sugestoesAvaliadas = new ArrayList<Sugestao>();
 	}
 	
-	public Colaborador() {
+	public Colaborador() throws CpfException{
 		
 	}
 	

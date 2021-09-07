@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+import com.IdeaBox.exceptions.CpfException;
+
 @Entity
 public class Gerente extends Colaborador{
 
@@ -12,7 +14,7 @@ public class Gerente extends Colaborador{
 	
 
 	
-	public Gerente() {
+	public Gerente() throws CpfException{
 		
 	}
 	
