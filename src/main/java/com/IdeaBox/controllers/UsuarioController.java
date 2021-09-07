@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.IdeaBox.exceptions.CpfException;
+import com.IdeaBox.exceptions.SenhaLowException;
 import com.IdeaBox.exceptions.ServiceExce;
 import com.IdeaBox.models.cargos.Cargo;
 import com.IdeaBox.models.sugestoes.Sugestao;
@@ -63,7 +64,7 @@ public class UsuarioController {
 
 	@PostMapping("/login")
 	public ModelAndView login(Colaborador colaborador, Gerente gerente, Administrador adm, BindingResult br,
-			HttpSession session) throws NoSuchAlgorithmException, ServiceExce, CpfException {
+			HttpSession session) throws NoSuchAlgorithmException, ServiceExce, CpfException, SenhaLowException {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("colaborador", new Colaborador());
 		if (br.hasErrors()) {
@@ -101,6 +102,9 @@ public class UsuarioController {
 			return mv;
 		}
 		catch(CpfException e) {
+			e.printStackTrace();
+		}
+		catch(SenhaLowException e) {
 			e.printStackTrace();
 		}
 		finally {
@@ -172,6 +176,8 @@ public class UsuarioController {
 			colaborador = new Colaborador();
 		} catch (CpfException e) {
 			e.printStackTrace();
+		} catch (SenhaLowException e) {
+			e.printStackTrace();
 		}
 		mv.addObject("gerente", colaborador);
 		Cargo cargo = new Cargo();
@@ -200,6 +206,8 @@ public class UsuarioController {
 		try {
 			gerente = new Gerente();
 		} catch (CpfException e) {
+			e.printStackTrace();
+		} catch (SenhaLowException e) {
 			e.printStackTrace();
 		}
 		mv.addObject("gerente", gerente);
