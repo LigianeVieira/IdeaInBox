@@ -172,7 +172,9 @@ public class UsuarioController {
 	public String form(Colaborador colaborador,  @RequestParam long cargoId) throws Exception {
 		Cargo cargo = crg.findById(cargoId);
 		colaborador.setCargo(cargo);
+		cargo.getColaborador().add(colaborador);
 		su.salvarColaborador(colaborador);
+		crg.save(cargo);
 		return "redirect:/cadastrarColaborador";
 	}
 
@@ -196,7 +198,9 @@ public class UsuarioController {
 	public String form(Gerente gerente, @RequestParam long cargoId) throws Exception {
 		Cargo cargo = crg.findById(cargoId);
 		gerente.setCargo(cargo);
+		cargo.getColaborador().add(gerente);
 		su.salvarGerente(gerente);
+		crg.save(cargo);
 		return "redirect:/cadastrarGerente";
 	}
 	

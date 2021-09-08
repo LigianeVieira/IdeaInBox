@@ -64,11 +64,11 @@ public class Cargo implements Serializable {
 		this.nome = nome;
 	}
 	
-	private List<Usuario> getColaborador() {
+	public List<Usuario> getColaborador() {
 		return colaboradores;
 	}
 
-	private void setColaborador(List<Usuario> colaboradores) {
+	public void setColaborador(List<Usuario> colaboradores) {
 		this.colaboradores = colaboradores;
 	}
 
