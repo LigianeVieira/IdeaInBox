@@ -18,22 +18,17 @@ import com.IdeaBox.repository.ColaboradorRepository;
 import com.IdeaBox.repository.SugestaoRepository;
 import com.IdeaBox.service.ServiceUsuario;
 
-
 @Controller
 public class ColaboradorController {
 	@Autowired
 	private ColaboradorRepository cr;
-	
+
 	@Autowired
 	private SugestaoRepository sr;
-	
+
 	@Autowired
 	private ServiceUsuario su;
-	
-	
-	
 
-	
 	@GetMapping("/colaboradores")
 	public ModelAndView listaSugestao() {
 		ModelAndView mv = new ModelAndView("colaborador/listaColaboradores");
@@ -41,20 +36,27 @@ public class ColaboradorController {
 		mv.addObject("colaboradores", colaboradores);
 		return mv;
 	}
-	
+
 	@RequestMapping("/deletar")
 	public String deletarColaborador(long Id) {
 		Colaborador colaborador = cr.findById(Id);
 		cr.delete(colaborador);
 		return "redirect:/colaboradores";
 	}
-	
-	@PostMapping("/editarNome")
-	 public String editarColaborador(@RequestParam long id, @RequestParam("nome") String nome) {
-			Colaborador colaborador = cr.findById(id);
-			colaborador.setNome(nome);
-			cr.save(colaborador);
-				return "redirect:/colaboradores";
-			}
 
+	@PostMapping("/editarNome")
+	public String editarColaborador(@RequestParam long id, @RequestParam("nome") String nome) {
+		Colaborador colaborador = cr.findById(id);
+		colaborador.setNome(nome);
+		cr.save(colaborador);
+		return "redirect:/colaboradores";
+	}
+
+	@PostMapping("/editarCpf")
+	public String editarCpf(@RequestParam long id, @RequestParam("cpf") String cpf) {
+		Colaborador colaborador = cr.findById(id);
+		colaborador.setCpf(cpf);
+		cr.save(colaborador);
+		return "redirect:/colaboradores";
+	}
 }

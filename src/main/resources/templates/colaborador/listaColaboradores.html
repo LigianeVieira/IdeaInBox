@@ -77,6 +77,7 @@
     <tr th:each="colaborador : ${colaboradores}" >
     	<td><span th:text="${colaborador.id}"></span></td>
       <td><span th:text="${colaborador.nome}" ></span><button type="button" class="btn1" data-bs-toggle="modal" th:attr="data-bs-target='#nomeModal' +*{colaborador.id}"><i class="far fa-edit"></i>
+      <td><span th:text="${colaborador.cpf}" ></span><button type="button" class="btn1" data-bs-toggle="modal" th:attr="data-bs-target='#cpfModal' +*{colaborador.id}"><i class="far fa-edit"></i>
 </button></td>
 <!-- Modal nome -->
 <div class="modal fade" th:id="*{'nomeModal' + {colaborador.id}}" tabindex="-1" aria-labelledby="nomeModalLabel" aria-hidden="true">
@@ -103,6 +104,34 @@
   </div>
 </div>
 <!-- FIM Modal nome -->
+
+<!-- Modal CPF -->
+<div class="modal fade" th:id="*{'cpfModal' + {colaborador.id}}" tabindex="-1" aria-labelledby="cpfModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cpfModalLabel">Mudar CPF</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/editarCpf">
+        <div class="mb-3">
+        <label for="id">Id</label>
+       <input type="text" th:value="*{colaborador.id}" class="form-control" name="id" >
+    <label for="exampleInputPassword1" class="form-label">Mudar CPF</label>
+    <input type="cpf" class="form-control" id="texto" name="cpf"  th:value="*{colaborador.cpf}">
+  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+       <button type="submit" class="btn btn-outline-success">Aceitar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FIM Modal CPF -->
+
       <td><span th:text="${colaborador.cpf}"></span></td>
       <td><span th:text="${colaborador.cargo.nome}"></span></td>
       <td><span th:text="${colaborador.login}"></span></td>
