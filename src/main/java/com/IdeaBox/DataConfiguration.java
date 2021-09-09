@@ -19,7 +19,7 @@ public class DataConfiguration {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/ideabox?useSSL=false&serverTimezone=America/Sao_Paulo&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true");
         dataSource.setUsername("root");
-        dataSource.setPassword(""); 
+        dataSource.setPassword("root"); 
         return dataSource;
     }
 	
